@@ -1,0 +1,144 @@
+/**  =====================
+      Form Componant css start
+==========================  **/
+
+.custom-select,
+.form-control {
+    background: $theme-background;
+    padding: 10px 20px;
+    font-size: 14px;
+    height: auto;
+
+    &.form-control-lg {
+        font-size: 1.25rem;
+    }
+
+    &.form-control-sm {
+        height: calc(1.8125rem + 2px);
+        font-size: .875rem;
+    }
+
+    &.form-control-range {
+        box-shadow: none;
+    }
+
+    &:focus {
+        background: $theme-background;
+    }
+
+    &::-moz-placeholder {
+        color: #aaaeb3;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: #aaaeb3;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #aaaeb3;
+    }
+}
+/* input group start */
+
+.input-group {
+    background: $theme-background;
+
+    .input-group-text {
+        padding-left: 15px;
+        padding-right: 15px;
+        background: transparent;
+        i {
+            font-size: 20px;
+        }
+    }
+
+    .custom-file-label {
+        margin-bottom: 0;
+    }
+
+    .btn {
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+}
+
+.cust-file-button {
+    .custom-file-label {
+        height: calc(2.25rem + 8px);
+        line-height: 2.5;
+
+        &::after {
+            padding: 0.775rem 0.75rem;
+            height: 2.65rem;
+        }
+    }
+}
+
+.custom-select{
+    height: calc(2.25rem + 9px);
+}
+/* input group End */
+/**====== Form Componant css end ======**/
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.55rem + 2px);
+}
+.input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]),
+.input-group-lg > .input-group-append > select.input-group-text:not([size]):not([multiple]),
+.input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]),
+.input-group-lg > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
+.input-group-lg > select.form-control:not([size]):not([multiple]),
+select.form-control-lg:not([size]):not([multiple]) {
+    height: calc(3.375rem + 2px);
+}
+
+.minicolors {
+    .form-control {
+        padding: 6px 12px 5px 44px;
+    }
+}
+/* form-select */
+
+.select2-container {
+    width: 100% !important;
+}
+.tt-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+    cursor: pointer;
+}
+.bootstrap-tagsinput {
+    width: 100%;
+}
+.custom-file-label{
+    height: auto;
+    &:after{
+        height: auto;
+        padding: 0.550rem 0.75rem;
+    }
+}
+.form-control.is-invalid, .was-validated .form-control:invalid,
+.was-validated .form-control:valid, .form-control.is-valid {
+    background-position: calc(100% - 10px) calc(.375em + 0.4875rem);
+}
+
+.was-validated .form-control:invalid~.invalid-feedback {
+  background: #fff;
+  margin-top: 0;
+  padding-top: 0.25em;
+}
+

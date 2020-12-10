@@ -1,0 +1,45 @@
+{
+  "name": "datta-able-rv18.0.4",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://lite.codedthemes.com/datta-able/react/default/",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
+    "google-maps-react": "^2.0.2",
+    "jquery": "^3.4.0",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.5",
+    "react-dom": "^16.8.4",
+    "react-full-screen": "^0.2.4",
+    "react-loadable": "^5.5.0",
+    "react-nvd3": "^0.5.7",
+    "react-perfect-scrollbar": "^1.4.4",
+    "react-redux": "^6.0.1",
+    "react-reveal": "^1.2.2",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^3.0.0",
+    "react-window-size": "^1.2.2",
+    "redux": "^4.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "react-to-print": "^2.1.1"
+  }
+}

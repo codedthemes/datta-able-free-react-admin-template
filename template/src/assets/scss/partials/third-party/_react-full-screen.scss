@@ -1,0 +1,3 @@
+:not(:root):-webkit-full-screen::backdrop {
+  background: transparent !important;
+}
