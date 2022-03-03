@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://lite.codedthemes.com/datta-able/react/default/",
   "dependencies": {
+    "ansi-html-community": "^0.0.8",
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
     "google-maps-react": "^2.0.2",
