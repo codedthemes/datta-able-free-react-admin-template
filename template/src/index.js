@@ -4,8 +4,6 @@ import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './services';
-
 import { Provider } from 'react-redux';
 import { ConfigProvider } from './contexts/ConfigContext';
 

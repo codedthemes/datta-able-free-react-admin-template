@@ -24,10 +24,6 @@ export const CONFIG = {
   configBlock: true,
   layout6Background: 'linear-gradient(to right, #A445B2 0%, #D41872 52%, #FF0066 100%)', // used only for pre-layout = layout-6
   layout6BackSize: '', // 'auto' - for background pattern, 'cover' - for background images & used only for pre-layout = layout-6
-  jwt: {
-    secret: 'SECRET-KEY',
-    timeout: '1 days'
-  },
   firebase: {
     apiKey: 'AIzaSyAlA-jy7dpv4SxGD_6Ka1i5l6YOJANVyJU',
     authDomain: 'datta-able-react-hook.firebaseapp.com',
@@ -36,9 +32,5 @@ export const CONFIG = {
     messagingSenderId: '194472541027',
     appId: '1:194472541027:web:462efb7a5035da914ef156',
     measurementId: 'G-M4PFJDM1EZ'
-  },
-  auth0: {
-    client_id: 'CLhKXoEUbSlJSF8RrKB8oDX15pfZ2E1F',
-    domain: 'dev-w0-vxep3.us.auth0.com'
   }
 };

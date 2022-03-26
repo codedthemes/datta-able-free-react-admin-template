@@ -4,8 +4,6 @@ import { Switch, Redirect, Route } from 'react-router-dom';
 import Loader from './components/Loader/Loader';
 import AdminLayout from './layouts/AdminLayout';
 
-
-
 import { BASE_URL } from './config/constant';
 
 export const renderRoutes = (routes = []) => (
@@ -20,11 +18,7 @@ export const renderRoutes = (routes = []) => (
             key={i}
             path={route.path}
             exact={route.exact}
-            render={(props) => (
-              
-                <Layout>{route.routes ? renderRoutes(route.routes) : <Component {...props} />}</Layout>
-              
-            )}
+            render={(props) => <Layout>{route.routes ? renderRoutes(route.routes) : <Component {...props} />}</Layout>}
           />
         );
       })}
