@@ -4,30 +4,30 @@
 /* Breadcrumbs */
 
 .breadcrumb {
-    background-color: $theme-background;
-    border-radius:0;
+  background-color: $theme-background;
+  border-radius: 0;
 }
 
 .breadcrumb-item {
-    + .breadcrumb-item {
-        color: $primary-color;
-        &::before {
-            /* content: $breadcrumb-divider; */
-        }
+  + .breadcrumb-item {
+    color: $primary-color;
+    &::before {
+      /* content: $breadcrumb-divider; */
     }
+  }
 
-    &.active {
-        color: $theme-heading-color;
-    }
+  &.active {
+    color: $theme-heading-color;
+  }
 }
 
 /* pagination */
 
 .page-item {
-    &.active .page-link {
-        color: #fff;
-        background-color: $primary-color;
-        border-color: $primary-color;
-    }
+  &.active .page-link {
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
 }
 /**====== Breadcrumbs & Pagination css end ======**/

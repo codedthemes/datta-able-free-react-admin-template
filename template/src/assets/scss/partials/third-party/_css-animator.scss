@@ -17,18 +17,26 @@
   &.hinge {
     animation-duration: 2s;
   }
-  &.flipOutX, &.flipOutY, &.bounceIn, &.bounceOut {
-    animation-duration: .75s;
+  &.flipOutX,
+  &.flipOutY,
+  &.bounceIn,
+  &.bounceOut {
+    animation-duration: 0.75s;
   }
 }
 
 @keyframes bounce {
-  from, 20%, 53%, 80%, to {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     transform: translate3d(0, 0, 0);
   }
 
-  40%, 43% {
+  40%,
+  43% {
     animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
     transform: translate3d(0, -30px, 0);
   }
@@ -43,22 +51,23 @@
   }
 }
 
-
 .bounce {
   animation-name: bounce;
   transform-origin: center bottom;
 }
 
 @keyframes flash {
-  from, 50%, to {
+  from,
+  50%,
+  to {
     opacity: 1;
   }
 
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
   }
 }
-
 
 .flash {
   animation-name: flash;
@@ -79,7 +88,6 @@
     transform: scale3d(1, 1, 1);
   }
 }
-
 
 .pulse {
   animation-name: pulse;
@@ -115,25 +123,31 @@
   }
 }
 
-
 .rubberBand {
   animation-name: rubberBand;
 }
 
 @keyframes shake {
-  from, to {
+  from,
+  to {
     transform: translate3d(0, 0, 0);
   }
 
-  10%, 30%, 50%, 70%, 90% {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
     transform: translate3d(-10px, 0, 0);
   }
 
-  20%, 40%, 60%, 80% {
+  20%,
+  40%,
+  60%,
+  80% {
     transform: translate3d(10px, 0, 0);
   }
 }
-
 
 .shake {
   animation-name: shake;
@@ -165,7 +179,6 @@
   }
 }
 
-
 .headShake {
   animation-timing-function: ease-in-out;
   animation-name: headShake;
@@ -193,7 +206,6 @@
   }
 }
 
-
 .swing {
   transform-origin: top center;
   animation-name: swing;
@@ -204,15 +216,21 @@
     transform: scale3d(1, 1, 1);
   }
 
-  10%, 20% {
+  10%,
+  20% {
     transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
   }
 
-  30%, 50%, 70%, 90% {
+  30%,
+  50%,
+  70%,
+  90% {
     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
   }
 
-  40%, 60%, 80% {
+  40%,
+  60%,
+  80% {
     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
   }
 
@@ -220,7 +238,6 @@
     transform: scale3d(1, 1, 1);
   }
 }
-
 
 .tada {
   animation-name: tada;
@@ -258,13 +275,14 @@
   }
 }
 
-
 .wobble {
   animation-name: wobble;
 }
 
 @keyframes jello {
-  from, 11.1%, to {
+  from,
+  11.1%,
+  to {
     transform: none;
   }
 
@@ -297,14 +315,18 @@
   }
 }
 
-
 .jello {
   animation-name: jello;
   transform-origin: center;
 }
 
 @keyframes bounceIn {
-  from, 20%, 40%, 60%, 80%, to {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
@@ -336,13 +358,16 @@
   }
 }
 
-
 .bounceIn {
   animation-name: bounceIn;
 }
 
 @keyframes bounceInDown {
-  from, 60%, 75%, 90%, to {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
@@ -369,13 +394,16 @@
   }
 }
 
-
 .bounceInDown {
   animation-name: bounceInDown;
 }
 
 @keyframes bounceInLeft {
-  from, 60%, 75%, 90%, to {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
@@ -402,13 +430,16 @@
   }
 }
 
-
 .bounceInLeft {
   animation-name: bounceInLeft;
 }
 
 @keyframes bounceInRight {
-  from, 60%, 75%, 90%, to {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
@@ -435,13 +466,16 @@
   }
 }
 
-
 .bounceInRight {
   animation-name: bounceInRight;
 }
 
 @keyframes bounceInUp {
-  from, 60%, 75%, 90%, to {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
@@ -468,7 +502,6 @@
   }
 }
 
-
 .bounceInUp {
   animation-name: bounceInUp;
 }
@@ -478,7 +511,8 @@
     transform: scale3d(0.9, 0.9, 0.9);
   }
 
-  50%, 55% {
+  50%,
+  55% {
     opacity: 1;
     transform: scale3d(1.1, 1.1, 1.1);
   }
@@ -489,7 +523,6 @@
   }
 }
 
-
 .bounceOut {
   animation-name: bounceOut;
 }
@@ -499,7 +532,8 @@
     transform: translate3d(0, 10px, 0);
   }
 
-  40%, 45% {
+  40%,
+  45% {
     opacity: 1;
     transform: translate3d(0, -20px, 0);
   }
@@ -509,7 +543,6 @@
     transform: translate3d(0, 2000px, 0);
   }
 }
-
 
 .bounceOutDown {
   animation-name: bounceOutDown;
@@ -527,7 +560,6 @@
   }
 }
 
-
 .bounceOutLeft {
   animation-name: bounceOutLeft;
 }
@@ -544,7 +576,6 @@
   }
 }
 
-
 .bounceOutRight {
   animation-name: bounceOutRight;
 }
@@ -554,7 +585,8 @@
     transform: translate3d(0, -10px, 0);
   }
 
-  40%, 45% {
+  40%,
+  45% {
     opacity: 1;
     transform: translate3d(0, 20px, 0);
   }
@@ -564,7 +596,6 @@
     transform: translate3d(0, -2000px, 0);
   }
 }
-
 
 .bounceOutUp {
   animation-name: bounceOutUp;
@@ -579,7 +610,6 @@
     opacity: 1;
   }
 }
-
 
 .fadeIn {
   animation-name: fadeIn;
@@ -597,7 +627,6 @@
   }
 }
 
-
 .fadeInDown {
   animation-name: fadeInDown;
 }
@@ -613,7 +642,6 @@
     transform: none;
   }
 }
-
 
 .fadeInDownBig {
   animation-name: fadeInDownBig;
@@ -631,7 +659,6 @@
   }
 }
 
-
 .fadeInLeft {
   animation-name: fadeInLeft;
 }
@@ -647,7 +674,6 @@
     transform: none;
   }
 }
-
 
 .fadeInLeftBig {
   animation-name: fadeInLeftBig;
@@ -665,7 +691,6 @@
   }
 }
 
-
 .fadeInRight {
   animation-name: fadeInRight;
 }
@@ -681,7 +706,6 @@
     transform: none;
   }
 }
-
 
 .fadeInRightBig {
   animation-name: fadeInRightBig;
@@ -699,7 +723,6 @@
   }
 }
 
-
 .fadeInUp {
   animation-name: fadeInUp;
 }
@@ -716,7 +739,6 @@
   }
 }
 
-
 .fadeInUpBig {
   animation-name: fadeInUpBig;
 }
@@ -730,7 +752,6 @@
     opacity: 0;
   }
 }
-
 
 .fadeOut {
   animation-name: fadeOut;
@@ -747,7 +768,6 @@
   }
 }
 
-
 .fadeOutDown {
   animation-name: fadeOutDown;
 }
@@ -762,7 +782,6 @@
     transform: translate3d(0, 2000px, 0);
   }
 }
-
 
 .fadeOutDownBig {
   animation-name: fadeOutDownBig;
@@ -779,7 +798,6 @@
   }
 }
 
-
 .fadeOutLeft {
   animation-name: fadeOutLeft;
 }
@@ -794,7 +812,6 @@
     transform: translate3d(-2000px, 0, 0);
   }
 }
-
 
 .fadeOutLeftBig {
   animation-name: fadeOutLeftBig;
@@ -811,7 +828,6 @@
   }
 }
 
-
 .fadeOutRight {
   animation-name: fadeOutRight;
 }
@@ -826,7 +842,6 @@
     transform: translate3d(2000px, 0, 0);
   }
 }
-
 
 .fadeOutRightBig {
   animation-name: fadeOutRightBig;
@@ -843,7 +858,6 @@
   }
 }
 
-
 .fadeOutUp {
   animation-name: fadeOutUp;
 }
@@ -858,7 +872,6 @@
     transform: translate3d(0, -2000px, 0);
   }
 }
-
 
 .fadeOutUpBig {
   animation-name: fadeOutUpBig;
@@ -890,7 +903,6 @@
     animation-timing-function: ease-in;
   }
 }
-
 
 .animated.flip {
   -webkit-backface-visibility: visible;
@@ -924,7 +936,6 @@
   }
 }
 
-
 .flipInX {
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
@@ -957,7 +968,6 @@
   }
 }
 
-
 .flipInY {
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
@@ -980,7 +990,6 @@
   }
 }
 
-
 .flipOutX {
   animation-name: flipOutX;
   -webkit-backface-visibility: visible !important;
@@ -1002,7 +1011,6 @@
     opacity: 0;
   }
 }
-
 
 .flipOutY {
   -webkit-backface-visibility: visible !important;
@@ -1032,7 +1040,6 @@
   }
 }
 
-
 .lightSpeedIn {
   animation-name: lightSpeedIn;
   animation-timing-function: ease-out;
@@ -1048,7 +1055,6 @@
     opacity: 0;
   }
 }
-
 
 .lightSpeedOut {
   animation-name: lightSpeedOut;
@@ -1069,7 +1075,6 @@
   }
 }
 
-
 .rotateIn {
   animation-name: rotateIn;
 }
@@ -1087,7 +1092,6 @@
     opacity: 1;
   }
 }
-
 
 .rotateInDownLeft {
   animation-name: rotateInDownLeft;
@@ -1107,7 +1111,6 @@
   }
 }
 
-
 .rotateInDownRight {
   animation-name: rotateInDownRight;
 }
@@ -1125,7 +1128,6 @@
     opacity: 1;
   }
 }
-
 
 .rotateInUpLeft {
   animation-name: rotateInUpLeft;
@@ -1145,7 +1147,6 @@
   }
 }
 
-
 .rotateInUpRight {
   animation-name: rotateInUpRight;
 }
@@ -1162,7 +1163,6 @@
     opacity: 0;
   }
 }
-
 
 .rotateOut {
   animation-name: rotateOut;
@@ -1181,7 +1181,6 @@
   }
 }
 
-
 .rotateOutDownLeft {
   animation-name: rotateOutDownLeft;
 }
@@ -1198,7 +1197,6 @@
     opacity: 0;
   }
 }
-
 
 .rotateOutDownRight {
   animation-name: rotateOutDownRight;
@@ -1217,7 +1215,6 @@
   }
 }
 
-
 .rotateOutUpLeft {
   animation-name: rotateOutUpLeft;
 }
@@ -1235,7 +1232,6 @@
   }
 }
 
-
 .rotateOutUpRight {
   animation-name: rotateOutUpRight;
 }
@@ -1246,13 +1242,15 @@
     animation-timing-function: ease-in-out;
   }
 
-  20%, 60% {
+  20%,
+  60% {
     transform: rotate3d(0, 0, 1, 80deg);
     transform-origin: top left;
     animation-timing-function: ease-in-out;
   }
 
-  40%, 80% {
+  40%,
+  80% {
     transform: rotate3d(0, 0, 1, 60deg);
     transform-origin: top left;
     animation-timing-function: ease-in-out;
@@ -1264,7 +1262,6 @@
     opacity: 0;
   }
 }
-
 
 .hinge {
   animation-name: hinge;
@@ -1291,7 +1288,6 @@
   }
 }
 
-
 .jackInTheBox {
   animation-name: jackInTheBox;
 }
@@ -1310,7 +1306,6 @@
   }
 }
 
-
 .rollIn {
   animation-name: rollIn;
 }
@@ -1328,7 +1323,6 @@
   }
 }
 
-
 .rollOut {
   animation-name: rollOut;
 }
@@ -1343,7 +1337,6 @@
     opacity: 1;
   }
 }
-
 
 .zoomIn {
   animation-name: zoomIn;
@@ -1363,7 +1356,6 @@
   }
 }
 
-
 .zoomInDown {
   animation-name: zoomInDown;
 }
@@ -1381,7 +1373,6 @@
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
-
 
 .zoomInLeft {
   animation-name: zoomInLeft;
@@ -1401,7 +1392,6 @@
   }
 }
 
-
 .zoomInRight {
   animation-name: zoomInRight;
 }
@@ -1419,7 +1409,6 @@
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
-
 
 .zoomInUp {
   animation-name: zoomInUp;
@@ -1440,7 +1429,6 @@
   }
 }
 
-
 .zoomOut {
   animation-name: zoomOut;
 }
@@ -1460,7 +1448,6 @@
   }
 }
 
-
 .zoomOutDown {
   animation-name: zoomOutDown;
 }
@@ -1478,7 +1465,6 @@
   }
 }
 
-
 .zoomOutLeft {
   animation-name: zoomOutLeft;
 }
@@ -1495,7 +1481,6 @@
     transform-origin: right center;
   }
 }
-
 
 .zoomOutRight {
   animation-name: zoomOutRight;
@@ -1516,7 +1501,6 @@
   }
 }
 
-
 .zoomOutUp {
   animation-name: zoomOutUp;
 }
@@ -1531,7 +1515,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-
 
 .slideInDown {
   animation-name: slideInDown;
@@ -1548,7 +1531,6 @@
   }
 }
 
-
 .slideInLeft {
   animation-name: slideInLeft;
 }
@@ -1563,7 +1545,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-
 
 .slideInRight {
   animation-name: slideInRight;
@@ -1580,7 +1561,6 @@
   }
 }
 
-
 .slideInUp {
   animation-name: slideInUp;
 }
@@ -1595,7 +1575,6 @@
     transform: translate3d(0, 100%, 0);
   }
 }
-
 
 .slideOutDown {
   animation-name: slideOutDown;
@@ -1612,7 +1591,6 @@
   }
 }
 
-
 .slideOutLeft {
   animation-name: slideOutLeft;
 }
@@ -1628,7 +1606,6 @@
   }
 }
 
-
 .slideOutRight {
   animation-name: slideOutRight;
 }
@@ -1643,7 +1620,6 @@
     transform: translate3d(0, -100%, 0);
   }
 }
-
 
 .slideOutUp {
   animation-name: slideOutUp;

@@ -1,0 +1,271 @@
+/**  =====================
+      wizard css start
+==========================  **/
+/*  material wizard start */
+
+.wizard-container {
+  z-index: 3;
+
+  .wizard-navigation {
+    position: relative;
+  }
+}
+
+.wizard-card {
+  .moving-tab {
+    position: absolute;
+    text-align: center;
+    padding: 16px 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    -webkit-font-smoothing: subpixel-antialiased;
+    top: -6px;
+    left: 0;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  @each $value in $color-bt-name {
+    $i: index($color-bt-name, $value);
+
+    &[data-color='wizard-#{$value}'] {
+      .moving-tab {
+        background-color: nth($color-bt-color, $i);
+        box-shadow: 0 16px 26px -10px transparentize(nth($color-bt-color, $i), 0.44), 0 4px 25px 0 rgba(0, 0, 0, 0.12),
+          0 8px 10px -5px transparentize(nth($color-bt-color, $i), 0.8);
+      }
+    }
+  }
+
+  .wizard-footer {
+    .checkbox {
+      margin-top: 16px;
+    }
+  }
+
+  .disabled {
+    display: none;
+  }
+}
+
+.nav-pills {
+  > li {
+    + li {
+      margin-left: 0;
+    }
+
+    > a {
+      border: 0;
+      border-radius: 0;
+      line-height: 18px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 500;
+      min-width: 100px;
+      text-align: center;
+      color: #555555;
+      position: relative;
+      display: block;
+      padding: 11px 15px;
+    }
+
+    &.active > a {
+      background-color: inherit;
+
+      &:focus,
+      &:hover {
+        background-color: inherit;
+      }
+    }
+
+    > a {
+      &:focus,
+      &:hover {
+        background-color: inherit;
+      }
+    }
+
+    i {
+      display: block;
+      font-size: 30px;
+      padding: 15px 0;
+    }
+  }
+}
+/* material wizard end */
+/* Smart wizard 4 start */
+
+.sw-theme-default {
+  box-shadow: none;
+
+  > ul.step-anchor > li {
+    a,
+    a > h6,
+    a:hover {
+      color: $theme-border;
+    }
+
+    &.done {
+      a > h6 {
+        color: initial;
+      }
+    }
+
+    &.active {
+      a,
+      a h6 {
+        color: $primary-color;
+      }
+    }
+
+    > a.nav-link:after {
+      background: $primary-color;
+    }
+
+    &.done > a.nav-link:after {
+      background: $theme-border;
+    }
+  }
+
+  .step-anchor,
+  .sw-container {
+    background: #fff;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .step-anchor {
+    margin-bottom: 30px;
+
+    li > a {
+      padding: 15px 25px;
+    }
+  }
+
+  .sw-container {
+    .step-content {
+      padding: 35px 30px;
+    }
+  }
+
+  .sw-toolbar {
+    padding: 10px;
+    background: transparent;
+  }
+
+  .step-content + .sw-toolbar {
+    padding-top: 0;
+  }
+}
+
+.sw-theme-arrows,
+.sw-theme-circles,
+.sw-theme-dots {
+  .sw-container {
+    background: #fff;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
+    .step-content {
+      padding: 35px 30px;
+    }
+  }
+  .sw-toolbar-bottom {
+    padding: 10px;
+  }
+  .step-anchor {
+    margin-bottom: 30px;
+  }
+}
+
+.sw-theme-dots > {
+  ul.step-anchor > {
+    li > a:after {
+      left: 42%;
+      bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sw-theme-dots > {
+    ul.step-anchor > {
+      li > a:after {
+        top: -42px;
+        left: -40px;
+      }
+    }
+  }
+  .sw-theme-arrows > {
+    ul.step-anchor > {
+      li > a {
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+.sw-vertical-left,
+.sw-vertical-right {
+  display: flex;
+  flex-direction: row;
+  @media (min-width: 768px) {
+    &.sw-main {
+      flex-direction: row;
+    }
+
+    .step-anchor {
+      align-self: flex-start;
+      flex-direction: column;
+      min-width: 200px;
+
+      li {
+        flex-grow: 0;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    &.sw-main {
+      flex-direction: column;
+    }
+  }
+}
+
+.sw-vertical-left {
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+
+    .sw-done-icon,
+    .sw-icon,
+    .sw-number {
+      left: 2rem;
+    }
+
+    .step-anchor {
+      margin-right: 30px;
+    }
+  }
+}
+
+.sw-vertical-right {
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+
+    .sw-done-icon,
+    .sw-icon,
+    .sw-number {
+      right: 2rem;
+    }
+
+    .step-anchor {
+      margin-left: 30px;
+    }
+  }
+  @media (max-width: 767px) {
+    .step-anchor {
+      margin: 30px 0 0;
+    }
+  }
+}
+/*  Smart wizard 4 end */
+/**====== wizard css end ======**/

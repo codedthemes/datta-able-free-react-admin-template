@@ -1,0 +1,71 @@
+.LokiSteps {
+  width: 100%;
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  vertical-align: middle;
+  border-collapse: separate;
+  margin-left: 0;
+  padding-left: 0;
+  padding-top: 20px;
+
+  .LokiStep {
+    display: table-cell;
+    position: relative;
+    float: none;
+    padding: 0;
+    width: 1%;
+
+    .LokiStep-Icon {
+      background-color: $white;
+      border-radius: 50%;
+      border: 1px solid $loki-color-neutral;
+      color: $loki-color-neutral;
+      font-size: $loki-step-font-size;
+      height: $loki-step-width-height;
+      line-height: $loki-step-width-height;
+      margin: 0 auto;
+      position: relative;
+      width: $loki-step-width-height;
+      z-index: 1;
+    }
+
+    .LokiStep-Link {
+      &.disabled {
+        cursor: not-allowed;
+      }
+    }
+
+    &.LokiStep-Active {
+      .LokiStep-Icon {
+        border-color: $loki-color-active;
+        color: $loki-color-active;
+      }
+    }
+
+    &.LokiStep-Complete {
+      .LokiStep-Icon {
+        border-color: $loki-color-complete;
+        color: $loki-color-complete;
+      }
+    }
+
+    &:after {
+      left: 50%;
+      background-color: $loki-color-neutral;
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      width: 100%;
+      top: $loki-step-width-height / 2;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

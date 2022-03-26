@@ -1,0 +1,234 @@
+.board {
+  // VARIABLES
+  $dark-yellow-color: #ffae17;
+  $light-yellow-color: #ffc43a;
+  $second-yellow-color: #ffda65;
+  $turquoise-color: #1ab188;
+  $blue-color: #1496bb;
+  $white-color: white;
+  $body-background: #24313c;
+
+  // MIXINS
+  @mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+
+  @mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+  }
+
+  @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow: inset $top $left $blur $color;
+      -moz-box-shadow: inset $top $left $blur $color;
+      box-shadow: inset $top $left $blur $color;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+    }
+  }
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .close {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin: 4px;
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+    &:hover {
+      &::before,
+      &::after {
+        background: #f44236;
+        color: #f44236;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      margin-top: -1px;
+      background: #f44236;
+      height: 1px;
+    }
+
+    &::before {
+      @include transform(rotate(45deg));
+    }
+
+    &::after {
+      @include transform(rotate(-45deg));
+    }
+  }
+
+  .main-header {
+    height: 50px;
+    background-color: $turquoise-color;
+    color: $white-color;
+    cursor: pointer;
+
+    h1 {
+      font-size: 42px;
+      color: $white-color;
+      line-height: 230px;
+      text-transform: uppercase;
+      font-weight: 100;
+      @include transition(all 0.3s ease);
+    }
+
+    .main-header__text {
+      padding: 15px;
+    }
+  }
+
+  .note {
+    width: 250px;
+    height: auto !important;
+    background: $second-yellow-color;
+    margin: 8px 8px 0 0;
+    display: inline-block;
+    cursor: -webkit-grab;
+
+    .note__textarea {
+      height: 75%;
+      width: 98%;
+      font-size: 16px;
+      background: $second-yellow-color;
+      border: none;
+      overflow: auto;
+      resize: vertical;
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .note__content {
+      font-size: 16px;
+      padding: 5px;
+      padding-bottom: 25px;
+    }
+
+    .note__header {
+      height: 40px;
+      width: 100%;
+      background: #ffd248;
+    }
+
+    .note__footer {
+      position: relative;
+      bottom: 0px;
+
+      .note__fold {
+        float: left;
+        display: inline-block;
+        border-top: 40px solid $light-yellow-color;
+        border-left: 40px solid $dark-yellow-color;
+      }
+
+      .note__save {
+        float: left;
+        width: calc(100% - 40px);
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        display: inline-block;
+        background: $light-yellow-color;
+        color: $white-color;
+        border: none;
+
+        &:hover {
+          background: #ffc43d;
+        }
+      }
+    }
+  }
+
+  .wrapper-tooltip {
+    &:hover .tooltip {
+      opacity: 1;
+      pointer-events: auto;
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+      -o-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+
+    .tooltip {
+      z-index: 999;
+      background: $blue-color;
+      bottom: 100%;
+      color: $white-color;
+      display: block;
+      left: 0;
+      top: -50px;
+      margin-bottom: 15px;
+      opacity: 0;
+      padding: 10px;
+      pointer-events: none;
+      position: relative;
+      width: 100%;
+      @include transform(translateY(10px));
+      @include transition(all 0.25s ease-out);
+      @include transition(2px 2px 6px rgba(0, 0, 0, 0.28));
+
+      &:before {
+        bottom: -20px;
+        content: ' ';
+        display: block;
+        height: 20px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      &:after {
+        border-left: solid transparent 10px;
+        border-right: solid transparent 10px;
+        border-top: solid $blue-color 10px;
+        bottom: -10px;
+        content: ' ';
+        height: 0;
+        left: 90%;
+        margin-left: -13px;
+        position: absolute;
+        width: 0;
+      }
+    }
+  }
+
+  // ANIMATIONS
+  .fadein {
+    text-align: center;
+    animation: fadein 3s;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

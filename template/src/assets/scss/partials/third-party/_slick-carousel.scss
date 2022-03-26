@@ -1,0 +1,37 @@
+.slick-slider {
+  margin: 25px;
+  margin-top: 0;
+
+  .slick-next {
+    &:before {
+      color: #000;
+    }
+    right: 25px;
+    z-index: 1;
+  }
+
+  .slick-prev {
+    &:before {
+      color: #000;
+    }
+    left: 25px;
+    z-index: 1;
+  }
+
+  .slick-dots {
+    .pc-dot {
+      width: 25px;
+      height: 25px;
+      color: #fff;
+      border-radius: 50%;
+      border: 1px #fff solid;
+    }
+
+    .slick-active {
+      .pc-dot {
+        color: #000;
+        background: #fff;
+      }
+    }
+  }
+}

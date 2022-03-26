@@ -1,0 +1,65 @@
+.nestable {
+  display: block;
+  clear: both;
+  padding: 30px 0;
+  width: 100%;
+  border: 0;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+
+  .nestable-item,
+  .nestable-item-copy {
+    margin: 5px 0;
+    .nestable-list {
+      margin: 5px 0;
+    }
+
+    &.is-dragging:before {
+      background: #f2fbff;
+    }
+  }
+
+  .pc-nestable-item {
+    position: relative;
+    padding: 5px 10px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 3px;
+
+    .nestable-item-handler {
+      margin-left: 30px;
+    }
+  }
+
+  .pc-nestable-item-handler {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    text-indent: 100%;
+    border: 1px solid #aaa;
+    background: linear-gradient(to bottom, #ddd 0, #bbb 100%);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &:before {
+      content: '≡';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      text-align: center;
+      text-indent: 0;
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+}

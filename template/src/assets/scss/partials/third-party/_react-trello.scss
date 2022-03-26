@@ -1,0 +1,58 @@
+.adv-task-board {
+  background-color: transparent !important;
+  height: auto !important;
+  .react-trello-board,
+  .sc-htpNat {
+    background-color: #fff;
+    border: 1px solid #ddd;
+
+    header {
+      .popover {
+        position: relative;
+        box-shadow: none;
+        .sc-ckVGcZ {
+          font-size: 20px;
+          font-weight: 400;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .sc-dnqmqq {
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      background-color: #f8f9fa;
+    }
+
+    .sc-EHOje {
+      overflow: visible;
+      > div {
+        background: #fff !important;
+      }
+      .smooth-dnd-draggable-wrapper {
+        overflow: visible;
+        .sc-dxgOiQ {
+          color: #ea1b0d;
+          &:hover {
+            color: #ea1b0d;
+          }
+          &:before,
+          &:after {
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    button {
+      border: none;
+    }
+
+    article {
+      border: 1px solid #ccc;
+    }
+  }
+}

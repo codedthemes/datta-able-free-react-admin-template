@@ -1,9 +1,31 @@
 @import '~react-perfect-scrollbar/dist/css/styles.css';
-@import "~nvd3/build/nv.d3.css";
 
-@import "ngx-perfect-scrollbar";
-@import "react-full-screen";
-@import "css-animator";
-@import "google-map";
+@import '~dropzone/dist/min/dropzone.min.css';
 
-@import "react-bootstrap/react-bootstrap";
+
+@import '~react-datetime/css/react-datetime';
+
+
+@import '~nvd3/build/nv.d3.css';
+
+@import 'ngx-perfect-scrollbar';
+@import 'react-full-screen';
+@import 'react-trello';
+@import 'react-animated-modal';
+@import 'react-toast-notifications';
+@import 'css-animator';
+@import 'react-tag-automplete';
+@import 'react-loki/index';
+@import 'datatables';
+@import 'peity';
+@import 'google-map';
+@import 'jquery-jvectormap-2.0.2.scss';
+@import 'react-stickies';
+
+@import 'react-bootstrap/react-bootstrap';
+
+.dropzone {
+  .dz-progress {
+    display: none;
+  }
+}

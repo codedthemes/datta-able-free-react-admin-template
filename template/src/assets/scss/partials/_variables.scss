@@ -34,7 +34,7 @@ $Menu-collapsed-width: 80px;
 // color list for build layouts
 // temp variables
 $theme-color: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
-$theme-color2: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%);
+$theme-color2: linear-gradient(-135deg, #899fd4 0%, #a389d4 100%);
 $primary-color: #04a9f5;
 $warning-color: #f4c22b;
 $danger-color: #f44236;
@@ -67,25 +67,23 @@ $menu-active-color: #04a9f5;
 $dark-layout: #212224;
 $dark-layout-font: #adb7be;
 
-
 // Menu icon
-$menu-icon-color: $primary-color, #ff5252, #01a9ac ,#9575CD , #23b7e5, $warning-color;
+$menu-icon-color: $primary-color, #ff5252, #01a9ac, #9575cd, #23b7e5, $warning-color;
 // Header background
 $color-header-name: blue, red, purple, lightblue, dark;
-$color-header-color: $primary-color, #ff5252, #9575CD ,#23b7e5,lighten($dark-layout,7%);
+$color-header-color: $primary-color, #ff5252, #9575cd, #23b7e5, lighten($dark-layout, 7%);
 // Menu background
 $color-menu-name: blue, red, purple, lightblue, dark;
-$color-menu-color: $primary-color, #ff5252, #9575CD ,#23b7e5,lighten($dark-layout,7%);
+$color-menu-color: $primary-color, #ff5252, #9575cd, #23b7e5, lighten($dark-layout, 7%);
 // Active background color
 $color-active-name: blue, red, purple, lightblue, dark;
-$color-active-color: $primary-color, #ff5252, #9575CD ,#23b7e5,lighten($dark-layout,7%);
- // Menu title color
+$color-active-color: $primary-color, #ff5252, #9575cd, #23b7e5, lighten($dark-layout, 7%);
+// Menu title color
 $color-title-name: blue, red, purple, lightblue, dark;
-$color-title-color: $primary-color, #ff5252, #9575CD ,#23b7e5,lighten($dark-layout,7%);
+$color-title-color: $primary-color, #ff5252, #9575cd, #23b7e5, lighten($dark-layout, 7%);
 
- // layout-6 background color
-$layout-6-bg-color:#23b7e5;
-
+// layout-6 background color
+$layout-6-bg-color: #23b7e5;
 
 $theme-font-family: 'Open Sans', sans-serif;
 $theme-font-size: 14px;
@@ -93,16 +91,28 @@ $theme-background: #f4f7fa;
 $theme-font-color: #888;
 $theme-heading-color: #111;
 
-$color-name: c-blue,c-red,c-green,c-yellow,c-purple;
-$color-color: $primary-color,$danger-color,$success-color ,$warning-color ,$purple-color;
-$color-bt-name: primary,danger,success,warning,info;
-$color-bt-color: $primary-color,$danger-color,$success-color ,$warning-color ,$info-color;
+$color-name: c-blue, c-red, c-green, c-yellow, c-purple;
+$color-color: $primary-color, $danger-color, $success-color, $warning-color, $purple-color;
+$color-bt-name: primary, danger, success, warning, info;
+$color-bt-color: $primary-color, $danger-color, $success-color, $warning-color, $info-color;
 
 // form-control variables
 $form-bg: #f0f3f6;
 
 $theme-colors: () !default;
-$theme-colors: map-merge(("primary": $primary-color, "secondary": $secondary-color, "success": $success-color, "info": $info-color, "warning": $warning-color, "danger": $danger-color, "light": $light-color, "dark": $dark-color), $theme-colors); // Color contrast
+$theme-colors: map-merge(
+  (
+    'primary': $primary-color,
+    'secondary': $secondary-color,
+    'success': $success-color,
+    'info': $info-color,
+    'warning': $warning-color,
+    'danger': $danger-color,
+    'light': $light-color,
+    'dark': $dark-color
+  ),
+  $theme-colors
+); // Color contrast
 $yiq-contrasted-threshold: 200 !default;
 $yiq-dark-color: #37474f;
 $yiq-light-color: #fff;
