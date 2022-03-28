@@ -7,12 +7,6 @@ import NavLogo from './NavLogo';
 import NavContent from './NavContent';
 import navigation from '../../../menu-items';
 
-import navImage1 from '../../../assets/images/nav-bg/navbar-img-1.jpg';
-import navImage2 from '../../../assets/images/nav-bg/navbar-img-2.jpg';
-import navImage3 from '../../../assets/images/nav-bg/navbar-img-3.jpg';
-import navImage4 from '../../../assets/images/nav-bg/navbar-img-4.jpg';
-import navImage5 from '../../../assets/images/nav-bg/navbar-img-5.jpg';
-
 const Navigation = () => {
   const configContext = useContext(ConfigContext);
   const {
@@ -131,31 +125,7 @@ const Navigation = () => {
     document.body.classList.remove('box-layout');
   }
 
-  let backImage, navStyle;
-  if (navBackImage) {
-    switch (navBackImage) {
-      case 'navbar-image-1':
-        backImage = navImage1;
-        break;
-      case 'navbar-image-2':
-        backImage = navImage2;
-        break;
-      case 'navbar-image-3':
-        backImage = navImage3;
-        break;
-      case 'navbar-image-4':
-        backImage = navImage4;
-        break;
-      case 'navbar-image-5':
-        backImage = navImage5;
-        break;
-      default:
-        backImage = '';
-    }
-    navStyle = {
-      backgroundImage: `url(${backImage})`
-    };
-  }
+  
 
   let navBarClass = ['navbar-wrapper'];
   if (layout === 'horizontal' && subLayout === 'horizontal-2') {
@@ -178,7 +148,7 @@ const Navigation = () => {
   }
   return (
     <React.Fragment>
-      <nav className={navClass.join(' ')} style={navStyle}>
+      <nav className={navClass.join(' ')} >
         {navContent}
       </nav>
     </React.Fragment>
