@@ -8,17 +8,8 @@
 @import '~nvd3/build/nv.d3.css';
 
 @import 'ngx-perfect-scrollbar';
-@import 'react-full-screen';
-@import 'css-animator';
-@import 'react-loki/index';
 @import 'datatables';
 @import 'google-map';
-@import 'jquery-jvectormap-2.0.2.scss';
 
 @import 'react-bootstrap/react-bootstrap';
 
-.dropzone {
-  .dz-progress {
-    display: none;
-  }
-}
