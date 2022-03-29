@@ -59,7 +59,7 @@
       height: 1px;
       position: absolute;
       width: 100%;
-      top: $loki-step-width-height / 2;
+      top: calc($loki-step-width-height / 2);
     }
 
     &:last-child {
