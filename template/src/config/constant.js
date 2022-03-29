@@ -1,4 +1,4 @@
-export const BASENAME = '/demos/admin-templates/datta-able/react/default'; // don't add '/' at end off BASENAME
+export const BASENAME = '/demos/admin-templates/datta-able/react/free'; // don't add '/' at end off BASENAME
 export const BASE_URL = '/app/dashboard/default';
 export const BASE_TITLE = ' | Datta Able Premium React Hooks + Redux Admin Template';
 

@@ -2,7 +2,7 @@
   "name": "datta-able-free-react-admin-template",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://codedthemes.com/demos/admin-templates/datta-able/react/default/",
+  "homepage": "https://codedthemes.com/demos/admin-templates/datta-able/react/free/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
     "@tanem/react-nprogress": "^4.0.9",
