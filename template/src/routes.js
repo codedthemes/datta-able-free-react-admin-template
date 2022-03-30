@@ -1,45 +1,118 @@
-import React from 'react';
-import $ from 'jquery';
+import React, { Suspense, Fragment, lazy } from 'react';
+import { Switch, Redirect, Route } from 'react-router-dom';
 
-window.jQuery = $;
-window.$ = $;
-global.jQuery = $;
+import Loader from './components/Loader/Loader';
+import AdminLayout from './layouts/AdminLayout';
 
-const DashboardDefault = React.lazy(() => import('./Demo/Dashboard/Default'));
+import { BASE_URL } from './config/constant';
 
-const UIBasicButton = React.lazy(() => import('./Demo/UIElements/Basic/Button'));
-const UIBasicBadges = React.lazy(() => import('./Demo/UIElements/Basic/Badges'));
-const UIBasicBreadcrumbPagination = React.lazy(() => import('./Demo/UIElements/Basic/BreadcrumbPagination'));
+export const renderRoutes = (routes = []) => (
+  <Suspense fallback={<Loader />}>
+    <Switch>
+      {routes.map((route, i) => {
+        const Layout = route.layout || Fragment;
+        const Component = route.component;
 
-const UIBasicCollapse = React.lazy(() => import('./Demo/UIElements/Basic/Collapse'));
-const UIBasicTabsPills = React.lazy(() => import('./Demo/UIElements/Basic/TabsPills'));
-const UIBasicBasicTypography = React.lazy(() => import('./Demo/UIElements/Basic/Typography'));
-
-const FormsElements = React.lazy(() => import('./Demo/Forms/FormsElements'));
-
-const BootstrapTable = React.lazy(() => import('./Demo/Tables/BootstrapTable'));
-
-const Nvd3Chart = React.lazy(() => import('./Demo/Charts/Nvd3Chart/index'));
-
-const GoogleMap = React.lazy(() => import('./Demo/Maps/GoogleMap/index'));
-
-const OtherSamplePage = React.lazy(() => import('./Demo/Other/SamplePage'));
-const OtherDocs = React.lazy(() => import('./Demo/Other/Docs'));
+        return (
+          <Route
+            key={i}
+            path={route.path}
+            exact={route.exact}
+            render={(props) => <Layout>{route.routes ? renderRoutes(route.routes) : <Component {...props} />}</Layout>}
+          />
+        );
+      })}
+    </Switch>
+  </Suspense>
+);
 
 const routes = [
-    { path: '/dashboard/default', exact: true, name: 'Default', component: DashboardDefault },
-    { path: '/basic/button', exact: true, name: 'Basic Button', component: UIBasicButton },
-    { path: '/basic/badges', exact: true, name: 'Basic Badges', component: UIBasicBadges },
-    { path: '/basic/breadcrumb-paging', exact: true, name: 'Basic Breadcrumb Pagination', component: UIBasicBreadcrumbPagination },
-    { path: '/basic/collapse', exact: true, name: 'Basic Collapse', component: UIBasicCollapse },
-    { path: '/basic/tabs-pills', exact: true, name: 'Basic Tabs & Pills', component: UIBasicTabsPills },
-    { path: '/basic/typography', exact: true, name: 'Basic Typography', component: UIBasicBasicTypography },
-    { path: '/forms/form-basic', exact: true, name: 'Forms Elements', component: FormsElements },
-    { path: '/tables/bootstrap', exact: true, name: 'Bootstrap Table', component: BootstrapTable },
-    { path: '/charts/nvd3', exact: true, name: 'Nvd3 Chart', component: Nvd3Chart },
-    { path: '/maps/google-map', exact: true, name: 'Google Map', component: GoogleMap },
-    { path: '/sample-page', exact: true, name: 'Sample Page', component: OtherSamplePage },
-    { path: '/docs', exact: true, name: 'Documentation', component: OtherDocs },
+  {
+    exact: true,
+    path: '/auth/signin-1',
+    component: lazy(() => import('./views/auth/signin/SignIn1'))
+  },
+  {
+    exact: true,
+    path: '/auth/signup-1',
+    component: lazy(() => import('./views/auth/signup/SignUp1'))
+  },
+  {
+    path: '*',
+    layout: AdminLayout,
+    routes: [
+      {
+        exact: true,
+        path: '/app/dashboard/default',
+        component: lazy(() => import('./views/dashboard/DashDefault'))
+      },
+      {
+        exact: true,
+        path: '/basic/button',
+        component: lazy(() => import('./views/ui-elements/basic/BasicButton'))
+      },
+      {
+        exact: true,
+        path: '/basic/badges',
+        component: lazy(() => import('./views/ui-elements/basic/BasicBadges'))
+      },
+      {
+        exact: true,
+        path: '/basic/breadcrumb',
+        component: lazy(() => import('./views/ui-elements/basic/BasicBreadcrumb'))
+      },
+      {
+        exact: true,
+        path: '/basic/pagination',
+        component: lazy(() => import('./views/ui-elements/basic/BasicPagination'))
+      },
+      {
+        exact: true,
+        path: '/basic/collapse',
+        component: lazy(() => import('./views/ui-elements/basic/BasicCollapse'))
+      },
+      {
+        exact: true,
+        path: '/basic/tabs-pills',
+        component: lazy(() => import('./views/ui-elements/basic/BasicTabsPills'))
+      },
+      {
+        exact: true,
+        path: '/basic/typography',
+        component: lazy(() => import('./views/ui-elements/basic/BasicTypography'))
+      },
+      {
+        exact: true,
+        path: '/forms/form-basic',
+        component: lazy(() => import('./views/forms/FormsElements'))
+      },
+      {
+        exact: true,
+        path: '/tables/bootstrap',
+        component: lazy(() => import('./views/tables/BootstrapTable'))
+      },
+      {
+        exact: true,
+        path: '/charts/nvd3',
+        component: lazy(() => import('./views/charts/nvd3-chart'))
+      },
+      {
+        exact: true,
+        path: '/maps/google-map',
+        component: lazy(() => import('./views/maps/GoogleMaps'))
+      },
+      {
+        exact: true,
+        path: '/sample-page',
+        component: lazy(() => import('./views/extra/SamplePage'))
+      },
+      {
+        path: '*',
+        exact: true,
+        component: () => <Redirect to={BASE_URL} />
+      }
+    ]
+  }
 ];
 
 export default routes;
