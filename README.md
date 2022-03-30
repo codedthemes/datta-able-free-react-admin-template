@@ -1,6 +1,6 @@
 # Datta Able React Free Admin Template
 
-Datta Able React Free Admin Template made using Bootstrap 4 framework, It is a free lite version of [Datta Able Pro](https://codedthemes.com/item/datta-able-react-free-admin-template/) Dashboard Template that makes you fulfill your Dashboard needs.
+Datta Able React Free Admin Template made using Bootstrap 4 framework, It is a free lite version of [Datta Able Pro](https://codedthemes.com/item/datta-able-react-admin-template/) Dashboard Template that makes you fulfill your Dashboard needs.
 
 ![Datta Able React Free Admin Template Preview Image](https://codedthemes.com/wp-content/uploads/edd/2019/05/datta-bootstrap-free.jpg)
 
@@ -18,7 +18,7 @@ Check out live preview of Datta Able lite version & download it.
 
 #### Preview
 
- - [Demo](http://lite.codedthemes.com/datta-able/react/default/dashboard/default)
+ - [Demo](https://codedthemes.com/demos/admin-templates/datta-able/react/free)
 
 #### Download
 
@@ -31,7 +31,7 @@ Datta Able Pro Admin Template is available to purchase. Visit its numerous demos
 
 #### Preview
 
- - [Demo](https://codedthemes.com/datta-able/react/default/dashboard/default)
+ - [Demo](https://codedthemes.com/demos/admin-templates/datta-able/react/default/dashboard/default)
 
 #### Download
 
@@ -71,39 +71,30 @@ Datta Able Lite version documentation cover in its Pro version documentation - c
 ## Directory Structure
 
 ```
-Datta-able/
-├── assets/
-│   ├── css/
-│   │   ├── style.css
-│   ├── fonts/
-│   │   ├── feather/css/feather.css
-│   │   ├── fontawesome/css/fontawesome-all.min.css
-│   │   ├── datta/datta-icon.css
-│   ├── images/
-│   │   ├── user/
-│   │   │   ├── avatar-1.jpg
-│   │   │   ├── avatar-2.jpg
-│   │   │   ├── ...-More
-│   │   ├── logo.png
-│   │   ├── ...-More
-│   ├── js/
-│   │   ├── pages/
-│   │   │   ├── chart-morris-custom.js
-│   │   │   ├── google-maps.js
-│   │   ├── vendor-all.min.js
-│   │   ├── pcoded.min.js
-│   ├── plugins/
-│   │   ├── jquery/
-│   │   │   ├── js/
-│   │   │   │   ├── jquery.min.js
-│   │   ├── bootstrap/
-│   │   │   ├── css/
-│   │   │   │   ├── bootstrap.min.css
-│   │   │   ├── js/
-│   │   │   │   ├── bootstrap.min.js
-│   │   ├── ...-More
-├── index.html
-├── ...- More
+template/
+├── public/
+│   ├── index.html
+│   ├── ...
+├── src/
+│   ├── assets
+│   ├── components
+│   ├── config
+│   ├── contexts
+│   ├── data
+│   ├── firebase
+│   ├── hooks
+│   ├── layouts
+│   ├── store
+│   ├── utils
+│   ├── views
+│   ├── app.js
+│   ├── index.js
+│   ├── index.scss
+│   ├── menu-items.js
+│   ├── routes.js
+│   ├── ....
+├── package.json
+├── ...
 ```
 
 ## RoadMap
