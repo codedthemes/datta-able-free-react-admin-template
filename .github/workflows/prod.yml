@@ -1,38 +1,37 @@
-name: Node - SSH deploy
+name: Prod deploy
 
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches:
-      - main
-  # pull_request:
-    # types:
-      # - closed
-    # branches:
-      # - main
+      - master
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
 
 jobs:
-  uses:
-  # if_merged:
-    # if: github.event.pull_request.merged == true
+  if_merged:
+    if: github.event.pull_request.merged == true
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-        
+
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
 
-      - name: Use Node.js 14
+      - name: Use Node.js 16
         uses: actions/setup-node@v2-beta
         with:
-          node-version: "14"
+          node-version: "16"
 
       - name: 🔨 Build Project
         run: |
           cd template
-          yarn
-          yarn build
+          yarn install
+          CI=false yarn build
 
       - name: 📂 Deploy to Server
         uses: easingthemes/ssh-deploy@v2.1.5
@@ -40,7 +39,8 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           # ARGS: "-rltgoDzvO --delete"
           SOURCE: "template/build/"
-          REMOTE_HOST: 192.34.62.123
-          REMOTE_USER: cicd-user
-          TARGET: public_html/demos/admin-templates/datta-able/react/free
+          REMOTE_HOST: 217.21.92.35
+          REMOTE_USER: u778408432
+          REMOTE_PORT: "65002"
+          TARGET: domains/codedthemes.com/public_html/demos/admin-templates/datta-able/react/free
           EXCLUDE: "/template/dist/, /template/node_modules/"
