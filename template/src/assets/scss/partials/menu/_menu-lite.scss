@@ -1640,8 +1640,8 @@
 
   .pcoded-navbar {
     margin-left: -#{$Menu-width};
-    position: fixed;
-    height: 100%;
+    position: absolute;
+    height: fit-content;
     box-shadow: none;
 
     .datta-scroll.navbar-content {
