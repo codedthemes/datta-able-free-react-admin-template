@@ -1,20 +1,20 @@
 # Datta Able React Free Admin Template
 
-Datta Able React Free Admin Template made using Bootstrap 4 framework, It is a free lite version of [Datta Able Pro](https://codedthemes.com/item/datta-able-react-admin-template/) Dashboard Template that makes you fulfill your Dashboard needs.
+Datta Able React Free Admin Template is made using Bootstrap 4 framework. It is a free lite version of [Datta Able Pro](https://codedthemes.com/item/datta-able-react-admin-template/) Dashboard Template that helps you to  fulfil all of your Dashboard needs.
 
 ![Datta Able React Free Admin Template Preview Image](https://codedthemes.com/wp-content/uploads/edd/2019/05/datta-bootstrap-free.jpg)
 
-Datta Able React Free Admin Template comes with variety of components like Button, Badges, Tabs, Breadcrumb, Icons, Form elements, Table, Charts & Authentication pages.
+Datta Able React Free Admin Template comes with a variety of components like Buttons, Badges, Tabs, Breadcrumb, Icons, Form elements, Tables, Charts and authentication pages.
 
-The code structure is high flexible to use and modify. 
+The code structure is highly flexible to use and modify. 
 
-Its design adapt any screen size easily even if retina screens.
+Its design adapts to any screen size easily, even retina screens.
 
-It is modern concept dashboard design with eye catchy colors. Wish you happy to use our product in your project.
+It's a modern concept dashboard design with eye-catching colors. We are happy for you to use our product in your project.
 
 ## Free Version Preview & Download
 
-Check out live preview of Datta Able lite version & download it.
+Check out the live preview of Datta Able lite version & download it.
 
 #### Preview
 
@@ -99,7 +99,7 @@ template/
 
 ## RoadMap
 
-We are continuously working in Datta Able Project and going to make it a awesome dashboard template via your support. Give us the ideas, suggestion for include more components, pages, plugins. Few of future release pages are
+We are continuously working on Datta Able Project and with your support will continue to deliver an awesome product. Please feel free to share your ideas and suggestions for more components, pages or plugins with us. Some future plans include:
  
 #### Layouts 
  - Horizontal version
@@ -116,15 +116,15 @@ We are continuously working in Datta Able Project and going to make it a awesome
  - Alert, Cards, Progress, Modal
  - Datepicker, Notification, Slider
 
-*All above pages already included in Pro version. We need your support to include those pages in lite version too.*
+*All above pages are already included in the Pro version. We need your support to include those pages in the lite version too.*
 
 ## Author
 
-Design and code is completely written by CodedThemes's design and development team. We are happy to welcome the contributors work for our all repositories.
+Design and code are completely written by CodedThemes's design and development team. We are happy to welcome the contributors' work for our all repositories.
 
 ## Issues
 
-Please generate Github issue if you found bug in any version. We are try to be responsive to resolve the issue.
+Please generate a Github issue if you find bugs in any version. We will attempt to be responsive to resolve the issue. Obviously paid users get first support!
 
 ## License
 
