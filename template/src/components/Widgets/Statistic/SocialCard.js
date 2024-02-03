@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 
@@ -24,6 +25,17 @@ const SocialCard = ({ params }) => {
       </Card.Body>
     </Card>
   );
+};
+
+SocialCard.propTypes = {
+  params: PropTypes.array,
+  class: PropTypes.string,
+  icon: PropTypes.string,
+  primaryTitle: PropTypes.string,
+  primaryText: PropTypes.number,
+  secondaryText: PropTypes.string,
+  variant: PropTypes.string,
+  label: PropTypes.string
 };
 
 export default SocialCard;

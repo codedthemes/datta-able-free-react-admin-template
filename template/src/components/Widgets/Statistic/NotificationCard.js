@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 
@@ -22,6 +23,14 @@ const NotificationCard = ({ params }) => {
       </Card.Body>
     </Card>
   );
+};
+
+NotificationCard.propTypes = {
+  params: PropTypes.object,
+  class: PropTypes.string,
+  icon: PropTypes.string,
+  primaryText: PropTypes.string,
+  secondaryText: PropTypes.string
 };
 
 export default NotificationCard;

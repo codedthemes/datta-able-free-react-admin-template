@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 
@@ -33,6 +34,16 @@ const ProductCard = ({ params }) => {
       </Card.Body>
     </Card>
   );
+};
+
+ProductCard.propTypes = {
+  params: PropTypes.object,
+  class: PropTypes.string,
+  icon: PropTypes.string,
+  primaryText: PropTypes.string,
+  secondaryText: PropTypes.string,
+  title: PropTypes.string,
+  extraText: PropTypes.string
 };
 
 export default ProductCard;

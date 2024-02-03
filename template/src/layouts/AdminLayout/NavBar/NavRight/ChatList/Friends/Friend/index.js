@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { Media } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const images = require.context('../../../../../../../assets/images/user', true);
 
 const Friend = ({ data, activeId, clicked }) => {
   let photo = images(`./${data.photo}`);
-  let timeClass = ['d-block'];
+  let timeClass = ['d-block f-w-400'];
   if (data.status) {
     timeClass = [...timeClass, 'text-c-green'];
   } else {
@@ -25,21 +26,39 @@ const Friend = ({ data, activeId, clicked }) => {
 
   return (
     <React.Fragment>
-      <Media className={activeId === data.id ? 'userlist-box active' : 'userlist-box'} onClick={clicked}>
+      {/* eslint-disable-next-line */}
+      <Card
+        className={activeId === data.id ? 'userlist-box mb-0 shadow-none active' : 'userlist-box mb-0 shadow-none'}
+        style={{ flexDirection: 'row', backgroundColor: 'unset' }}
+        onClick={clicked}
+        onKeyDown={clicked}
+      >
         <Link to="#" className="media-left">
           {' '}
-          <img className="media-object img-radius" src={photo.default} alt={data.name} />
+          <img className="media-object img-radius" src={photo} alt={data.name} />
           {newFriend}
         </Link>
-        <Media.Body>
+        <Card.Body className="p-0">
           <h6 className="chat-header">
             {data.name}
             {time}
           </h6>
-        </Media.Body>
-      </Media>
+        </Card.Body>
+      </Card>
     </React.Fragment>
   );
+};
+
+Friend.propTypes = {
+  data: PropTypes.object,
+  activeId: PropTypes.number,
+  clicked: PropTypes.func,
+  photo: PropTypes.string,
+  id: PropTypes.number,
+  status: PropTypes.string,
+  time: PropTypes.string,
+  new: PropTypes.string,
+  name: PropTypes.string
 };
 
 export default Friend;

@@ -1,17 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import { FirebaseProvider } from './contexts/FirebaseContext';
+// auth provider
 
 import routes, { renderRoutes } from './routes';
-import { BASENAME } from './config/constant';
 
 const App = () => {
   return (
     <React.Fragment>
-      <Router basename={BASENAME}>
-        <FirebaseProvider>{renderRoutes(routes)}</FirebaseProvider>
-      </Router>
+      <BrowserRouter basename={process.env.REACT_APP_BASE_NAME}>{renderRoutes(routes)}</BrowserRouter>
     </React.Fragment>
   );
 };

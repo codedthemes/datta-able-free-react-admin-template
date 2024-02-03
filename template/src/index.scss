@@ -65,25 +65,10 @@
   overflow: hidden;
 }
 
-.zoom-container {
-  position: relative;
-  display: flex;
-}
-
 .img-preview-section-container {
   display: none;
 }
-.zoom-container:hover .img-preview-section-container {
-  display: block;
-  position: relative;
-  left: 50px;
-}
-.zoom-container:hover .img-preview-section-container {
-  left: 100%;
-  position: absolute;
-  background: #fff;
-  border: 1px solid $theme-border;
-}
+
 .carousel-inner {
   overflow: visible;
   z-index: 1050;
@@ -185,7 +170,7 @@ body.datta-rtl .pcoded-navbar.theme-horizontal .pcoded-inner-navbar > li.active:
 
 @media only screen and (max-width: 991px) {
   .pcoded-navbar {
-    z-index: 1032;
+    z-index: 1072;
   }
 
   body.datta-rtl {
@@ -220,31 +205,25 @@ body.datta-rtl .pcoded-navbar.theme-horizontal .pcoded-inner-navbar > li.active:
     color: $dark-layout-font;
   }
 }
-.to-do-list .checkbox-fade .cr {
-  float: left;
-  border-radius: 3px;
-  width: 22px;
-  height: 22px;
-}
-.to-do-list .checkbox-fade label input[type='checkbox']:checked + .cr {
-  background: #1dd5d2;
-}
 
 .user-activity .tab-content {
   padding-top: 5px;
 }
 
-.rodal-dialog {
-  height: auto !important;
-  bottom: auto !important;
-  top: 50% !important;
-  transform: translateY(-50%);
-  .card {
-    box-shadow: none;
-    margin-bottom: 0px;
-    .card-footer {
-      padding-bottom: 0px;
+.rodal {
+  .rodal-dialog {
+    height: auto !important;
+    bottom: auto;
+    top: 25%;
+    .card {
+      box-shadow: none;
+      margin-bottom: 0px;
     }
+    padding: 0;
+  }
+  .rodal-close:hover:before,
+  .rodal-close:hover:after {
+    background: $danger-color;
   }
 }
 
@@ -358,26 +337,9 @@ td {
 .carousel.slide {
   overflow: hidden;
 }
-.react-datepicker-popper[data-placement^='bottom'] .react-datepicker__triangle,
-.react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
-.react-datepicker__year-read-view--down-arrow,
-.react-datepicker__month-read-view--down-arrow,
-.react-datepicker__month-year-read-view--down-arrow {
-  left: 18px !important;
-}
 .smooth-dnd-container.horizontal {
   button {
     border: none;
-  }
-}
-.ui-pnotify-icon {
-  > span {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 21px;
-    height: 21px;
   }
 }
 
@@ -388,15 +350,12 @@ td {
     }
   }
 }
-.filter-bar .navbar {
-  @media (max-width: 690px) {
-    padding: 0.5rem 1rem 1rem;
-    // #dropdown-basic{
-    //   padding-left: 10px;
-    // }
-    .f-view {
-      padding-left: 25px;
-      margin-top: 8px;
-    }
+.photoshop-picker {
+  @media only screen and (max-width: 575px) {
+    display: none;
   }
+}
+
+.css-1v494f5-Wrapper {
+  z-index: 20 !important;
 }

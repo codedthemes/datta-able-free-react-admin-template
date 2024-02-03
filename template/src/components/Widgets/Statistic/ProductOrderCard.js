@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -61,7 +62,7 @@ const ProductOrderCard = (props) => {
                     <h5>${price}</h5>
                   </td>
                   <td className="text-right">
-                    <div className="text-left d-inline-block">
+                    <div className="text-start d-inline-block">
                       <h6 className="my-0">Delivered on {delivered}</h6>
                       <small className="text-muted">{description}</small>
                     </div>
@@ -85,6 +86,18 @@ const ProductOrderCard = (props) => {
       </Card>
     </React.Fragment>
   );
+};
+
+ProductOrderCard.propTypes = {
+  image: PropTypes.string,
+  orderId: PropTypes.number,
+  name: PropTypes.string,
+  rating: PropTypes.string,
+  price: PropTypes.number,
+  delivered: PropTypes.bool,
+  ordered: PropTypes.bool,
+  description: PropTypes.string,
+  total: PropTypes.number
 };
 
 export default ProductOrderCard;

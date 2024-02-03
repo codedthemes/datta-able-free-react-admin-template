@@ -1,13 +1,21 @@
-import { ACCOUNT_INITIALISE, LOGIN, LOGOUT } from './actions';
+// action - state management
+import { REGISTER, LOGIN, LOGOUT } from './actions';
 
-const accountReducer = (state, action) => {
+// initial state
+export const initialState = {
+  isLoggedIn: false,
+  isInitialized: false,
+  user: null
+};
+
+// ==============================|| AUTH REDUCER ||============================== //
+
+const auth = (state = initialState, action) => {
   switch (action.type) {
-    case ACCOUNT_INITIALISE: {
-      const { isLoggedIn, user } = action.payload;
+    case REGISTER: {
+      const { user } = action.payload;
       return {
         ...state,
-        isLoggedIn,
-        isInitialised: true,
         user
       };
     }
@@ -16,12 +24,14 @@ const accountReducer = (state, action) => {
       return {
         ...state,
         isLoggedIn: true,
+        isInitialized: true,
         user
       };
     }
     case LOGOUT: {
       return {
         ...state,
+        isInitialized: true,
         isLoggedIn: false,
         user: null
       };
@@ -32,4 +42,4 @@ const accountReducer = (state, action) => {
   }
 };
 
-export default accountReducer;
+export default auth;

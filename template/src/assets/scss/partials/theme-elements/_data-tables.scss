@@ -89,13 +89,6 @@
 }
 /* fixed header position */
 
-table.dataTable.fixedHeader-floating {
-  top: 0 !important;
-  @media screen and (max-width: 992px) {
-    display: none !important;
-  }
-}
-
 @media screen and (max-width: 992px) {
   .fixedHeader-locked {
     display: none !important;

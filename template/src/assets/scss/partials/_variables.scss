@@ -40,7 +40,7 @@ $warning-color: #f4c22b;
 $danger-color: #f44236;
 $success-color: #1de9b6;
 $purple-color: #a389d4;
-$info-color: #3ebfea;
+$info-color: #17a2b8;
 $secondary-color: #748892;
 $default-color: #d6d6d6;
 $light-color: #f2f2f2;
@@ -120,3 +120,12 @@ $theme-color-interval: 8% !default;
 $alert-bg-level: -10 !default;
 $alert-border-level: -9 !default;
 $alert-color-level: 6 !default;
+
+:root {
+  --bs-body-color: #888;
+}
+
+.breadcrumb {
+  --bs-breadcrumb-padding-x: 1rem;
+  --bs-breadcrumb-padding-y: 0.75rem;
+}

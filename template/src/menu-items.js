@@ -10,8 +10,8 @@ const menuItems = {
           id: 'dashboard',
           title: 'Dashboard',
           type: 'item',
-          url: '/app/dashboard/default',
           icon: 'feather icon-home',
+          url: '/app/dashboard/default'
         }
       ]
     },
@@ -22,12 +22,11 @@ const menuItems = {
       icon: 'icon-ui',
       children: [
         {
-          id: 'basic',
+          id: 'component',
           title: 'Component',
           type: 'collapse',
           icon: 'feather icon-box',
           children: [
-            
             {
               id: 'button',
               title: 'Button',
@@ -51,7 +50,7 @@ const menuItems = {
               title: 'Pagination',
               type: 'item',
               url: '/basic/pagination'
-          },
+            },
             {
               id: 'collapse',
               title: 'Collapse',
@@ -75,8 +74,8 @@ const menuItems = {
       ]
     },
     {
-      id: 'forms-tables',
-      title: 'Forms & Tables',
+      id: 'ui-forms',
+      title: 'FORMS & TABLES',
       type: 'group',
       icon: 'icon-group',
       children: [
@@ -84,15 +83,15 @@ const menuItems = {
           id: 'forms',
           title: 'Form Elements',
           type: 'item',
-          url: '/forms/form-basic',
           icon: 'feather icon-file-text',
+          url: '/forms/form-basic'
         },
         {
-          id: 'tables',
+          id: 'table',
           title: 'Table',
           type: 'item',
-          url: '/tables/bootstrap',
           icon: 'feather icon-server',
+          url: '/tables/bootstrap'
         }
       ]
     },
@@ -106,15 +105,15 @@ const menuItems = {
           id: 'charts',
           title: 'Charts',
           type: 'item',
-          url: '/charts/nvd3',
-          icon: 'feather icon-pie-chart'
+          icon: 'feather icon-pie-chart',
+          url: '/charts/nvd3'
         },
         {
           id: 'maps',
-          title: 'Map',
+          title: 'Maps',
           type: 'item',
-          url: '/maps/google-map',
-          icon: 'feather icon-map'
+          icon: 'feather icon-map',
+          url: '/maps/google-map'
         }
       ]
     },
@@ -132,7 +131,7 @@ const menuItems = {
           badge: {
             title: 'New',
             type: 'label-danger'
-        },
+          },
           children: [
             {
               id: 'signup-1',
@@ -142,7 +141,6 @@ const menuItems = {
               target: true,
               breadcrumbs: false
             },
-            
             {
               id: 'signin-1',
               title: 'Sign in',
@@ -165,9 +163,9 @@ const menuItems = {
           id: 'documentation',
           title: 'Documentation',
           type: 'item',
-          icon: 'feather icon-help-circle',
+          icon: 'feather icon-book',
           classes: 'nav-item',
-          url: 'https://codedthemes.com/item/datta-able-react-free-admin-template/#',
+          url: 'https://codedthemes.gitbook.io/datta/',
           target: true,
           external: true
         },

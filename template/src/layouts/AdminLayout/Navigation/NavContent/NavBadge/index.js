@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const NavBadge = ({ items }) => {
@@ -9,6 +10,13 @@ const NavBadge = ({ items }) => {
   }
 
   return <React.Fragment>{navBadges}</React.Fragment>;
+};
+
+NavBadge.propTypes = {
+  items: PropTypes.object,
+  badge: PropTypes.string,
+  type: PropTypes.string,
+  title: PropTypes.string
 };
 
 export default NavBadge;

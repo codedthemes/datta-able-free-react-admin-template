@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 
 import friend from './friends';
@@ -40,6 +41,10 @@ const Friends = ({ listOpen }) => {
       />
     </React.Fragment>
   );
+};
+
+Friends.propTypes = {
+  listOpen: PropTypes.bool
 };
 
 export default Friends;

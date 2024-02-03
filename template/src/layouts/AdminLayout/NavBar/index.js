@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import NavLeft from './NavLeft';
@@ -8,7 +8,7 @@ import { ConfigContext } from '../../../contexts/ConfigContext';
 import * as actionType from '../../../store/actions';
 
 const NavBar = () => {
-  //const [moreToggle, setMoreToggle] = useState(false);
+  const [moreToggle, setMoreToggle] = useState(false);
   const configContext = useContext(ConfigContext);
   const { collapseMenu, headerBackColor, headerFixedLayout, layout, subLayout } = configContext.state;
   const { dispatch } = configContext;
@@ -27,15 +27,15 @@ const NavBar = () => {
     dispatch({ type: actionType.COLLAPSE_MENU });
   };
 
-  // let moreClass = ['mob-toggler'];;
-  // if (layout === 'horizontal') {
-  //     moreClass = [...moreClass, 'd-none'];
-  // }
+  let moreClass = ['mob-toggler'];
+  if (layout === 'horizontal') {
+    moreClass = [...moreClass, ''];
+  }
   let collapseClass = ['collapse navbar-collapse'];
-  // if (moreToggle) {
-  //     //moreClass = [...moreClass, 'on'];
-  //     collapseClass = [...collapseClass, 'd-block']
-  // }
+  if (moreToggle) {
+    moreClass = [...moreClass, 'on'];
+    collapseClass = [...collapseClass, 'show'];
+  }
 
   let navBar = (
     <React.Fragment>
@@ -49,11 +49,11 @@ const NavBar = () => {
           </div>
           <span className="b-title">Datta Able</span>
         </Link>
-        {/* <Link to='#' className={moreClass.join(' ')} onClick={() => setMoreToggle(!moreToggle)}>
-                    <i className="feather icon-more-vertical"/>
-                </Link> */}
+        <Link to="#" className={moreClass.join(' ')} onClick={() => setMoreToggle(!moreToggle)}>
+          <i className="feather icon-more-vertical" />
+        </Link>
       </div>
-      <div className={collapseClass.join(' ')}>
+      <div style={{ justifyContent: 'space-between' }} className={collapseClass.join(' ')}>
         <NavLeft />
         <NavRight />
       </div>

@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { Media, FormControl, Button, InputGroup } from 'react-bootstrap';
+import { FormControl, Button, InputGroup, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
@@ -13,13 +14,13 @@ const Chat = ({ user, chatOpen, listOpen, closed }) => {
   }
 
   let message = (
-    <Media className="chat-messages text-center">
-      <Media.Body className="chat-menu-content">
+    <Card className="d-flex align-items-center shadow-none mb-0 p-0" style={{ flexDirection: 'row', backgroundColor: 'unset' }}>
+      <Card.Body className="p-0 chat-menu-content">
         <div className="">
           <p className="chat-cont">CHAT NOT FOUND</p>
         </div>
-      </Media.Body>
-    </Media>
+      </Card.Body>
+    </Card>
   );
 
   chatMsg.filter((chats) => {
@@ -49,11 +50,9 @@ const Chat = ({ user, chatOpen, listOpen, closed }) => {
         </div>
         <div className="h-list-footer">
           <InputGroup>
-            <InputGroup.Prepend>
-              <Button variant="success" className="btn-attach">
-                <i className="feather icon-paperclip" />
-              </Button>
-            </InputGroup.Prepend>
+            <Button variant="success" className="btn-attach">
+              <i className="feather icon-paperclip" />
+            </Button>
             <FormControl type="text" name="h-chat-text" className="h-send-chat" placeholder="Write hear . . " />
             <Button type="submit" className="input-group-append btn-send">
               <i className="feather icon-message-circle" />
@@ -63,6 +62,15 @@ const Chat = ({ user, chatOpen, listOpen, closed }) => {
       </div>
     </React.Fragment>
   );
+};
+
+Chat.propTypes = {
+  user: PropTypes.array,
+  chatOpen: PropTypes.bool,
+  listOpen: PropTypes.bool,
+  id: PropTypes.number,
+  closed: PropTypes.func,
+  name: PropTypes.string
 };
 
 export default Chat;

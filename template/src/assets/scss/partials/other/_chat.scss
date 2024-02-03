@@ -133,7 +133,7 @@
       height: 25px;
       width: 25px;
       position: absolute;
-      top: 35px;
+      top: 28px;
       right: 20px;
       border-radius: 100%;
       color: #fff;
@@ -212,7 +212,7 @@
       }
 
       .btn-attach {
-        border-radius: 50%;
+        border-radius: 50% !important;
         padding: 5px;
         margin-right: 5px;
 
@@ -222,9 +222,9 @@
       }
 
       .btn-send {
-        border-radius: 50%;
+        border-radius: 50% !important;
         padding: 10px;
-        margin-left: 5px;
+        margin-left: 5px !important;
         position: absolute;
         right: -45px;
         top: 2px;
@@ -262,9 +262,9 @@
 
 .h-list-body {
   .chat-messages {
-    padding-bottom: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-bottom: 20px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
 
     .photo-table {
       padding-right: 15px;
@@ -368,56 +368,10 @@
 }
 /* massage page start */
 
-.msg-card {
-  .msg-user-list {
-    height: calc(100vh - 300px);
-  }
-
-  .msg-user-chat {
-    background: lighten($primary-color, 45%);
-    height: calc(100vh - 330px);
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  .msg-block {
-    > .row {
-      > div {
-        &:before {
-          content: '';
-          width: 1px;
-          height: 100%;
-          background: #f1f1f1;
-          position: absolute;
-          top: 0;
-        }
-
-        &:first-child {
-          &:before {
-            right: 0;
-          }
-        }
-
-        &:last-child {
-          &:before {
-            left: -1px;
-          }
-        }
-      }
-    }
-  }
-}
 .main-friend-chat {
   padding-bottom: 15px;
 }
 
-@media screen and (max-width: 991px) {
-  .msg-card .msg-block > .row > div:before {
-    background: none;
-  }
-}
 /* massage page end */
 /**====== Chat css end ======**/
 

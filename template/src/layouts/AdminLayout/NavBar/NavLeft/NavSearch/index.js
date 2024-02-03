@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -37,13 +38,24 @@ const NavSearch = (props) => {
           <Link to="#" className="input-group-append search-close" onClick={searchOffHandler}>
             <i className="feather icon-x input-group-text" />
           </Link>
-          <span className="input-group-append search-btn btn btn-primary" onClick={searchOnHandler}>
+          <span
+            onKeyDown={searchOnHandler}
+            role="button"
+            tabIndex="0"
+            className="input-group-append search-btn btn btn-primary"
+            onClick={searchOnHandler}
+            style={{ borderRadius: '50%', marginLeft: 5 }}
+          >
             <i className="feather icon-search input-group-text" />
           </span>
         </div>
       </div>
     </React.Fragment>
   );
+};
+
+NavSearch.propTypes = {
+  windowWidth: PropTypes.number
 };
 
 export default NavSearch;

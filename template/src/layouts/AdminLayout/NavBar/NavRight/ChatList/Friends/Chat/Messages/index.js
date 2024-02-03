@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Media } from 'react-bootstrap';
 
 const images = require.context('../../../../../../../../assets/images/user', true);
 
@@ -9,7 +10,7 @@ const Messages = ({ message, photo, name }) => {
   if (message.type) {
     image = (
       <Link to="#" className="media-left photo-table">
-        <img className="media-object img-radius img-radius m-t-5" src={images(`./${photo}`).default} alt={name} />
+        <img className="media-object img-radius img-radius m-t-5" src={images(`./${photo}`)} alt={name} />
       </Link>
     );
   }
@@ -23,17 +24,29 @@ const Messages = ({ message, photo, name }) => {
 
   return (
     <React.Fragment>
-      <Media className="media chat-messages">
+      <Card
+        className="d-flex align-items-start shadow-none mb-0 p-0 chat-messages"
+        style={{ flexDirection: 'row', backgroundColor: 'unset' }}
+      >
         {image}
-        <Media.Body className={msgClass.join(' ')}>
+        <Card.Body className={msgClass.join(' ')} style={{ padding: 0 }}>
           <div className="">
             <p className="chat-cont">{message.msg}</p>
           </div>
           <p className="chat-time">{message.time}</p>
-        </Media.Body>
-      </Media>
+        </Card.Body>
+      </Card>
     </React.Fragment>
   );
+};
+
+Messages.propTypes = {
+  message: PropTypes.string,
+  photo: PropTypes.string,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  msg: PropTypes.string,
+  time: PropTypes.string
 };
 
 export default Messages;

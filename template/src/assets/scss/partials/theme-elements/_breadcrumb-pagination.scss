@@ -11,9 +11,6 @@
 .breadcrumb-item {
   + .breadcrumb-item {
     color: $primary-color;
-    &::before {
-      /* content: $breadcrumb-divider; */
-    }
   }
 
   &.active {

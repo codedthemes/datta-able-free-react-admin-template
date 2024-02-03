@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useContext, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -115,6 +116,10 @@ const NavContent = ({ navigation }) => {
   }
 
   return <React.Fragment>{mainContent}</React.Fragment>;
+};
+
+NavContent.propTypes = {
+  navigation: PropTypes.array
 };
 
 export default NavContent;

@@ -1,11 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { ListGroup, Dropdown, Media } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Card, ListGroup, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import ChatList from './ChatList';
-import { ConfigContext } from '../../../../contexts/ConfigContext';
-import useAuth from '../../../../hooks/useAuth';
 
 import avatar1 from '../../../../assets/images/user/avatar-1.jpg';
 import avatar2 from '../../../../assets/images/user/avatar-2.jpg';
@@ -13,34 +11,42 @@ import avatar3 from '../../../../assets/images/user/avatar-3.jpg';
 import avatar4 from '../../../../assets/images/user/avatar-4.jpg';
 
 const NavRight = () => {
-  const configContext = useContext(ConfigContext);
-  const { logout } = useAuth();
-  const { rtlLayout } = configContext.state;
-
   const [listOpen, setListOpen] = useState(false);
 
-  const handleLogout = async () => {
-    try {
-      //handleClose();
-      await logout();
-    } catch (err) {
-      console.error(err);
+  const notiData = [
+    {
+      name: 'Joseph William',
+      image: avatar2,
+      details: 'Purchase New Theme and make payment',
+      activity: '30 min'
+    },
+    {
+      name: 'Sara Soudein',
+      image: avatar3,
+      details: 'currently login',
+      activity: '30 min'
+    },
+    {
+      name: 'Suzen',
+      image: avatar4,
+      details: 'Purchase New Theme and make payment',
+      activity: 'yesterday'
     }
-  };
+  ];
 
   return (
     <React.Fragment>
       <ListGroup as="ul" bsPrefix=" " className="navbar-nav ml-auto" id="navbar-right">
         <ListGroup.Item as="li" bsPrefix=" ">
-          <Dropdown alignRight={!rtlLayout}>
+          <Dropdown align="start">
             <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic">
               <i className="feather icon-bell icon" />
             </Dropdown.Toggle>
-            <Dropdown.Menu alignRight className="notification notification-scroll">
+            <Dropdown.Menu align="end" className="notification notification-scroll">
               <div className="noti-head">
                 <h6 className="d-inline-block m-b-0">Notifications</h6>
-                <div className="float-right">
-                  <Link to="#" className="m-r-10">
+                <div className="float-end">
+                  <Link to="#" className="me-2">
                     mark as read
                   </Link>
                   <Link to="#">clear all</Link>
@@ -52,68 +58,48 @@ const NavRight = () => {
                     <p className="m-b-0">NEW</p>
                   </ListGroup.Item>
                   <ListGroup.Item as="li" bsPrefix=" " className="notification">
-                    <Media>
+                    <Card
+                      className="d-flex align-items-center shadow-none mb-0 p-0"
+                      style={{ flexDirection: 'row', backgroundColor: 'unset' }}
+                    >
                       <img className="img-radius" src={avatar1} alt="Generic placeholder" />
-                      <Media.Body>
+                      <Card.Body className="p-0">
                         <p>
                           <strong>John Doe</strong>
                           <span className="n-time text-muted">
-                            <i className="icon feather icon-clock m-r-10" />
+                            <i className="icon feather icon-clock me-2" />
                             30 min
                           </span>
                         </p>
                         <p>New ticket Added</p>
-                      </Media.Body>
-                    </Media>
+                      </Card.Body>
+                    </Card>
                   </ListGroup.Item>
                   <ListGroup.Item as="li" bsPrefix=" " className="n-title">
                     <p className="m-b-0">EARLIER</p>
                   </ListGroup.Item>
-                  <ListGroup.Item as="li" bsPrefix=" " className="notification">
-                    <Media>
-                      <img className="img-radius" src={avatar2} alt="Generic placeholder" />
-                      <Media.Body>
-                        <p>
-                          <strong>Joseph William</strong>
-                          <span className="n-time text-muted">
-                            <i className="icon feather icon-clock m-r-10" />
-                            30 min
-                          </span>
-                        </p>
-                        <p>Purchase New Theme and make payment</p>
-                      </Media.Body>
-                    </Media>
-                  </ListGroup.Item>
-                  <ListGroup.Item as="li" bsPrefix=" " className="notification">
-                    <Media>
-                      <img className="img-radius" src={avatar3} alt="Generic placeholder" />
-                      <Media.Body>
-                        <p>
-                          <strong>Sara Soudein</strong>
-                          <span className="n-time text-muted">
-                            <i className="icon feather icon-clock m-r-10" />
-                            30 min
-                          </span>
-                        </p>
-                        <p>currently login</p>
-                      </Media.Body>
-                    </Media>
-                  </ListGroup.Item>
-                  <ListGroup.Item as="li" bsPrefix=" " className="notification">
-                    <Media>
-                      <img className="img-radius" src={avatar4} alt="Generic placeholder" />
-                      <Media.Body>
-                        <p>
-                          <strong>Suzen</strong>
-                          <span className="n-time text-muted">
-                            <i className="icon feather icon-clock m-r-10" />
-                            yesterday
-                          </span>
-                        </p>
-                        <p>Purchase New Theme and make payment</p>
-                      </Media.Body>
-                    </Media>
-                  </ListGroup.Item>
+                  {notiData.map((data, index) => {
+                    return (
+                      <ListGroup.Item key={index} as="li" bsPrefix=" " className="notification">
+                        <Card
+                          className="d-flex align-items-center shadow-none mb-0 p-0"
+                          style={{ flexDirection: 'row', backgroundColor: 'unset' }}
+                        >
+                          <img className="img-radius" src={data.image} alt="Generic placeholder" />
+                          <Card.Body className="p-0">
+                            <p>
+                              <strong>{data.name}</strong>
+                              <span className="n-time text-muted">
+                                <i className="icon feather icon-clock me-2" />
+                                {data.activity}
+                              </span>
+                            </p>
+                            <p>{data.details}</p>
+                          </Card.Body>
+                        </Card>
+                      </ListGroup.Item>
+                    );
+                  })}
                 </ListGroup>
               </PerfectScrollbar>
               <div className="noti-footer">
@@ -130,11 +116,11 @@ const NavRight = () => {
           </Dropdown>
         </ListGroup.Item>
         <ListGroup.Item as="li" bsPrefix=" ">
-          <Dropdown alignRight={!rtlLayout} className="drp-user">
+          <Dropdown align="start" className="drp-user">
             <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic">
               <i className="icon feather icon-settings" />
             </Dropdown.Toggle>
-            <Dropdown.Menu alignRight className="profile-notification">
+            <Dropdown.Menu align="end" className="profile-notification">
               <div className="pro-head">
                 <img src={avatar1} className="img-radius" alt="User Profile" />
                 <span>John Doe</span>
@@ -164,7 +150,7 @@ const NavRight = () => {
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item as="li" bsPrefix=" ">
-                  <Link to="#" className="dropdown-item" onClick={handleLogout}>
+                  <Link to="#" className="dropdown-item">
                     <i className="feather icon-log-out" /> Logout
                   </Link>
                 </ListGroup.Item>

@@ -1,131 +1,53 @@
 import React from 'react';
-import { Row, Col, Card, Tab, Tabs, Table } from 'react-bootstrap';
+import { Row, Col, Card, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import avatar1 from '../../../assets/images/user/avatar-1.jpg';
-import avatar2 from '../../../assets/images/user/avatar-2.jpg';
-import avatar3 from '../../../assets/images/user/avatar-3.jpg';
+
+import avatar1 from '../../assets/images/user/avatar-1.jpg';
+import avatar2 from '../../assets/images/user/avatar-2.jpg';
+import avatar3 from '../../assets/images/user/avatar-3.jpg';
+
+const dashSalesData = [
+  { title: 'Daily Sales', amount: '$249.95', icon: 'icon-arrow-up text-c-green', value: 50, class: 'progress-c-theme' },
+  { title: 'Monthly Sales', amount: '$2.942.32', icon: 'icon-arrow-down text-c-red', value: 36, class: 'progress-c-theme2' },
+  { title: 'Yearly Sales', amount: '$8.638.32', icon: 'icon-arrow-up text-c-green', value: 70, color: 'progress-c-theme' }
+];
 
 const DashDefault = () => {
-  const tabContent = (
-    <React.Fragment>
-      <div className="media friendlist-box align-items-center justify-content-center m-b-20">
-        <div className="m-r-10 photo-table">
-          <Link to="#">
-            <img className="rounded-circle" style={{ width: '40px' }} src={avatar1} alt="activity-user" />
-          </Link>
-        </div>
-        <div className="media-body">
-          <h6 className="m-0 d-inline">Silje Larsen</h6>
-          <span className="float-right d-flex  align-items-center">
-            <i className="fa fa-caret-up f-22 m-r-10 text-c-green" />
-            3784
-          </span>
-        </div>
-      </div>
-      <div className="media friendlist-box align-items-center justify-content-center m-b-20">
-        <div className="m-r-10 photo-table">
-          <Link to="#">
-            <img className="rounded-circle" style={{ width: '40px' }} src={avatar2} alt="activity-user" />
-          </Link>
-        </div>
-        <div className="media-body">
-          <h6 className="m-0 d-inline">Julie Vad</h6>
-          <span className="float-right d-flex  align-items-center">
-            <i className="fa fa-caret-up f-22 m-r-10 text-c-green" />
-            3544
-          </span>
-        </div>
-      </div>
-      <div className="media friendlist-box align-items-center justify-content-center m-b-20">
-        <div className="m-r-10 photo-table">
-          <Link to="#">
-            <img className="rounded-circle" style={{ width: '40px' }} src={avatar3} alt="activity-user" />
-          </Link>
-        </div>
-        <div className="media-body">
-          <h6 className="m-0 d-inline">Storm Hanse</h6>
-          <span className="float-right d-flex  align-items-center">
-            <i className="fa fa-caret-down f-22 m-r-10 text-c-red" />
-            2739
-          </span>
-        </div>
-      </div>
-      <div className="media friendlist-box align-items-center justify-content-center m-b-20">
-        <div className="m-r-10 photo-table">
-          <Link to="#">
-            <img className="rounded-circle" style={{ width: '40px' }} src={avatar1} alt="activity-user" />
-          </Link>
-        </div>
-        <div className="media-body">
-          <h6 className="m-0 d-inline">Frida Thomse</h6>
-          <span className="float-right d-flex  align-items-center">
-            <i className="fa fa-caret-down f-22 m-r-10 text-c-red" />
-            1032
-          </span>
-        </div>
-      </div>
-      <div className="media friendlist-box align-items-center justify-content-center m-b-20">
-        <div className="m-r-10 photo-table">
-          <Link to="#">
-            <img className="rounded-circle" style={{ width: '40px' }} src={avatar2} alt="activity-user" />
-          </Link>
-        </div>
-        <div className="media-body">
-          <h6 className="m-0 d-inline">Silje Larsen</h6>
-          <span className="float-right d-flex  align-items-center">
-            <i className="fa fa-caret-up f-22 m-r-10 text-c-green" />
-            8750
-          </span>
-        </div>
-      </div>
-      <div className="media friendlist-box align-items-center justify-content-center">
-        <div className="m-r-10 photo-table">
-          <Link to="#">
-            <img className="rounded-circle" style={{ width: '40px' }} src={avatar3} alt="activity-user" />
-          </Link>
-        </div>
-        <div className="media-body">
-          <h6 className="m-0 d-inline">Storm Hanse</h6>
-          <span className="float-right d-flex  align-items-center">
-            <i className="fa fa-caret-down f-22 m-r-10 text-c-red" />
-            8750
-          </span>
-        </div>
-      </div>
-    </React.Fragment>
-  );
   return (
     <React.Fragment>
       <Row>
-        <Col md={6} xl={4}>
-          <Card>
-            <Card.Body>
-              <h6 className="mb-4">Daily Sales</h6>
-              <div className="row d-flex align-items-center">
-                <div className="col-9">
-                  <h3 className="f-w-300 d-flex align-items-center m-b-0">
-                    <i className="feather icon-arrow-up text-c-green f-30 m-r-5" /> $249.95
-                  </h3>
-                </div>
-
-                <div className="col-3 text-right">
-                  <p className="m-b-0">50%</p>
-                </div>
-              </div>
-              <div className="progress m-t-30" style={{ height: '7px' }}>
-                <div
-                  className="progress-bar progress-c-theme"
-                  role="progressbar"
-                  style={{ width: '50%' }}
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                />
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6} xl={4}>
+        {dashSalesData.map((data, index) => {
+          return (
+            <Col key={index} xl={6} xxl={4}>
+              <Card>
+                <Card.Body>
+                  <h6 className="mb-4">{data.title}</h6>
+                  <div className="row d-flex align-items-center">
+                    <div className="col-9">
+                      <h3 className="f-w-300 d-flex align-items-center m-b-0">
+                        <i className={`feather ${data.icon} f-30 m-r-5`} /> $249.95
+                      </h3>
+                    </div>
+                    <div className="col-3 text-end">
+                      <p className="m-b-0">{data.value}%</p>
+                    </div>
+                  </div>
+                  <div className="progress m-t-30" style={{ height: '7px' }}>
+                    <div
+                      className={`progress-bar ${data.class}`}
+                      role="progressbar"
+                      style={{ width: `${data.value}%` }}
+                      aria-valuenow={data.value}
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    />
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+        })}
+        {/* <Col md={6} xl={4}>
           <Card>
             <Card.Body>
               <h6 className="mb-4">Monthly Sales</h6>
@@ -136,7 +58,7 @@ const DashDefault = () => {
                   </h3>
                 </div>
 
-                <div className="col-3 text-right">
+                <div className="col-3 text-end">
                   <p className="m-b-0">36%</p>
                 </div>
               </div>
@@ -164,7 +86,7 @@ const DashDefault = () => {
                   </h3>
                 </div>
 
-                <div className="col-3 text-right">
+                <div className="col-3 text-end">
                   <p className="m-b-0">70%</p>
                 </div>
               </div>
@@ -180,14 +102,14 @@ const DashDefault = () => {
               </div>
             </Card.Body>
           </Card>
-        </Col>
+        </Col> */}
         <Col md={6} xl={8}>
-        <Card className="Recent-Users">
+          <Card className="Recent-Users">
             <Card.Header>
               <Card.Title as="h5">Recent Users</Card.Title>
             </Card.Header>
             <Card.Body className="px-0 py-2">
-              <Table responsive hover>
+              <Table responsive hover className="recent-users">
                 <tbody>
                   <tr className="unread">
                     <td>
@@ -309,14 +231,14 @@ const DashDefault = () => {
           </Card>
         </Col>
         <Col md={6} xl={4}>
-        <Card className="card-event">
+          <Card className="card-event">
             <Card.Body>
               <div className="row align-items-center justify-content-center">
                 <div className="col">
                   <h5 className="m-0">Upcoming Event</h5>
                 </div>
                 <div className="col-auto">
-                  <label className="label theme-bg2 text-white f-14 f-w-400 float-right">34%</label>
+                  <label className="label theme-bg2 text-white f-14 f-w-400 float-end">34%</label>
                 </div>
               </div>
               <h2 className="mt-2 f-w-300">
@@ -358,7 +280,7 @@ const DashDefault = () => {
                 <div className="col-auto">
                   <i className="fab fa-facebook-f text-primary f-36" />
                 </div>
-                <div className="col text-right">
+                <div className="col text-end">
                   <h3>12,281</h3>
                   <h5 className="text-c-green mb-0">
                     +7.2% <span className="text-muted">Total Likes</span>
@@ -409,7 +331,7 @@ const DashDefault = () => {
                 <div className="col-auto">
                   <i className="fab fa-twitter text-c-blue f-36" />
                 </div>
-                <div className="col text-right">
+                <div className="col text-end">
                   <h3>11,200</h3>
                   <h5 className="text-c-purple mb-0">
                     +6.2% <span className="text-muted">Total Likes</span>
@@ -460,7 +382,7 @@ const DashDefault = () => {
                 <div className="col-auto">
                   <i className="fab fa-google-plus-g text-c-red f-36" />
                 </div>
-                <div className="col text-right">
+                <div className="col text-end">
                   <h3>10,500</h3>
                   <h5 className="text-c-blue mb-0">
                     +5.9% <span className="text-muted">Total Likes</span>
@@ -512,12 +434,12 @@ const DashDefault = () => {
             <Card.Body>
               <div className="row align-items-center justify-content-center m-b-20">
                 <div className="col-6">
-                  <h2 className="f-w-300 d-flex align-items-center float-left m-0">
+                  <h2 className="f-w-300 d-flex align-items-center float-start m-0">
                     4.7 <i className="fa fa-star f-10 m-l-10 text-c-yellow" />
                   </h2>
                 </div>
                 <div className="col-6">
-                  <h6 className="d-flex  align-items-center float-right m-0">
+                  <h6 className="d-flex  align-items-center float-end m-0">
                     0.4 <i className="fa fa-caret-up text-c-green f-22 m-l-10" />
                   </h6>
                 </div>
@@ -525,10 +447,10 @@ const DashDefault = () => {
 
               <div className="row">
                 <div className="col-xl-12">
-                  <h6 className="align-items-center float-left">
+                  <h6 className="align-items-center float-start">
                     <i className="fa fa-star f-10 m-r-10 text-c-yellow" />5
                   </h6>
-                  <h6 className="align-items-center float-right">384</h6>
+                  <h6 className="align-items-center float-end">384</h6>
                   <div className="progress m-t-30 m-b-20" style={{ height: '6px' }}>
                     <div
                       className="progress-bar progress-c-theme"
@@ -542,10 +464,10 @@ const DashDefault = () => {
                 </div>
 
                 <div className="col-xl-12">
-                  <h6 className="align-items-center float-left">
+                  <h6 className="align-items-center float-start">
                     <i className="fa fa-star f-10 m-r-10 text-c-yellow" />4
                   </h6>
-                  <h6 className="align-items-center float-right">145</h6>
+                  <h6 className="align-items-center float-end">145</h6>
                   <div className="progress m-t-30  m-b-20" style={{ height: '6px' }}>
                     <div
                       className="progress-bar progress-c-theme"
@@ -559,10 +481,10 @@ const DashDefault = () => {
                 </div>
 
                 <div className="col-xl-12">
-                  <h6 className="align-items-center float-left">
+                  <h6 className="align-items-center float-start">
                     <i className="fa fa-star f-10 m-r-10 text-c-yellow" />3
                   </h6>
-                  <h6 className="align-items-center float-right">24</h6>
+                  <h6 className="align-items-center float-end">24</h6>
                   <div className="progress m-t-30  m-b-20" style={{ height: '6px' }}>
                     <div
                       className="progress-bar progress-c-theme"
@@ -576,10 +498,10 @@ const DashDefault = () => {
                 </div>
 
                 <div className="col-xl-12">
-                  <h6 className="align-items-center float-left">
+                  <h6 className="align-items-center float-start">
                     <i className="fa fa-star f-10 m-r-10 text-c-yellow" />2
                   </h6>
-                  <h6 className="align-items-center float-right">1</h6>
+                  <h6 className="align-items-center float-end">1</h6>
                   <div className="progress m-t-30  m-b-20" style={{ height: '6px' }}>
                     <div
                       className="progress-bar progress-c-theme"
@@ -592,10 +514,10 @@ const DashDefault = () => {
                   </div>
                 </div>
                 <div className="col-xl-12">
-                  <h6 className="align-items-center float-left">
+                  <h6 className="align-items-center float-start">
                     <i className="fa fa-star f-10 m-r-10 text-c-yellow" />1
                   </h6>
-                  <h6 className="align-items-center float-right">0</h6>
+                  <h6 className="align-items-center float-end">0</h6>
                   <div className="progress m-t-30  m-b-5" style={{ height: '6px' }}>
                     <div
                       className="progress-bar"
@@ -612,17 +534,108 @@ const DashDefault = () => {
           </Card>
         </Col>
         <Col md={6} xl={8}>
-        <Tabs defaultActiveKey="today" id="uncontrolled-tab-example">
-            <Tab eventKey="today" title="Today">
-              {tabContent}
-            </Tab>
-            <Tab eventKey="week" title="This Week">
-              {tabContent}
-            </Tab>
-            <Tab eventKey="all" title="All">
-              {tabContent}
-            </Tab>
-          </Tabs>
+          <Card className="user-list">
+            <Card.Header>
+              <Card.Title as="h5">User Project List</Card.Title>
+            </Card.Header>
+            <Card.Body className="p-0">
+              <Table responsive hover>
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Project</th>
+                    <th>Completed</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img className="rounded-circle" style={{ width: '40px' }} src={avatar1} alt="activity-user" />
+                    </td>
+                    <td>
+                      <h6 className="mb-1">Social Media App</h6>
+                      <p className="m-0">
+                        Assigned to<span className="text-c-green"> Tristan Madsen</span>
+                      </p>
+                    </td>
+                    <td>
+                      <span className="pie_1">326,134</span>
+                    </td>
+                    <td>
+                      <h6 className="m-0">68%</h6>
+                    </td>
+                    <td>
+                      <h6 className="m-0">October 26, 2017</h6>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <img className="rounded-circle" style={{ width: '40px' }} src={avatar2} alt="activity-user" />
+                    </td>
+                    <td>
+                      <h6 className="mb-1">Newspaper Wordpress Web</h6>
+                      <p className="m-0">
+                        Assigned to<span className="text-c-green"> Marcus Poulsen</span>
+                      </p>
+                    </td>
+                    <td>
+                      <span className="pie_2">110,134</span>
+                    </td>
+                    <td>
+                      <h6 className="m-0">46%</h6>
+                    </td>
+                    <td>
+                      <h6 className="m-0">September 4, 2017</h6>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <img className="rounded-circle" style={{ width: '40px' }} src={avatar3} alt="activity-user" />
+                    </td>
+                    <td>
+                      <h6 className="mb-1">Dashboard UI Kit Design</h6>
+                      <p className="m-0">
+                        Assigned to<span className="text-c-green"> Felix Johansen</span>
+                      </p>
+                    </td>
+                    <td>
+                      <span className="pie_3">226,134</span>
+                    </td>
+                    <td>
+                      <h6 className="m-0">31%</h6>
+                    </td>
+                    <td>
+                      <h6 className="m-0">November 14, 2017</h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img className="rounded-circle" style={{ width: '40px' }} src={avatar1} alt="activity-user" />
+                    </td>
+                    <td>
+                      <h6 className="mb-1">Social Media App</h6>
+                      <p className="m-0">
+                        Assigned to<span className="text-c-green"> Tristan Madsen</span>
+                      </p>
+                    </td>
+                    <td>
+                      <span className="pie_4">500,134</span>
+                    </td>
+                    <td>
+                      <h6 className="m-0">85%</h6>
+                    </td>
+                    <td>
+                      <h6 className="m-0">December 14, 2017</h6>
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </React.Fragment>

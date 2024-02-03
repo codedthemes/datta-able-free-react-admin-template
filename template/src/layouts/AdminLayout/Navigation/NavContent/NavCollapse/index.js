@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useContext, useEffect } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -85,7 +86,12 @@ const NavCollapse = ({ collapse, type }) => {
         {itemTitle}
         <NavBadge items={collapse} />
       </Link>
-      <ListGroup variant="flush" bsPrefix=" " as="ul" className="pcoded-submenu">
+      <ListGroup
+        variant="flush"
+        bsPrefix=" "
+        as="ul"
+        className={navItems.length > 10 ? 'pcoded-submenu horizontal-scroll' : 'pcoded-submenu'}
+      >
         {navItems}
       </ListGroup>
     </React.Fragment>
@@ -113,6 +119,15 @@ const NavCollapse = ({ collapse, type }) => {
   }
 
   return <React.Fragment>{mainContent}</React.Fragment>;
+};
+
+NavCollapse.propTypes = {
+  collapse: PropTypes.object,
+  type: PropTypes.string,
+  id: PropTypes.number,
+  children: PropTypes.node,
+  title: PropTypes.string,
+  icon: PropTypes.string
 };
 
 export default NavCollapse;

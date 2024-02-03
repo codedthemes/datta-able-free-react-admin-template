@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -34,6 +35,11 @@ const ChatList = ({ listOpen, closed }) => {
       </div>
     </React.Fragment>
   );
+};
+
+ChatList.propTypes = {
+  listOpen: PropTypes.bool,
+  closed: PropTypes.func
 };
 
 export default ChatList;

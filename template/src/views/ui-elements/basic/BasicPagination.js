@@ -56,17 +56,20 @@ const BasicBreadcrumbPagination = () => {
             </Pagination>
             <h5 className="mt-5">More Options</h5>
             <hr />
-            <Pagination>
-              <Pagination.Prev />
-              <Pagination.Item>{1}</Pagination.Item>
-              <Pagination.Ellipsis />
-              <Pagination.Item>{11}</Pagination.Item>
-              <Pagination.Item active>{12}</Pagination.Item>
-              <Pagination.Item>{13}</Pagination.Item>
-              <Pagination.Ellipsis />
-              <Pagination.Item>{20}</Pagination.Item>
-              <Pagination.Next />
-            </Pagination>
+            <div className="table-responsive">
+              <Pagination>
+                <Pagination.Prev />
+                <Pagination.Item>{1}</Pagination.Item>
+                <Pagination.Ellipsis />
+                <Pagination.Item>{11}</Pagination.Item>
+                <Pagination.Item active>{12}</Pagination.Item>
+                <Pagination.Item>{13}</Pagination.Item>
+                <Pagination.Ellipsis />
+                <Pagination.Item>{20}</Pagination.Item>
+                <Pagination.Next />
+              </Pagination>
+            </div>
+
             <h5 className="mt-5">Active</h5>
             <hr />
             <Pagination>{activeItems}</Pagination>

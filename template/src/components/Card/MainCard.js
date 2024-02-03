@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Dropdown, Card, Collapse } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -32,7 +33,7 @@ const MainCard = (props) => {
   if (isOption) {
     cardHeaderRight = (
       <div className={'card-header-right ' + optionClass}>
-        <Dropdown alignRight={true} className="btn-group card-option">
+        <Dropdown align="end" className="btn-group card-option">
           <Dropdown.Toggle id="dropdown-basic" className="btn-icon">
             <i className="feather icon-more-horizontal" />
           </Dropdown.Toggle>
@@ -101,6 +102,14 @@ const MainCard = (props) => {
   );
 
   return <React.Fragment>{card}</React.Fragment>;
+};
+
+MainCard.propTypes = {
+  isOption: PropTypes.bool,
+  title: PropTypes.string,
+  children: PropTypes.node,
+  cardClass: PropTypes.string,
+  optionClass: PropTypes.string
 };
 
 export default MainCard;

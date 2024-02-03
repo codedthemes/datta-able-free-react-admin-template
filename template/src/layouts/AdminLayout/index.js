@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useRef } from 'react';
 
 import Navigation from './Navigation';
 import NavBar from './NavBar';
 import Breadcrumb from './Breadcrumb';
-import Configuration from './Configuration';
 
 import useWindowSize from '../../hooks/useWindowSize';
 import useOutsideClick from '../../hooks/useOutsideClick';
@@ -15,24 +15,24 @@ const AdminLayout = ({ children }) => {
   const ref = useRef();
   const configContext = useContext(ConfigContext);
 
-  const { collapseMenu, layout, subLayout, headerFixedLayout, configBlock } = configContext.state;
+  const { collapseMenu, headerFixedLayout } = configContext.state;
   const { dispatch } = configContext;
+
+  useEffect(() => {
+    if (windowSize.width > 992 && windowSize.width <= 1024) {
+      dispatch({ type: actionType.COLLAPSE_MENU });
+    }
+
+    if (windowSize.width < 992) {
+      dispatch({ type: actionType.CHANGE_LAYOUT, layout: 'vertical' });
+    }
+  }, [dispatch, windowSize]);
 
   useOutsideClick(ref, () => {
     if (collapseMenu) {
       dispatch({ type: actionType.COLLAPSE_MENU });
     }
   });
-
-  useEffect(() => {
-    if (windowSize.width > 992 && windowSize.width <= 1024 && layout !== 'horizontal') {
-      dispatch({ type: actionType.COLLAPSE_MENU });
-    }
-
-    if (layout === 'horizontal' && windowSize.width < 992) {
-      dispatch({ type: actionType.CHANGE_LAYOUT, layout: 'vertical' });
-    }
-  }, [dispatch, layout, windowSize]);
 
   const mobileOutClickHandler = () => {
     if (windowSize.width < 992 && collapseMenu) {
@@ -41,19 +41,16 @@ const AdminLayout = ({ children }) => {
   };
 
   let mainClass = ['pcoded-wrapper'];
-  if (layout === 'horizontal' && subLayout === 'horizontal-2') {
-    mainClass = [...mainClass, 'container'];
-  }
 
   let common = (
     <React.Fragment>
       <Navigation />
+      <NavBar />
     </React.Fragment>
   );
 
   let mainContainer = (
     <React.Fragment>
-      <NavBar />
       <div className="pcoded-main-container">
         <div className={mainClass.join(' ')}>
           <div className="pcoded-content">
@@ -83,7 +80,13 @@ const AdminLayout = ({ children }) => {
     );
 
     mainContainer = (
-      <div className="pcoded-outside" onClick={() => mobileOutClickHandler}>
+      <div
+        role="button"
+        tabIndex="0"
+        className="pcoded-outside"
+        onClick={() => mobileOutClickHandler}
+        onKeyDown={() => mobileOutClickHandler}
+      >
         {mainContainer}
       </div>
     );
@@ -93,9 +96,11 @@ const AdminLayout = ({ children }) => {
     <React.Fragment>
       {common}
       {mainContainer}
-      {configBlock && <Configuration />}
     </React.Fragment>
   );
 };
 
+AdminLayout.propTypes = {
+  children: PropTypes.node
+};
 export default AdminLayout;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 
@@ -12,6 +13,11 @@ const Notification = (props) => {
       </Alert>
     </React.Fragment>
   );
+};
+
+Notification.propTypes = {
+  message: PropTypes.string,
+  link: PropTypes.string
 };
 
 export default Notification;

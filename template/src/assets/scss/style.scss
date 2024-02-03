@@ -11,7 +11,7 @@ File: style.css
 		-	Margin, Padding, Font class, text align, position, floating, overflow, background class, text color, display class, boarder class
 	- Theme Elements
 		-	Accordion, Button, tabs, typography, buttons, box shadow, Lable & Badges, Alert, Pagination, Breadcumb, Cards, Collapse,
-        -   Carousel, Grid, Progress, Model, tooltip, popover, Datepicker, Gridstack, lightbox, notification, Nestable, pnotify, rating,
+        -   Carousel, Grid, Progress, Model, tooltip, popover, Datepicker, Gridstack, lightbox, notification, Nestable, rating,
         -   Rangeslider, Slider, Syntax Highlighter, Tour, Treeview, Toolbar, Session Timeout, Session idle Timeout, offline, Animation
     - Forms
         -   Forms Elements, Advance Form Control, Validation, Masking, Wizard, Picker, Select
@@ -46,11 +46,11 @@ File: style.css
 @import 'partials/theme-elements/authentication';
 @import 'partials/theme-elements/button';
 @import 'partials/theme-elements/breadcrumb-pagination';
+@import 'partials/theme-elements/progress';
 @import 'partials/theme-elements/nav';
 
 // Other
 @import 'partials/other/chat';
 @import 'partials/other/chart';
-
 
 @import 'partials/third-party/third-party';

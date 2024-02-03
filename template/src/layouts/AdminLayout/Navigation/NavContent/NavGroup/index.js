@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import NavCollapse from '../NavCollapse';
@@ -29,6 +30,14 @@ const NavGroup = ({ layout, group }) => {
       {navItems}
     </React.Fragment>
   );
+};
+
+NavGroup.propTypes = {
+  layout: PropTypes.string,
+  group: PropTypes.object,
+  id: PropTypes.number,
+  children: PropTypes.node,
+  title: PropTypes.string
 };
 
 export default NavGroup;

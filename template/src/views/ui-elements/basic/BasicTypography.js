@@ -58,7 +58,7 @@ const BasicTypography = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6}>
+        <Col lg={6}>
           <Card>
             <Card.Header>
               <Card.Title as="h5">Inline Text Elements</Card.Title>
@@ -78,7 +78,7 @@ const BasicTypography = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6}>
+        <Col lg={6}>
           <Card>
             <Card.Header>
               <Card.Title as="h5">Contextual Text Colors</Card.Title>
@@ -94,7 +94,7 @@ const BasicTypography = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6} xl={4}>
+        <Col lg={6} xl={4}>
           <Card>
             <Card.Header>
               <Card.Title as="h5">Unordered</Card.Title>
@@ -121,7 +121,7 @@ const BasicTypography = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6} xl={4}>
+        <Col lg={6} xl={4}>
           <Card>
             <Card.Header>
               <Card.Title as="h5">Ordered</Card.Title>
@@ -148,7 +148,7 @@ const BasicTypography = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6} xl={4}>
+        <Col lg={6} xl={4}>
           <Card>
             <Card.Header>
               <Card.Title as="h5">Unstyled</Card.Title>
@@ -175,7 +175,7 @@ const BasicTypography = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6}>
+        <Col lg={6}>
           <Card>
             <Card.Header>
               <Card.Title as="h5">Blockquotes</Card.Title>
@@ -183,10 +183,10 @@ const BasicTypography = () => {
             <Card.Body>
               <Card.Text className="text-muted m-b-30">Your awesome text goes here.</Card.Text>
               <blockquote className="blockquote">
-                <Card.Text className="mb-2">
+                <Card.Text className="mb-2 text-start">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
                 </Card.Text>
-                <footer className="blockquote-footer">
+                <footer className="blockquote-footer text-start">
                   Someone famous in <cite title="Source Title">Source Title</cite>
                 </footer>
               </blockquote>
@@ -194,17 +194,17 @@ const BasicTypography = () => {
                 Add <code>.text-right</code> for a blockquote with right-aligned content.
               </Card.Text>
               <blockquote className="blockquote text-right">
-                <Card.Text className="mb-2">
+                <Card.Text className="mb-2 text-end">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
                 </Card.Text>
-                <footer className="blockquote-footer">
+                <footer className="blockquote-footer text-end">
                   Someone famous in <cite title="Source Title">Source Title</cite>
                 </footer>
               </blockquote>
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6}>
+        <Col lg={6}>
           <Card>
             <Card.Header>
               <Card.Title as="h5">Horizontal Description</Card.Title>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -47,6 +48,17 @@ const IcoCard = (props) => {
       </Col>
     </React.Fragment>
   );
+};
+
+IcoCard.propTypes = {
+  icon: PropTypes.string,
+  title: PropTypes.string,
+  caption: PropTypes.string,
+  category: PropTypes.string,
+  totalAmount: PropTypes.number,
+  amount: PropTypes.number,
+  percentage: PropTypes.number,
+  time: PropTypes.string
 };
 
 export default IcoCard;

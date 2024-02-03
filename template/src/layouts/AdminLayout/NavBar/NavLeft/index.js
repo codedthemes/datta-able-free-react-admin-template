@@ -11,9 +11,9 @@ const NavLeft = () => {
 
   const configContext = useContext(ConfigContext);
   const { rtlLayout } = configContext.state;
-  let dropdownRightAlign = false;
+  let dropdownAlign = 'start';
   if (rtlLayout) {
-    dropdownRightAlign = true;
+    dropdownAlign = 'end';
   }
 
   let navItemClass = ['nav-item'];
@@ -25,7 +25,7 @@ const NavLeft = () => {
     <React.Fragment>
       <ListGroup as="ul" bsPrefix=" " className="navbar-nav mr-auto">
         <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ')}>
-          <Dropdown alignRight={dropdownRightAlign}>
+          <Dropdown align={dropdownAlign}>
             <Dropdown.Toggle variant={'link'} id="dropdown-basic">
               Dropdown
             </Dropdown.Toggle>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { withNProgress } from '@tanem/react-nprogress';
 
@@ -12,6 +13,12 @@ const Progress = ({ isFinished, progress, animationDuration }) => {
       <Spinner />
     </Container>
   );
+};
+
+Progress.propTypes = {
+  animationDuration: PropTypes.number,
+  progress: PropTypes.number,
+  isFinished: PropTypes.bool
 };
 
 export default withNProgress(Progress);

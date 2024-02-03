@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
@@ -35,7 +36,7 @@ const NavItem = ({ layout, item }) => {
     );
   } else {
     subContent = (
-      <NavLink to={item.url} className="nav-link" exact={true} target={itemTarget}>
+      <NavLink to={item.url} className="nav-link" target={itemTarget}>
         <NavIcon items={item} />
         {itemTitle}
         <NavBadge items={item} />
@@ -66,6 +67,17 @@ const NavItem = ({ layout, item }) => {
   }
 
   return <React.Fragment>{mainContent}</React.Fragment>;
+};
+
+NavItem.propTypes = {
+  item: PropTypes.object,
+  layout: PropTypes.string,
+  title: PropTypes.string,
+  icon: PropTypes.string,
+  target: PropTypes.string,
+  external: PropTypes.bool,
+  url: PropTypes.string,
+  classes: PropTypes.string
 };
 
 export default NavItem;
