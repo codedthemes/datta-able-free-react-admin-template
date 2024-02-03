@@ -424,7 +424,6 @@ const FormsElements = () => {
             <Card.Body>
               <Form.Group className="mb-3">
                 <Form.Check
-                  custom
                   required
                   isInvalid={!supportedCheckbox}
                   isValid={supportedCheckbox}
@@ -437,7 +436,6 @@ const FormsElements = () => {
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Check
-                  custom
                   required
                   isInvalid={!supportedRadio}
                   isValid={supportedRadio}
@@ -448,7 +446,6 @@ const FormsElements = () => {
                   onChange={() => setSupportedRadio(true)}
                 />
                 <Form.Check
-                  custom
                   required
                   isInvalid={!supportedRadio}
                   isValid={supportedRadio}
@@ -537,7 +534,6 @@ const FormsElements = () => {
                 </Row>
                 <Form.Group className="mb-3">
                   <Form.Check
-                    custom
                     required
                     label="Agree to terms and conditions"
                     feedback="You must agree before submitting."
@@ -574,14 +570,7 @@ const FormsElements = () => {
                   <hr />
                   <Form.Group className="mb-3">
                     <Form.Check inline type="radio" label="Toggle this custom radio" name="supportedRadio" id="supportedRadio21" />
-                    <Form.Check
-                      inline
-                      custom
-                      type="radio"
-                      label="Or toggle this other custom radio"
-                      name="supportedRadio"
-                      id="supportedRadio22"
-                    />
+                    <Form.Check inline type="radio" label="Or toggle this other custom radio" name="supportedRadio" id="supportedRadio22" />
                   </Form.Group>
                 </Col>
                 <Col md={6}>

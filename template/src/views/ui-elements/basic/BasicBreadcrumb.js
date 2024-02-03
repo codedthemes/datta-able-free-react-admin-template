@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col, Breadcrumb, Pagination } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import ModuleNotification from '../../../components/Widgets/Statistic/Notification';
 
 import Card from '../../../components/Card/MainCard';
@@ -46,25 +45,19 @@ const BasicBreadcrumbPagination = () => {
         <Col md={6}>
           <Card title="Breadcrumb">
             <Breadcrumb>
-              <Breadcrumb.Item as={Link} to="#" active>
+              <Breadcrumb.Item href="#" active>
                 Home
               </Breadcrumb.Item>
             </Breadcrumb>
             <Breadcrumb>
-              <Breadcrumb.Item as={Link} to="#">
-                Home
-              </Breadcrumb.Item>
-              <Breadcrumb.Item as={Link} to="#" active>
+              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+              <Breadcrumb.Item href="#" active>
                 Library
               </Breadcrumb.Item>
             </Breadcrumb>
             <Breadcrumb>
-              <Breadcrumb.Item as={Link} to="#">
-                Home
-              </Breadcrumb.Item>
-              <Breadcrumb.Item as={Link} to="#">
-                Library
-              </Breadcrumb.Item>
+              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+              <Breadcrumb.Item href="#">Library</Breadcrumb.Item>
               <Breadcrumb.Item active>Data</Breadcrumb.Item>
             </Breadcrumb>
           </Card>
@@ -72,25 +65,23 @@ const BasicBreadcrumbPagination = () => {
         <Col md={6}>
           <Card title="Breadcrumb Icon">
             <Breadcrumb>
-              <Breadcrumb.Item as={Link} to="#" active>
+              <Breadcrumb.Item href="#" active>
                 <i className="feather icon-home" />
               </Breadcrumb.Item>
             </Breadcrumb>
             <Breadcrumb>
-              <Breadcrumb.Item as={Link} to="#">
+              <Breadcrumb.Item href="#">
                 <i className="feather icon-home" />
               </Breadcrumb.Item>
-              <Breadcrumb.Item as={Link} to="#" active>
+              <Breadcrumb.Item href="#" active>
                 Library
               </Breadcrumb.Item>
             </Breadcrumb>
             <Breadcrumb>
-              <Breadcrumb.Item as={Link} to="#">
+              <Breadcrumb.Item href="#">
                 <i className="feather icon-home" />
               </Breadcrumb.Item>
-              <Breadcrumb.Item as={Link} to="#">
-                Library
-              </Breadcrumb.Item>
+              <Breadcrumb.Item href="#">Library</Breadcrumb.Item>
               <Breadcrumb.Item active>Data</Breadcrumb.Item>
             </Breadcrumb>
           </Card>
