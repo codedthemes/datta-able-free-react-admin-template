@@ -10,7 +10,7 @@ import { ConfigContext } from '../../../../../contexts/ConfigContext';
 import * as actionType from '../../../../../store/actions';
 import useWindowSize from '../../../../../hooks/useWindowSize';
 
-const NavItem = ({ layout, item }) => {
+const NavItem = ({ item }) => {
   const windowSize = useWindowSize();
   const configContext = useContext(ConfigContext);
   const { dispatch } = configContext;
@@ -44,26 +44,19 @@ const NavItem = ({ layout, item }) => {
     );
   }
   let mainContent = '';
-  if (layout === 'horizontal') {
+
+  if (windowSize.width < 992) {
     mainContent = (
-      <ListGroup.Item as="li" bsPrefix=" " onClick={() => dispatch({ type: actionType.NAV_CONTENT_LEAVE })}>
+      <ListGroup.Item as="li" bsPrefix=" " className={item.classes} onClick={() => dispatch({ type: actionType.COLLAPSE_MENU })}>
         {subContent}
       </ListGroup.Item>
     );
   } else {
-    if (windowSize.width < 992) {
-      mainContent = (
-        <ListGroup.Item as="li" bsPrefix=" " className={item.classes} onClick={() => dispatch({ type: actionType.COLLAPSE_MENU })}>
-          {subContent}
-        </ListGroup.Item>
-      );
-    } else {
-      mainContent = (
-        <ListGroup.Item as="li" bsPrefix=" " className={item.classes}>
-          {subContent}
-        </ListGroup.Item>
-      );
-    }
+    mainContent = (
+      <ListGroup.Item as="li" bsPrefix=" " className={item.classes}>
+        {subContent}
+      </ListGroup.Item>
+    );
   }
 
   return <React.Fragment>{mainContent}</React.Fragment>;
@@ -71,7 +64,6 @@ const NavItem = ({ layout, item }) => {
 
 NavItem.propTypes = {
   item: PropTypes.object,
-  layout: PropTypes.string,
   title: PropTypes.string,
   icon: PropTypes.string,
   target: PropTypes.string,

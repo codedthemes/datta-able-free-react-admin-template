@@ -54,9 +54,6 @@ const NavCollapse = ({ collapse, type }) => {
   const openIndex = isOpen.findIndex((id) => id === collapse.id);
   if (openIndex > -1) {
     navItemClass = [...navItemClass, 'active'];
-    if (layout !== 'horizontal') {
-      navLinkClass = [...navLinkClass, 'active'];
-    }
   }
 
   const triggerIndex = isTrigger.findIndex((id) => id === collapse.id);
@@ -70,9 +67,6 @@ const NavCollapse = ({ collapse, type }) => {
     .findIndex((id) => id === collapse.id);
   if (currentIndex > -1) {
     navItemClass = [...navItemClass, 'active'];
-    if (layout !== 'horizontal') {
-      navLinkClass = [...navLinkClass, 'active'];
-    }
   }
 
   const subContent = (
@@ -86,37 +80,19 @@ const NavCollapse = ({ collapse, type }) => {
         {itemTitle}
         <NavBadge items={collapse} />
       </Link>
-      <ListGroup
-        variant="flush"
-        bsPrefix=" "
-        as="ul"
-        className={navItems.length > 10 ? 'pcoded-submenu horizontal-scroll' : 'pcoded-submenu'}
-      >
+      <ListGroup variant="flush" bsPrefix=" " as="ul" className={'pcoded-submenu'}>
         {navItems}
       </ListGroup>
     </React.Fragment>
   );
 
   let mainContent = '';
-  if (layout === 'horizontal') {
-    mainContent = (
-      <ListGroup.Item
-        as="li"
-        bsPrefix=" "
-        className={navItemClass.join(' ')}
-        onMouseLeave={() => dispatch({ type: actionType.NAV_COLLAPSE_LEAVE, menu: { id: collapse.id, type: type } })}
-        onMouseEnter={() => dispatch({ type: actionType.COLLAPSE_TOGGLE, menu: { id: collapse.id, type: type } })}
-      >
-        {subContent}
-      </ListGroup.Item>
-    );
-  } else {
-    mainContent = (
-      <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ')}>
-        {subContent}
-      </ListGroup.Item>
-    );
-  }
+
+  mainContent = (
+    <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ')}>
+      {subContent}
+    </ListGroup.Item>
+  );
 
   return <React.Fragment>{mainContent}</React.Fragment>;
 };

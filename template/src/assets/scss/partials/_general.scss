@@ -984,18 +984,6 @@ p.text-muted {
   width: 100% !important;
 }
 
-.pcoded-navbar.theme-horizontal {
-  .navbar-wrapper.container {
-    padding: 0 35px;
-  }
-
-  ~ .pcoded-header {
-    .container .m-header {
-      padding-left: 35px;
-    }
-  }
-}
-
 .grid figure.effect-moses figcaption {
   @media (max-width: 575px) {
     padding: 8px !important;

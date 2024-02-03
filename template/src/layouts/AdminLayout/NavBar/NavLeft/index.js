@@ -1,20 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ListGroup, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import useWindowSize from '../../../../hooks/useWindowSize';
-import { ConfigContext } from '../../../../contexts/ConfigContext';
 import NavSearch from './NavSearch';
 
 const NavLeft = () => {
   const windowSize = useWindowSize();
 
-  const configContext = useContext(ConfigContext);
-  const { rtlLayout } = configContext.state;
   let dropdownAlign = 'start';
-  if (rtlLayout) {
-    dropdownAlign = 'end';
-  }
 
   let navItemClass = ['nav-item'];
   if (windowSize.width <= 575) {

@@ -107,77 +107,9 @@ header.navbar.pcoded-header.navbar-expand-lg.header-default .mobile-menu.on span
   background-color: transparent;
 }
 
-body.datta-rtl .pcoded-navbar.theme-horizontal ~ .pcoded-header {
-  margin-right: auto;
-}
-
-body.datta-rtl .pcoded-navbar.theme-horizontal ~ .pcoded-main-container {
-  margin-right: auto;
-}
-
-body.datta-rtl .pcoded-navbar.theme-horizontal .pcoded-inner-navbar > li > a:after {
-  left: 0;
-}
-
-body.datta-rtl .pcoded-navbar.theme-horizontal .pcoded-inner-navbar > li.active:after,
-.pcoded-navbar.theme-horizontal .pcoded-inner-navbar > li.pcoded-trigger:after {
-  right: 18px;
-}
-
-.theme-horizontal .sidenav-horizontal:after,
-.theme-horizontal .sidenav-horizontal:before {
-  content: '';
-  background: $header-dark-background;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  z-index: 5;
-}
-
-.theme-horizontal.navbar-blue .sidenav-horizontal:after,
-.theme-horizontal.navbar-blue .sidenav-horizontal:before {
-  background: $primary-color;
-}
-
-.theme-horizontal.navbar-red .sidenav-horizontal:after,
-.theme-horizontal.navbar-red .sidenav-horizontal:before {
-  background: $danger-color;
-}
-
-.theme-horizontal.navbar-purple .sidenav-horizontal:after,
-.theme-horizontal.navbar-purple .sidenav-horizontal:before {
-  background: $purple-color;
-}
-
-.theme-horizontal.navbar-lightblue .sidenav-horizontal:after,
-.theme-horizontal.navbar-lightblue .sidenav-horizontal:before {
-  background: $layout-6-bg-color;
-}
-
-.theme-horizontal.navbar-dark .sidenav-horizontal:after,
-.theme-horizontal.navbar-dark .sidenav-horizontal:before {
-  background: $dark-color;
-}
-
-.theme-horizontal .sidenav-horizontal:before {
-  left: 100%;
-}
-
-.theme-horizontal .sidenav-horizontal:after {
-  right: 100%;
-}
-
 @media only screen and (max-width: 991px) {
   .pcoded-navbar {
     z-index: 1072;
-  }
-
-  body.datta-rtl {
-    .pcoded-header,
-    .pcoded-main-container {
-      margin-right: 0;
-    }
   }
 
   header.navbar.pcoded-header.navbar-expand-lg.header-default.headerpos-fixed {
@@ -196,13 +128,6 @@ body.datta-rtl .pcoded-navbar.theme-horizontal .pcoded-inner-navbar > li.active:
 
   header.navbar.pcoded-header.navbar-expand-lg.header-default .mobile-menu.on span {
     background-color: transparent;
-  }
-
-  body.datta-dark .pcoded-header.header-dark .input-group .input-group-text,
-  .pcoded-header.header-dark a,
-  .pcoded-header.header-dark .btn,
-  .pcoded-header.header-dark .dropdown-toggle {
-    color: $dark-layout-font;
   }
 }
 
@@ -336,11 +261,6 @@ td {
 }
 .carousel.slide {
   overflow: hidden;
-}
-.smooth-dnd-container.horizontal {
-  button {
-    border: none;
-  }
 }
 
 .table.table-bordered.table-hover {
