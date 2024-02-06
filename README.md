@@ -16,7 +16,7 @@ It is modern concept dashboard design with eye catchy colors. Wish you happy to 
 
 :star: :star: :star: Support us by giving star (Top right of this page) if you like the theme :star: :star: :star:
 
-![Datta Able React Free Admin Template Preview Image](https://codedthemes.com/wp-content/uploads/edd/2019/05/datta-bootstrap-free.jpg)
+![Datta Able React Free Admin Template Preview Image](https://org-public-assets.s3.us-west-2.amazonaws.com/Free-Version-Banners/GITHUB-FREE-REACT-REPO%20-%20Datta%20able.jpg)
 
 The [Pro version](https://codedthemes.com/demos/admin-templates/datta-able/react/default) of Datta able react template includes features such as TypeScript, apps, authentication methods (i.e. JWT, Auth0, Firebase), advance components, form plugins, layouts, widgets, and more.
 
