@@ -84,8 +84,8 @@ Datta Able Pro Admin Template is available to purchase. Visit its numerous demos
 - [Author](#author)
 - [Issues?](#issues)
 - [License](#license)
-- [More Free React Templates](#More Free React Material Admin Dashboard Templates)
-- [More Pro React Templates](#More premium React Material Admin Dashboard Templates)
+- [More Free React Templates](#more-free-react-material-admin-dashboard-templates)
+- [More Pro React Templates](#more-premium-react-material-admin-dashboard-templates)
 - [Follow us](#follow-us)
 
 ## Getting Started
