@@ -1,0 +1,179 @@
+/**  =====================
+      Authentication css start
+==========================  **/
+.auth-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100vh;
+  a,
+  p > a {
+    color: $theme-heading-color;
+    font-weight: 600;
+  }
+  .btn-auth-gen {
+    .btn-icon {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 45px;
+
+      small {
+        font-size: 15px;
+      }
+    }
+  }
+  .input-group {
+    background: transparent;
+  }
+  .card {
+    margin-bottom: 0;
+  }
+
+  > div {
+    z-index: 5;
+  }
+
+  .auth-content {
+    position: relative;
+    width: 390px;
+    padding: 15px;
+    z-index: 5;
+    &.multyform,
+    &.subscribe {
+      width: 750px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    max-width: 360px;
+  }
+  @media only screen and (max-width: 575px) {
+    .card {
+      .card-body {
+        padding: 30px 15px;
+      }
+    }
+  }
+
+  .auth-icon {
+    font-size: 30px;
+    &:before {
+      background: $theme-color;
+      background-clip: inherit;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &.offline {
+    background-image: none;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .auth-bg {
+    .r {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+
+      &:first-child {
+        top: -100px;
+        right: -100px;
+        background: $theme-color;
+      }
+
+      &:last-child {
+        left: -100px;
+        bottom: -100px;
+        background: $theme-color2;
+      }
+
+      &.s {
+        width: 20px;
+        height: 20px;
+        &:nth-child(2) {
+          top: 150px;
+          right: -150px;
+          background: $primary-color;
+        }
+
+        &:nth-child(3) {
+          left: -150px;
+          bottom: 150px;
+          background: $success-color;
+        }
+      }
+
+      &:nth-child(odd) {
+        animation: floating 7s infinite;
+      }
+
+      &:nth-child(even) {
+        animation: floating 9s infinite;
+      }
+    }
+  }
+}
+/* image variant start */
+.aut-bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.aut-bg-img-side {
+  p {
+    line-height: 2;
+  }
+}
+.aut-bg-img,
+.aut-bg-img-side {
+  .custom-select,
+  .form-control {
+    background: transparent;
+  }
+}
+.auth-tabs {
+  .card {
+    // border-right: 10px;
+  }
+  .nav-pills {
+    // margin-top: -80px;
+  }
+  .tab-content {
+    overflow: hidden;
+    position: relative;
+    .tab-pane > * {
+      position: relative;
+      z-index: 5;
+    }
+    .auth-icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 180px;
+      transform: rotate(-30deg);
+      z-index: 1;
+      opacity: 0.2;
+    }
+  }
+}
+/* image varient start */
+@keyframes floating {
+  from {
+    transform: rotate(0deg) translate(-10px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-10px) rotate(-360deg);
+  }
+}
+/**====== Authentication css end ======**/

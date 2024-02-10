@@ -1,0 +1,40 @@
+@import '~react-perfect-scrollbar/dist/css/styles.css';
+@import '~nvd3/build/nv.d3.css';
+@import 'ngx-perfect-scrollbar';
+@import 'datatables';
+@import 'google-map';
+@import 'react-bootstrap/react-bootstrap';
+
+.pcoded-header .main-search .input-group-text {
+  line-height: 1;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.card-event {
+  .label {
+    border-radius: 15px;
+    margin: 0;
+    padding: 5px 16px;
+  }
+
+  i {
+    position: absolute;
+    bottom: 36px;
+    right: 27px;
+  }
+}
+
+.carousel {
+  z-index: 1 !important;
+}
+
+.rodal .rodal-dialog {
+  max-width: 100%;
+}
+
+.page-link {
+  font-size: 0.9rem !important;
+}

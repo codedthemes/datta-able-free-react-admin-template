@@ -1,0 +1,31 @@
+.pcoded-header {
+  .dropdown {
+    height: 70px;
+    .dropdown-toggle {
+      margin: -2px 0 0 4px;
+    }
+  }
+  .btn {
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    border: none;
+    &:after {
+      right: -12px !important;
+    }
+    &:focus,
+    &:active,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .main-search {
+    .input-group-text {
+      line-height: 1.5;
+    }
+  }
+
+  .btn > i {
+    margin-right: -12px;
+  }
+}
