@@ -4,8 +4,6 @@
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/datta-able-free-react-admin-template/blob/main/LICENSE)
 [![GitHub package version](https://img.shields.io/github/package-json/v/codedthemes/datta-able-free-react-admin-template)](https://github.com/codedthemes/datta-able-free-react-admin-template)
 
-### Name Derived From Nature
-
 Datta Able React Free Admin Template comes with variety of components like Button, Badges, Tabs, Breadcrumb, Icons, Form elements, Table, Charts & Authentication pages.
 
 The code structure is high flexible to use and modify.
@@ -137,13 +135,17 @@ Please generate a [GitHub issue](https://github.com/codedthemes/datta-able-free-
 
 ## More Free React Material Admin Dashboard Templates
 
+- [Free Mantis](https://github.com/codedthemes/mantis-free-react-admin-template)
 - [Free Materially](https://codedthemes.com/item/materially-free-reactjs-admin-template/)
 - [Free Berry](https://mui.com/store/items/berry-react-material-admin-free/)
+- [Free Gradient](https://github.com/codedthemes/gradient-able-free-admin-template/tree/main/react)
 
 ## More premium React Material Admin Dashboard Templates
 
+- [Mantis](https://codedthemes.com/item/mantis-mui-react-dashboard-template/)
 - [Materially](https://codedthemes.com/item/materially-reactjs-admin-dashboard/)
 - [Berry](https://mui.com/store/items/berry-react-material-admin/)
+- [Gradient](https://codedthemes.com/item/gradient-able-reactjs-admin-dashboard/)
 
 ## Follow us
 
