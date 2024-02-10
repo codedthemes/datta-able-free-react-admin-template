@@ -29,9 +29,8 @@ jobs:
 
       - name: 🔨 Build Project
         run: |
-          cd template
           yarn install
-          CI=false yarn build
+          yarn build
 
       - name: 📂 Deploy to Server
         uses: easingthemes/ssh-deploy@main
