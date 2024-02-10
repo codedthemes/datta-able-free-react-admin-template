@@ -1,0 +1,71 @@
+.user-list {
+  .table {
+    td {
+      vertical-align: middle;
+    }
+
+    thead {
+      th {
+        border: 0;
+      }
+    }
+  }
+}
+
+.Recent-Users {
+  .table {
+    tr {
+      &:first-child {
+        td {
+          border-top: 0;
+        }
+      }
+    }
+
+    td {
+      vertical-align: middle;
+    }
+
+    .label {
+      border-radius: 15px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.card-social {
+  &:hover {
+    i {
+      font-size: 40px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .progress {
+    height: 6px;
+  }
+
+  .card-active > div + div {
+    border-left: 1px solid $theme-border;
+  }
+}
+
+.card {
+  .card-block,
+  .card-body {
+    code {
+      background-color: #eee;
+      margin: 5px;
+      display: inline-block;
+      border-radius: 3px;
+      padding: 0 3px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  div.dataTables_wrapper div.dataTables_filter label {
+    float: none !important;
+    text-align: center;
+  }
+}
