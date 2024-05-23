@@ -1,8 +1,5 @@
-@import '~react-perfect-scrollbar/dist/css/styles.css';
-@import '~nvd3/build/nv.d3.css';
+@import 'react-perfect-scrollbar/dist/css/styles.css';
 @import 'ngx-perfect-scrollbar';
-@import 'datatables';
-@import 'google-map';
 @import 'react-bootstrap/react-bootstrap';
 
 .pcoded-header .main-search .input-group-text {
@@ -25,14 +22,6 @@
     bottom: 36px;
     right: 27px;
   }
-}
-
-.carousel {
-  z-index: 1 !important;
-}
-
-.rodal .rodal-dialog {
-  max-width: 100%;
 }
 
 .page-link {

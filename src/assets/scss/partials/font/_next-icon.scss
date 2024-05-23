@@ -2,9 +2,12 @@
 
 @font-face {
   font-family: 'pct';
-  src: url('./fonts/pct.eot');
-  src: url('./fonts/pct.eot?#iefix') format('embedded-opentype'), url('./fonts/pct.woff') format('woff'),
-    url('./fonts/pct.ttf') format('truetype'), url('./fonts/pct.svg#pct') format('svg');
+  src: url('assets/scss/partials/font/fonts/pct.eot');
+  src:
+    url('assets/scss/partials/font/fonts/pct.eot?#iefix') format('embedded-opentype'),
+    url('assets/scss/partials/font/fonts/pct.woff') format('woff'),
+    url('assets/scss/partials/font/fonts/pct.ttf') format('truetype'),
+    url('assets/scss/partials/font/fonts/pct.svg#pct') format('svg');
   font-weight: normal;
   font-style: normal;
 }

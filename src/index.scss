@@ -135,27 +135,11 @@ header.navbar.pcoded-header.navbar-expand-lg.header-default .mobile-menu.on span
   padding-top: 5px;
 }
 
-.rodal {
-  .rodal-dialog {
-    height: auto !important;
-    bottom: auto;
-    top: 25%;
-    .card {
-      box-shadow: none;
-      margin-bottom: 0px;
-    }
-    padding: 0;
-  }
-  .rodal-close:hover:before,
-  .rodal-close:hover:after {
-    background: $danger-color;
-  }
+.user-activity .card {
+  box-shadow: none;
+  --bs-card-bg: transparent;
 }
 
-.carousel-inner {
-  overflow: visible;
-  z-index: 1050;
-}
 .form-control[type='file'] {
   height: auto;
   padding-left: 0.45rem;
@@ -269,13 +253,4 @@ td {
       min-width: 140px;
     }
   }
-}
-.photoshop-picker {
-  @media only screen and (max-width: 575px) {
-    display: none;
-  }
-}
-
-.css-1v494f5-Wrapper {
-  z-index: 20 !important;
 }
