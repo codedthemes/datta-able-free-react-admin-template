@@ -1,11 +1,10 @@
 {
   "name": "datta-able-react-hook-reactstrap-js",
-  "version": "18.2.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "start": "vite",
     "build": "node --max-old-space-size=4096 node_modules/vite/bin/vite.js build",
-    "build-stage": "env-cmd -f .env.qa node --max-old-space-size=4096 node_modules/vite/bin/vite.js build",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
@@ -26,7 +25,6 @@
     "jquery": "^3.7.1",
     "process": "^0.11.10",
     "react": "^18.2.0",
-    "react-app-polyfill": "^3.0.0",
     "react-bootstrap": "^2.10.2",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",

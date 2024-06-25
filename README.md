@@ -117,7 +117,7 @@ yarn start
 - Redux & React context API for state management.
 - Redux toolkit.
 - React Router for navigation routing.
-- Support for react-script.
+- Support for vite.
 - Code splitting.
 - CSS-in-JS.
 

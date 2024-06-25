@@ -2886,13 +2886,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asap@npm:~2.0.6":
-  version: 2.0.6
-  resolution: "asap@npm:2.0.6"
-  checksum: 10c0/c6d5e39fe1f15e4b87677460bd66b66050cd14c772269cee6688824c1410a08ab20254bb6784f9afb75af9144a9f9a7692d49547f4d19d715aeb7c0318f3136d
-  languageName: node
-  linkType: hard
-
 "ast-types-flow@npm:^0.0.8":
   version: 0.0.8
   resolution: "ast-types-flow@npm:0.0.8"
@@ -3275,13 +3268,6 @@ __metadata:
   dependencies:
     browserslist: "npm:^4.23.0"
   checksum: 10c0/4e2da9c900f2951a57947af7aeef4d16f2c75d7f7e966c0d0b62953f65225003ade5e84d3ae98847f65b24c109c606821d9dc925db8ca418fb761e7c81963c2a
-  languageName: node
-  linkType: hard
-
-"core-js@npm:^3.19.2":
-  version: 3.37.1
-  resolution: "core-js@npm:3.37.1"
-  checksum: 10c0/440eb51a7a39128a320225fe349f870a3641b96c9ecd26470227db730ef8c161ea298eaea621db66ec0ff622a85299efb4e23afebf889c0a1748616102307675
   languageName: node
   linkType: hard
 
@@ -3715,7 +3701,6 @@ __metadata:
     prettier: "npm:3.2.5"
     process: "npm:^0.11.10"
     react: "npm:^18.2.0"
-    react-app-polyfill: "npm:^3.0.0"
     react-bootstrap: "npm:^2.10.2"
     react-copy-to-clipboard: "npm:^5.1.0"
     react-dom: "npm:^18.2.0"
@@ -6286,13 +6271,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"performance-now@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "performance-now@npm:2.1.0"
-  checksum: 10c0/22c54de06f269e29f640e0e075207af57de5052a3d15e360c09b9a8663f393f6f45902006c1e71aa8a5a1cdfb1a47fe268826f8496d6425c362f00f5bc3e85d9
-  languageName: node
-  linkType: hard
-
 "picocolors@npm:^1.0.0, picocolors@npm:^1.0.1":
   version: 1.0.1
   resolution: "picocolors@npm:1.0.1"
@@ -6399,15 +6377,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"promise@npm:^8.1.0":
-  version: 8.3.0
-  resolution: "promise@npm:8.3.0"
-  dependencies:
-    asap: "npm:~2.0.6"
-  checksum: 10c0/6fccae27a10bcce7442daf090279968086edd2e3f6cebe054b71816403e2526553edf510d13088a4d0f14d7dfa9b9dfb188cab72d6f942e186a4353b6a29c8bf
-  languageName: node
-  linkType: hard
-
 "prop-types-extra@npm:^1.1.0":
   version: 1.1.1
   resolution: "prop-types-extra@npm:1.1.1"
@@ -6449,29 +6418,6 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10c0/900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
-  languageName: node
-  linkType: hard
-
-"raf@npm:^3.4.1":
-  version: 3.4.1
-  resolution: "raf@npm:3.4.1"
-  dependencies:
-    performance-now: "npm:^2.1.0"
-  checksum: 10c0/337f0853c9e6a77647b0f499beedafea5d6facfb9f2d488a624f88b03df2be72b8a0e7f9118a3ff811377d534912039a3311815700d2b6d2313f82f736f9eb6e
-  languageName: node
-  linkType: hard
-
-"react-app-polyfill@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "react-app-polyfill@npm:3.0.0"
-  dependencies:
-    core-js: "npm:^3.19.2"
-    object-assign: "npm:^4.1.1"
-    promise: "npm:^8.1.0"
-    raf: "npm:^3.4.1"
-    regenerator-runtime: "npm:^0.13.9"
-    whatwg-fetch: "npm:^3.6.2"
-  checksum: 10c0/7079c81717f4707d078943ab507771c3e80333e6c2c80c8d9a02e4a5661974e9bb196aea9f56336f559214a23f495c5f3907937d13a070e701019ae7a9d53c26
   languageName: node
   linkType: hard
 
@@ -6708,13 +6654,6 @@ __metadata:
   version: 1.4.2
   resolution: "regenerate@npm:1.4.2"
   checksum: 10c0/f73c9eba5d398c818edc71d1c6979eaa05af7a808682749dd079f8df2a6d91a9b913db216c2c9b03e0a8ba2bba8701244a93f45211afbff691c32c7b275db1b8
-  languageName: node
-  linkType: hard
-
-"regenerator-runtime@npm:^0.13.9":
-  version: 0.13.11
-  resolution: "regenerator-runtime@npm:0.13.11"
-  checksum: 10c0/12b069dc774001fbb0014f6a28f11c09ebfe3c0d984d88c9bced77fdb6fedbacbca434d24da9ae9371bfbf23f754869307fb51a4c98a8b8b18e5ef748677ca24
   languageName: node
   linkType: hard
 
@@ -7692,13 +7631,6 @@ __metadata:
   version: 3.5.2
   resolution: "web-vitals@npm:3.5.2"
   checksum: 10c0/662b385d6e96a18677cf8726454b65f3aecfdca330df72a82f73f293a5708ba9d191964649f8d363a1e64062a826a99805ade8c573a6492b91e02275b6860308
-  languageName: node
-  linkType: hard
-
-"whatwg-fetch@npm:^3.6.2":
-  version: 3.6.20
-  resolution: "whatwg-fetch@npm:3.6.20"
-  checksum: 10c0/fa972dd14091321d38f36a4d062298df58c2248393ef9e8b154493c347c62e2756e25be29c16277396046d6eaa4b11bd174f34e6403fff6aaca9fb30fa1ff46d
   languageName: node
   linkType: hard
 
