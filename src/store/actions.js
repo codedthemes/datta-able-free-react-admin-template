@@ -22,6 +22,7 @@ export const NAV_LIST_TITLE_COLOR = 'NAV_LIST_TITLE_COLOR';
 export const NAV_LIST_TITLE_HIDE = 'NAV_LIST_TITLE_HIDE';
 export const RESET = 'RESET';
 export const RTL_LAYOUT = 'RTL_LAYOUT';
+export const THEME_LOCALE = 'THEME_LOCALE';
 
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';

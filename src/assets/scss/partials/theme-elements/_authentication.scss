@@ -68,6 +68,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    color: #1dcae0;
   }
 
   &.offline {
@@ -142,12 +143,6 @@
   }
 }
 .auth-tabs {
-  .card {
-    // border-right: 10px;
-  }
-  .nav-pills {
-    // margin-top: -80px;
-  }
   .tab-content {
     overflow: hidden;
     position: relative;
