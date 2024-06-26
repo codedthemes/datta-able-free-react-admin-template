@@ -20,12 +20,12 @@ jobs:
 
     steps:
       - name: 🚚 Get latest code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Use Node.js 20
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.x'
 
       - name: 🔨 Build Project
         run: |
@@ -37,9 +37,9 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           # ARGS: "-rltgoDzvO --delete"
-          SOURCE: 'build/'
+          SOURCE: 'dist/'
           REMOTE_HOST: 217.21.92.35
           REMOTE_USER: u778408432
           REMOTE_PORT: '65002'
           TARGET: domains/codedthemes.com/public_html/demos/admin-templates/datta-able/react/free
-          EXCLUDE: '/template/dist/, /template/node_modules/'
+          EXCLUDE: '/build/'
