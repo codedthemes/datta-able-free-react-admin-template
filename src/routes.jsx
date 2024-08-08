@@ -52,13 +52,13 @@ const routes = [
     routes: [
       {
         exact: 'true',
-        path: '/app/dashboard/default',
+        path: '/dashboard',
         element: lazy(() => import('./views/dashboard'))
       },
       {
         exact: 'true',
-        path: '/basic/button',
-        element: lazy(() => import('./views/ui-elements/basic/BasicButton'))
+        path: '/credit-card',
+        element: lazy(() => import('./views/credit-card'))
       },
       {
         exact: 'true',

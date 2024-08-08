@@ -22,16 +22,16 @@ const menuItems = {
       icon: 'icon-ui',
       children: [
         {
-          id: 'savings-accounts',
-          title: 'savings-accounts',
+          id: 'Savings-accounts',
+          title: 'Savings-accounts',
           type: 'collapse',
           icon: 'feather icon-box',
           children: [
             {
               id: 'button',
-              title: 'Savings Accounts',
+              title: 'Savings-Accounts',
               type: 'item',
-              url: '/basic/button'
+              url: '/savings-account'
             },
           ]
         },
@@ -45,7 +45,7 @@ const menuItems = {
               id: 'button',
               title: 'Current-Accounts',
               type: 'item',
-              url: '/basic/button'
+              url: '/current-account'
             },
           ]
         }
@@ -59,10 +59,10 @@ const menuItems = {
       children: [
         {
           id: 'forms',
-          title: '1111111111111111',
+          title: 'credit-card',
           type: 'item',
           icon: 'feather icon-file-text',
-          url: '/credt-cards'
+          url: '/credit-card'
         },
       ]
     },
