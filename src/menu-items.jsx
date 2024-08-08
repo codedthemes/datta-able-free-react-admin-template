@@ -11,82 +11,89 @@ const menuItems = {
           title: 'Dashboard',
           type: 'item',
           icon: 'feather icon-home',
-          url: '/app/dashboard/default'
+          url: '/dashboard'
         }
       ]
     },
     {
       id: 'ui-element',
-      title: 'UI ELEMENT',
+      title: 'Accounts',
       type: 'group',
       icon: 'icon-ui',
       children: [
         {
-          id: 'component',
-          title: 'Component',
+          id: 'savings-accounts',
+          title: 'savings-accounts',
           type: 'collapse',
           icon: 'feather icon-box',
           children: [
             {
               id: 'button',
-              title: 'Button',
+              title: 'Savings Accounts',
               type: 'item',
               url: '/basic/button'
             },
+          ]
+        },
+        {
+          id: 'Current-Accounts',
+          title: 'Current-Accounts',
+          type: 'collapse',
+          icon: 'feather icon-box',
+          children: [
             {
-              id: 'badges',
-              title: 'Badges',
+              id: 'button',
+              title: 'Current-Accounts',
               type: 'item',
-              url: '/basic/badges'
+              url: '/basic/button'
             },
-            {
-              id: 'breadcrumb',
-              title: 'Breadcrumb & Pagination',
-              type: 'item',
-              url: '/basic/breadcrumb-paging'
-            },
-            {
-              id: 'collapse',
-              title: 'Collapse',
-              type: 'item',
-              url: '/basic/collapse'
-            },
-            {
-              id: 'tabs-pills',
-              title: 'Tabs & Pills',
-              type: 'item',
-              url: '/basic/tabs-pills'
-            },
-            {
-              id: 'typography',
-              title: 'Typography',
-              type: 'item',
-              url: '/basic/typography'
-            }
           ]
         }
       ]
     },
     {
-      id: 'ui-forms',
-      title: 'FORMS & TABLES',
+      id: 'credit-cards',
+      title: 'credit-cards',
       type: 'group',
       icon: 'icon-group',
       children: [
         {
           id: 'forms',
-          title: 'Form Elements',
+          title: '1111111111111111',
           type: 'item',
           icon: 'feather icon-file-text',
-          url: '/forms/form-basic'
+          url: '/credt-cards'
         },
+      ]
+    },
+    {
+      id: 'debit-cards',
+      title: 'debit-cards',
+      type: 'group',
+      icon: 'icon-group',
+      children: [
         {
-          id: 'table',
-          title: 'Table',
+          id: 'forms',
+          title: '1111111111111111',
           type: 'item',
-          icon: 'feather icon-server',
-          url: '/tables/bootstrap'
-        }
+          icon: 'feather icon-file-text',
+          url: ''
+        },
+      ]
+    },
+    {
+      id: 'loans',
+      title: 'loans',
+      type: 'group',
+      icon: 'icon-group',
+      children: [
+        {
+          id: 'forms',
+          title: '1111111111111111',
+          type: 'item',
+          icon: 'feather icon-file-text',
+          url: ''
+        },
       ]
     },
     {
@@ -132,7 +139,7 @@ const menuItems = {
               title: 'Sign up',
               type: 'item',
               url: '/auth/signup-1',
-              target: true,
+              
               breadcrumbs: false
             },
             {
@@ -140,7 +147,6 @@ const menuItems = {
               title: 'Sign in',
               type: 'item',
               url: '/auth/signin-1',
-              target: true,
               breadcrumbs: false
             }
           ]
