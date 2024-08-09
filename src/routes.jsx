@@ -62,6 +62,11 @@ const routes = [
       },
       {
         exact: 'true',
+        path: '/debit-card',
+        element: lazy(() => import('./views/DebitCard'))
+      },
+      {
+        exact: 'true',
         path: '/basic/badges',
         element: lazy(() => import('./views/ui-elements/basic/BasicBadges'))
       },

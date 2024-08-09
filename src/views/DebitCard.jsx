@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Row, Col, Card, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import avatar1 from '../assets/images/user/avatar-1.jpg'; // Update paths as needed
-import avatar2 from '../assets/images/user/avatar-2.jpg'; // Update paths as needed
+import avatar1 from '../assets/images/user/avatar-1.jpg';  // Update paths as needed
+import avatar2 from '../assets/images/user/avatar-2.jpg';  // Update paths as needed
 
 // Placeholder for API endpoint
-const API_ENDPOINT = 'https://api.example.com/credit-card-data';
+const API_ENDPOINT = 'https://api.example.com/debit-card-data';
 
-const CreditCard = () => {
-  const [creditCardData, setCreditCardData] = useState([]);
+const DebitCard = () => {
+  const [debitCardData, setDebitCardData] = useState([]);
   const [recentTransactions, setRecentTransactions] = useState([]);
 
   // Fetch data from API on component mount
@@ -18,9 +18,9 @@ const CreditCard = () => {
       try {
         const response = await fetch(API_ENDPOINT);
         const data = await response.json();
-
+        
         // Assuming API returns data in the following format
-        setCreditCardData(data.creditCardData);
+        setDebitCardData(data.debitCardData);
         setRecentTransactions(data.recentTransactions);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -30,16 +30,16 @@ const CreditCard = () => {
     fetchData();
   }, []);
 
-  // Check if creditCardData contains at least one item with a title
-  const hasCreditCardData = creditCardData.length > 0 && creditCardData[0].title;
+  // Check if debitCardData contains at least one item with a title
+  const hasDebitCardData = debitCardData.length > 0 && debitCardData[0].title;
 
   return (
     <React.Fragment>
       <Row>
-        {hasCreditCardData ? (
-          // If creditCardData exists and has a title, render the card details and transactions
+        {hasDebitCardData ? (
+          // If debitCardData exists and has a title, render the card details and transactions
           <>
-            {creditCardData.map((data, index) => (
+            {debitCardData.map((data, index) => (
               <Col key={index} xl={6}>
                 <Card>
                   <Card.Body>
@@ -79,13 +79,13 @@ const CreditCard = () => {
                           </td>
                           <td>
                             <h6 className="text-muted">
-                              <i className={`text-c-${transaction.type === 'Credit' ? 'green' : 'red'} f-10 m-r-15`} />
+                              <i className={`text-c-${transaction.type === 'Debit' ? 'red' : 'green'} f-10 m-r-15`} />
                               {transaction.type}
                             </h6>
                           </td>
                           <td>
                             <h6 className="text-muted">
-                              <i className={`fa fa-circle text-c-${transaction.type === 'Credit' ? 'green' : 'red'} f-10 m-r-15`} />
+                              <i className={`fa fa-circle text-c-${transaction.type === 'Debit' ? 'red' : 'green'} f-10 m-r-15`} />
                               {transaction.date}
                             </h6>
                           </td>
@@ -106,11 +106,11 @@ const CreditCard = () => {
             </Col>
           </>
         ) : (
-          // Render alternative view if no creditCardData exists or has no title
+          // Render alternative view if no debitCardData exists or has no title
           <Col xl={6}>
             <Card>
               <Card.Body>
-                <h6 className="mb-4">No Credit Card Data Available</h6>
+                <h6 className="mb-4">No Debit Card Data Available</h6>
                 <div className="row d-flex align-items-center">
                   <div className="col-9">
                     <h3 className="f-w-300 d-flex align-items-center m-b-0">
@@ -127,4 +127,4 @@ const CreditCard = () => {
   );
 };
 
-export default CreditCard;
+export default DebitCard;

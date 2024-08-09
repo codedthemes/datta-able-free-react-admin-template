@@ -74,10 +74,10 @@ const menuItems = {
       children: [
         {
           id: 'forms',
-          title: '1111111111111111',
+          title: 'debit-card',
           type: 'item',
           icon: 'feather icon-file-text',
-          url: ''
+          url: 'debit-card'
         },
       ]
     },
@@ -89,10 +89,10 @@ const menuItems = {
       children: [
         {
           id: 'forms',
-          title: '1111111111111111',
+          title: 'Loans',
           type: 'item',
           icon: 'feather icon-file-text',
-          url: ''
+          url: '/loans'
         },
       ]
     },
