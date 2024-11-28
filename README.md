@@ -4,26 +4,25 @@
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/datta-able-free-react-admin-template/blob/main/LICENSE)
 [![GitHub package version](https://img.shields.io/github/package-json/v/codedthemes/datta-able-free-react-admin-template)](https://github.com/codedthemes/datta-able-free-react-admin-template)
 
-Datta Able React Free Admin Template comes with variety of components like Button, Badges, Tabs, Breadcrumb, Icons, Form elements, Table, Charts & Authentication pages.
+Datta Able React Free Admin Template comes with various components, such as Buttons, Badges, Tabs, Breadcrumbs, Icons, Form elements, Tables, Charts, and authentication pages.
 
-The code structure is high flexible to use and modify.
+The code structure is highly flexible to use and modify.
 
-Its design adapt any screen size easily even if retina screens.
+Its design adapts to any screen size easily even if retina screens.
 
-It is modern concept dashboard design with eye catchy colors. Wish you happy to use our product in your project.
+It is a modern concept dashboard design with eye-catching colors. We hope you will be happy to use our product in your project.
 
-:star: :star: :star: Support us by giving star (Top right of this page) if you like the theme :star: :star: :star:
+:star: :star: :star: Support us by giving a star (Top right of this page) if you like the theme :star: :star: :star:
 
 ![Datta Able React Free Admin Template Preview Image](https://org-public-assets.s3.us-west-2.amazonaws.com/Free-Version-Banners/GITHUB-FREE-REACT-REPO%20-%20Datta%20able.jpg)
 
-The [Pro version](https://codedthemes.com/demos/admin-templates/datta-able/react/default) of Datta able react template includes features such as TypeScript, apps, authentication methods (i.e. JWT, Auth0, Firebase), advance components, form plugins, layouts, widgets, and more.
+The [Pro version](https://codedthemes.com/demos/admin-templates/datta-able/react/default) of Datta able react template includes features such as apps, authentication methods (i.e. JWT, Auth0, Firebase), advanced components, form plugins, layouts, widgets, and more.
 
 | [Datta Able Free](https://codedthemes.com/demos/admin-templates/datta-able/react/free) | [Datta able Pro](https://codedthemes.com/demos/admin-templates/datta-able/react/default)                |
 | -------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
 | **7+** Demo pages                                                                      | **85+** Demo pages                                                                                      |
 | -                                                                                      | ✓ Multi-Layout                                                                                          |
 | -                                                                                      | ✓ Dark/Light Mode 🌓                                                                                    |
-| -                                                                                      | ✓ TypeScript version                                                                                    |
 | -                                                                                      | ✓ Multiple color options                                                                                |
 | -                                                                                      | ✓ RTL                                                                                                   |
 | -                                                                                      | ✓ JWT, Firebase, Auth0, AWS authentication                                                              |
@@ -32,13 +31,13 @@ The [Pro version](https://codedthemes.com/demos/admin-templates/datta-able/react
 
 ## Why Datta Able?
 
-Datta Able offers everything needed to build an advanced dashboard application. In the initial release, we included following high-end features,
+Datta Able offers everything needed to build an advanced dashboard application. In the initial release, we included the following high-end features,
 
 - Support React18.
 - Professional user interface.
 - Bootstrap React components.
 - Fully responsive, all modern browser supported.
-- Easy to use code structure
+- Easy-to-use code structure
 - Flexible & high-Performance code
 - Simple documentation
 
@@ -123,11 +122,11 @@ yarn start
 
 ## Author
 
-Datta Able is managed by team [CodedThemes](https://codedthemes.com).
+Datta Able is managed by the team [CodedThemes](https://codedthemes.com).
 
 ## Issues
 
-Please generate a [GitHub issue](https://github.com/codedthemes/datta-able-free-react-admin-template/issues) if you found a bug in any version. We are try our best to resolve the issue.
+If you found a bug in any version, please generate a [GitHub issue](https://github.com/codedthemes/datta-able-free-react-admin-template/issues). We are trying our best to resolve the issue.
 
 ## License
 
