@@ -89,13 +89,13 @@ The [Pro version](https://codedthemes.com/demos/admin-templates/datta-able/react
 | -                                                                                      | ✓ Dark/Light Mode 🌓                                                                                    |
 | -                                                                                      | ✓ Multiple color options                                                                                |
 | -                                                                                      | ✓ RTL                                                                                                   |
-| -                                                                                      | ✓ JWT, Firebase, Auth0, AWS authentication                                                              |
+| -                                                                                      | ✓ JWT, Firebase, Auth0 authentication                                                              |
 | -                                                                                      | ✓ [More components](https://codedthemes.com/demos/admin-templates/datta-able/react/default/basic/alert) |
 | ✓ MIT License                                                                          | ✓ [Pro License](https://codedthemes.com/item/datta-able-react-admin-template/)                          |
 
 ## Documentation
 
-[Datta Able documentation](https://codedthemes.com/demos/admin-templates/datta-able/react/docs/) helps you out in all aspects from Installation to deployment.
+[Datta Able Documentation](https://codedthemes.com/demos/admin-templates/datta-able/react/docs/) helps you out in all aspects from Installation to deployment.
 
 ## Browser support
 
