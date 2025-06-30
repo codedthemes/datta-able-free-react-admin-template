@@ -1,97 +1,124 @@
 import PropTypes from 'prop-types';
-import React, { createContext, useReducer } from 'react';
-import * as actionType from '../store/actions';
-import { CONFIG } from '../config/constant';
+import { createContext, useEffect } from 'react';
 
+// project-imports
+import useLocalStorage from 'hooks/useLocalStorage';
+import config from 'config';
+
+// initial state
 const initialState = {
-  ...CONFIG,
-  isOpen: [],
-  isTrigger: []
+  ...config,
+  onChangeLocalization: () => {},
+  onChangeMenuOrientation: () => {},
+  onChangeDirection: () => {},
+  onChangeContainer: () => {},
+  onChangeCaption: () => {},
+  onChangeSideTheme: () => {},
+  onChangeThemePreset: () => {},
+  onChangeMenuIcon: () => {},
+  onChangeMode: () => {},
+  onReset: () => {}
 };
+
 const ConfigContext = createContext(initialState);
-const { Provider } = ConfigContext;
 
-const ConfigProvider = ({ children }) => {
-  let trigger = [];
-  let open = [];
+// ==============================|| CONFIG CONTEXT & PROVIDER ||============================== //
 
-  const [state, dispatch] = useReducer((state, action) => {
-    switch (action.type) {
-      case actionType.CHANGE_LAYOUT:
-        return {
-          ...state,
-          layout: action.layout
-        };
-      case actionType.COLLAPSE_MENU:
-        return {
-          ...state,
-          collapseMenu: !state.collapseMenu
-        };
-      case actionType.COLLAPSE_TOGGLE:
-        if (action.menu.type === 'sub') {
-          open = state.isOpen;
-          trigger = state.isTrigger;
+function ConfigProvider({ children }) {
+  const [config, setConfig] = useLocalStorage('datta-able-react-ts-config', initialState);
 
-          const triggerIndex = trigger.indexOf(action.menu.id);
-          if (triggerIndex > -1) {
-            open = open.filter((item) => item !== action.menu.id);
-            trigger = trigger.filter((item) => item !== action.menu.id);
-          }
-
-          if (triggerIndex === -1) {
-            open = [...open, action.menu.id];
-            trigger = [...trigger, action.menu.id];
-          }
-        } else {
-          open = state.isOpen;
-          const triggerIndex = state.isTrigger.indexOf(action.menu.id);
-          trigger = triggerIndex === -1 ? [action.menu.id] : [];
-          open = triggerIndex === -1 ? [action.menu.id] : [];
-        }
-        return {
-          ...state,
-          isOpen: open,
-          isTrigger: trigger
-        };
-      case actionType.NAV_COLLAPSE_LEAVE:
-        if (action.menu.type === 'sub') {
-          open = state.isOpen;
-          trigger = state.isTrigger;
-
-          const triggerIndex = trigger.indexOf(action.menu.id);
-          if (triggerIndex > -1) {
-            open = open.filter((item) => item !== action.menu.id);
-            trigger = trigger.filter((item) => item !== action.menu.id);
-          }
-          return {
-            ...state,
-            isOpen: open,
-            isTrigger: trigger
-          };
-        }
-        return { ...state };
-      case actionType.NAV_CONTENT_LEAVE:
-        return {
-          ...state,
-          isOpen: open,
-          isTrigger: trigger
-        };
-      case actionType.RESET:
-        return {
-          ...state,
-          layout: initialState.layout,
-          collapseMenu: initialState.collapseMenu
-        };
-      default:
-        throw new Error();
+  useEffect(() => {
+    const width = window.innerWidth;
+    if (width < 1025 && config.menuOrientation !== 'vertical') {
+      setConfig((prevConfig) => ({
+        ...prevConfig,
+        menuOrientation: 'vertical'
+      }));
     }
-  }, initialState);
+  });
 
-  return <Provider value={{ state, dispatch }}>{children}</Provider>;
-};
+  const onReset = () => {
+    setConfig(initialState);
+  };
 
-ConfigProvider.propTypes = {
-  children: PropTypes.object
-};
+  const onChangeLocalization = (lang) => {
+    setConfig({
+      ...config,
+      i18n: lang
+    });
+  };
 
-export { ConfigContext, ConfigProvider };
+  const onChangeMenuOrientation = (layout) => {
+    if (window.innerWidth >= 1025) {
+      setConfig({
+        ...config,
+        menuOrientation: layout
+      });
+    }
+  };
+
+  const onChangeCaption = (caption) => {
+    setConfig({
+      ...config,
+      caption: caption
+    });
+  };
+
+  const onChangeSideTheme = (sidebarTheme) => {
+    setConfig({
+      ...config,
+      sidebarTheme: sidebarTheme
+    });
+  };
+
+  const onChangeDirection = (direction) => {
+    setConfig({
+      ...config,
+      themeDirection: direction
+    });
+  };
+
+  const onChangeContainer = (container) => {
+    setConfig({
+      ...config,
+      container: container
+    });
+  };
+
+  const onChangeThemePreset = (key, value) => {
+    setConfig({
+      ...config,
+      [key]: value
+    });
+  };
+
+  const onChangeMenuIcon = (key, value) => {
+    setConfig({
+      ...config,
+      [key]: value
+    });
+  };
+
+  return (
+    <ConfigContext.Provider
+      value={{
+        ...config,
+        onChangeLocalization,
+        onChangeMenuOrientation,
+        onChangeDirection,
+        onChangeContainer,
+        onChangeCaption,
+        onChangeSideTheme,
+        onChangeThemePreset,
+        onChangeMenuIcon,
+        onReset
+      }}
+    >
+      {children}
+    </ConfigContext.Provider>
+  );
+}
+
+export { ConfigProvider, ConfigContext };
+
+ConfigProvider.propTypes = { children: PropTypes.node };
