@@ -1,0 +1,971 @@
+// ============================
+//   19. Form css start
+// ============================
+
+select.form-control,
+.form-control {
+  &:hover {
+    background-color: $gray-100;
+  }
+
+  &[readonly] {
+    opacity: 0.6;
+  }
+}
+
+.input-group-text svg {
+  width: 18px;
+  height: 18px;
+}
+
+.form-control-color-picker {
+  height: 43px;
+  padding: 0.5rem;
+}
+
+select.form-control {
+  appearance: none;
+  background: #{$input-bg}
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+    no-repeat right 0.75rem center/18px 25px;
+
+  &[data-multiselectsplitter-firstselect-selector],
+  &[data-multiselectsplitter-secondselect-selector] {
+    background: none;
+  }
+}
+
+.form-floating {
+  > label {
+    top: 1px;
+  }
+
+  > .form-control:focus,
+  > .form-control:not(:placeholder-shown),
+  > .form-select {
+    ~ label {
+      color: $gray-600;
+    }
+  }
+
+  > .form-control:focus {
+    ~ label {
+      color: $component-active-bg;
+    }
+  }
+
+  > input {
+    color: $body-color;
+  }
+}
+
+.bootstrap-select -select {
+  > .dropdown-toggle.btn-light,
+  > .dropdown-toggle.btn-secondary,
+  > .dropdown-toggle.btn-default {
+    border-color: $input-border-color !important;
+    box-shadow: none;
+    background: $input-bg !important;
+    color: $input-color;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+}
+
+.form-search {
+  position: relative;
+
+  i {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 20px;
+  }
+
+  .form-control {
+    padding-left: 50px;
+  }
+}
+
+.form-check {
+  label {
+    cursor: pointer;
+
+    input {
+      cursor: pointer;
+    }
+  }
+}
+
+.form-check-input.f-12 {
+  margin-left: -2.9em;
+}
+
+@each $color, $value in $theme-colors {
+  .form-check {
+    .form-check-input {
+      &.input-#{$color} {
+        &:checked {
+          border-color: $value;
+          background-color: $value;
+        }
+      }
+
+      &.input-light-#{$color} {
+        &:checked {
+          border-color: shift-color($value, $soft-bg-level);
+          background-color: shift-color($value, $soft-bg-level);
+
+          &[type='checkbox'] {
+            background-image: escape-svg(
+              url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$value}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>")
+            );
+          }
+
+          &[type='radio'] {
+            background-image: escape-svg(
+              url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$value}'/></svg>")
+            );
+          }
+        }
+      }
+
+      &.input-#{$color},
+      &.input-light-#{$color} {
+        &:focus {
+          &[type='checkbox'],
+          &[type='radio'] {
+            box-shadow: 0 0 0 0.2rem rgba($value, 0.25);
+            border-color: $value;
+          }
+        }
+      }
+    }
+
+    &.form-switch {
+      .form-check-input.input-light-#{$color} {
+        &:checked {
+          background-image: escape-svg(
+            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$value}'/></svg>")
+          );
+        }
+      }
+    }
+  }
+}
+
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+.input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .input-group-text {
+  border-right: none;
+}
+
+// v1 Start
+
+.form-v1 {
+  .form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .form-label-group > input,
+  .form-label-group > label {
+    height: 3.125rem;
+    padding: 0.75rem;
+  }
+
+  .form-label-group > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    color: #495057;
+    pointer-events: none;
+    cursor: text;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input::-ms-input-placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input::-moz-placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input::placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input:not(:-moz-placeholder-shown) {
+    padding-top: 1.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .form-label-group input:not(:placeholder-shown) {
+    padding-top: 1.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .form-label-group input:not(:-moz-placeholder-shown) ~ label {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 12px;
+    color: #777;
+  }
+
+  .form-label-group input:not(:placeholder-shown) ~ label {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 12px;
+    color: #777;
+  }
+}
+
+// v1 end
+// Date picker start
+
+.datepicker {
+  width: 275px;
+  padding: 10px;
+
+  &.dropdown-menu {
+    padding: 10px;
+  }
+
+  &.datepicker-orient-top {
+    margin-top: 8px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  td,
+  th {
+    font-weight: regular;
+    width: 35px;
+    height: 35px;
+  }
+
+  thead {
+    th {
+      color: $headings-color;
+
+      &.datepicker-switch,
+      &.next,
+      &.prev {
+        font-weight: 500;
+        color: $body-color;
+
+        i {
+          font-size: 1.2rem;
+          color: $body-color;
+
+          &:before {
+            line-height: 0;
+            vertical-align: middle;
+          }
+        }
+
+        &:hover {
+          background: $body-bg !important;
+        }
+      }
+
+      &.dow {
+        color: $body-color;
+        font-weight: 500;
+      }
+    }
+  }
+
+  tbody {
+    tr > td {
+      &.day {
+        color: $body-color;
+
+        &:hover {
+          background: $body-bg;
+          color: $body-color;
+        }
+
+        &.old {
+          color: $body-color;
+        }
+
+        &.new {
+          color: $body-color;
+        }
+
+        &.active,
+        &.active:hover,
+        &.selected,
+        &.selected:hover {
+          background: $primary;
+          color: #fff;
+        }
+
+        &.today {
+          position: relative;
+          background: $primary !important;
+          color: #fff !important;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            border: solid transparent;
+            border-width: 0 0 7px 7px;
+            border-bottom-color: #ffffff;
+            border-top-color: $body-color;
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+          }
+        }
+
+        &.range {
+          background: $body-bg;
+        }
+      }
+
+      span.hour,
+      span.minute,
+      span.month,
+      span.year {
+        color: $body-color;
+
+        &:hover {
+          background: $body-bg;
+        }
+
+        &.active,
+        &.active.focused:hover,
+        &.active:hover,
+        &.focused,
+        &.focused:hover {
+          background: $primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  tfoot {
+    tr > th {
+      &.clear,
+      &.today {
+        font-weight: 500;
+
+        &:hover {
+          background: $body-bg;
+        }
+      }
+    }
+  }
+}
+
+// Date picker end
+// Time picker start
+
+.bootstrap-timepicker-widget {
+  left: auto;
+  width: 175px;
+
+  .bootstrap-timepicker-hour,
+  .bootstrap-timepicker-meridian,
+  .bootstrap-timepicker-minute,
+  .bootstrap-timepicker-second {
+    border: none;
+    box-shadow: none;
+  }
+
+  table td {
+    > a {
+      border: 0;
+
+      i {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.bootstrap-timepicker-widget {
+  .bootstrap-timepicker-hour,
+  .bootstrap-timepicker-meridian,
+  .bootstrap-timepicker-minute,
+  .bootstrap-timepicker-second {
+    color: $headings-color;
+  }
+
+  table td > a {
+    &:hover {
+      background: $body-bg;
+    }
+  }
+}
+
+// Time picker end
+// tagify start
+
+.tagify__tag {
+  --tag-bg: #{$body-bg};
+  --tag-hover: #{transparentize($primary, 0.7)};
+  --tag-remove-bg: #{transparentize($danger, 0.7)};
+  --tag-remove-btn-bg--hover: #{$danger};
+
+  @each $color, $value in $theme-colors {
+    &.tagify__tag--#{$color} {
+      --tag-bg: #{transparentize($value, 0.8)};
+
+      div {
+        .tagify__tag-text {
+          color: $value;
+        }
+      }
+    }
+  }
+}
+
+// tagify end
+// switch start
+
+.bootstrap-switch {
+  border-color: $border-color;
+
+  .bootstrap-switch-handle-off,
+  .bootstrap-switch-handle-on {
+    &.bootstrap-switch-default {
+      background: $body-bg;
+    }
+
+    @each $color, $value in $theme-colors {
+      &.bootstrap-switch-#{$color} {
+        color: #fff;
+        background: $value;
+      }
+    }
+  }
+}
+
+// switch end
+// bootstrap-select start
+
+.bootstrap-select {
+  > .dropdown-toggle.bs-placeholder.btn[class*='btn-']:not(.btn-light) {
+    color: #fff;
+  }
+}
+
+// bootstrap-select end
+// typeahead start
+
+.typeahead .twitter-typeahead {
+  display: block !important;
+}
+
+.scrollable-dropdown-menu {
+  .tt-menu {
+    max-height: 150px;
+    overflow-y: auto;
+  }
+}
+
+.tt-menu {
+  padding: 10px 0;
+  font-size: $font-size-base;
+  background: #fff;
+  min-width: 10rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  .tt-suggestion {
+    padding: 4px 20px;
+    border-radius: 2px;
+
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      background: transparentize($primary, 0.97);
+      color: $primary;
+    }
+  }
+}
+
+// typeahead end
+// typeahead start
+
+.sticky-action {
+  top: $header-height;
+  position: sticky;
+  z-index: 1020;
+  background: var(--bs-card-bg);
+  border-radius: var(--bs-card-border-radius);
+}
+
+// typeahead end
+// dropzone start
+// Base
+
+.dropzone {
+  min-height: auto;
+}
+
+.dropzone {
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px dashed $border-color;
+  border-radius: $border-radius;
+
+  .dropzone-msg-title {
+    color: $body-color;
+    margin: 0 0 5px;
+    padding: 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .dropzone-msg-desc {
+    color: $body-color;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .dz-preview {
+    .dz-image {
+      border-radius: $border-radius;
+    }
+  }
+
+  // State colors
+  @each $color, $value in $theme-colors {
+    &.dropzone-#{$color} {
+      border-color: $value;
+    }
+  }
+}
+
+// Multipe upload
+
+.dz-started {
+  .dropzone-msg {
+    display: none;
+  }
+}
+
+.dropzone-multi {
+  border: 0;
+  padding: 0;
+
+  .dz-message {
+    display: none;
+  }
+
+  .dropzone-panel {
+    .dropzone-remove-all,
+    .dropzone-upload {
+      display: none;
+    }
+  }
+
+  .dropzone-item {
+    background: $body-bg;
+    border-radius: $border-radius;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+
+    .dropzone-progress {
+      width: 20%;
+
+      .progress {
+        height: 0.5rem;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    .dropzone-file {
+      .dropzone-filename {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: $body-color;
+        text-overflow: ellipsis;
+        margin-right: 0.5rem;
+
+        b {
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: $body-color;
+        }
+      }
+
+      .dropzone-error {
+        margin-top: 0.25rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: $danger;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .dropzone-toolbar {
+      margin-left: 1rem;
+      display: flex;
+      flex-wrap: nowrap;
+
+      .dropzone-cancel,
+      .dropzone-delete,
+      .dropzone-start {
+        height: 25px;
+        width: 25px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        i {
+          font-size: 0.8rem;
+          color: $headings-color;
+        }
+
+        &:hover {
+          i {
+            color: $primary;
+          }
+        }
+      }
+
+      .dropzone-start {
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+// dropzone end
+
+.slider-selection {
+  box-shadow: none;
+}
+
+.pc-toggle-noUiSlider {
+  height: 50px;
+}
+
+.pc-toggle-noUiSlider.off .noUi-handle {
+  border-color: $danger;
+  background: $danger;
+  box-shadow: none;
+}
+
+.note-editor {
+  &.card {
+    .card-header {
+      padding: 0 5px 5px;
+      border-bottom-color: #a9a9a9;
+    }
+  }
+}
+
+#cke5-inline-demo {
+  .ck-content {
+    margin-bottom: 1rem;
+    padding: 2.5rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  header.ck-content {
+    text-align: center;
+
+    h2 {
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      & + h3 {
+        margin-top: 0;
+
+        font: {
+          weight: 600;
+        }
+      }
+    }
+  }
+
+  .demo-row {
+    width: 100%;
+    display: flex;
+
+    .demo-row__half {
+      width: 50%;
+
+      &:first-of-type {
+        padding-right: 0.5rem;
+      }
+
+      &:last-of-type {
+        padding-left: 0.5rem;
+      }
+    }
+
+    p {
+      margin: {
+        bottom: 0;
+      }
+    }
+
+    h3 {
+      margin: 0;
+
+      font: {
+        weight: 600;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .ck-content {
+      padding: 1rem;
+    }
+
+    .demo-row {
+      flex-direction: column;
+
+      .demo-row__half {
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+}
+
+// switch v1 start
+
+.switch-demo {
+  .custom-switch-v1 {
+    margin-bottom: 4px;
+  }
+}
+
+.custom-switch-v1 {
+  &.form-switch {
+    padding-left: 2.9em;
+
+    .form-check-input {
+      height: 20px;
+      width: 35px;
+      margin-left: -2.9em;
+      background-image: escape-svg(
+        url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4.1' fill='#{$form-switch-color}'/%3e%3c/svg%3e")
+      );
+      transition: 0.35s cubic-bezier(0.54, 1.6, 0.5, 1);
+      //box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+
+      &[class*='input-light-'] {
+        border: none;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border-color: rgba(0, 0, 0, 0.25);
+      }
+
+      &:checked {
+        background-image: escape-svg(
+          url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4.1' fill='%23ffffff'/%3e%3c/svg%3e")
+        );
+      }
+    }
+
+    @each $color, $value in $theme-colors {
+      .form-check-input.input-light-#{$color} {
+        &:checked {
+          background-image: escape-svg(
+            url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4.1' fill='#{$value}'/%3e%3c/svg%3e")
+          );
+        }
+      }
+    }
+  }
+
+  // ===========
+  .custom-control-label {
+    &::before {
+      transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);
+      height: 20px;
+      width: 35px;
+      border-radius: 0.8rem;
+      top: 0;
+      left: -2.55rem;
+    }
+
+    &::after {
+      top: calc(0.15625rem - 2px);
+      left: calc(-2.25rem - 4px);
+      height: 19px;
+      width: 19px;
+      border-radius: 0.7rem;
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.1),
+        0 4px 0 0 rgba(0, 0, 0, 0.04),
+        0 4px 9px rgba(0, 0, 0, 0.13),
+        0 3px 3px rgba(0, 0, 0, 0.05);
+      transition: 0.35s cubic-bezier(0.54, 1.6, 0.5, 1);
+    }
+  }
+
+  .custom-control-input {
+    &:checked ~ .custom-control-label::after {
+      transform: translateX(0.95rem);
+    }
+  }
+
+  // ===========
+}
+
+// switch v1 end
+
+.row[data-multiselectsplitter-wrapper-selector] {
+  select {
+    margin-bottom: 8px;
+  }
+}
+
+// ============================
+// type-ahead css start
+.typeahead {
+  position: relative;
+
+  & > ul {
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.17);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: none;
+    margin: 2px 0 0;
+    min-width: 170px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+
+    > li {
+      > a {
+        clear: both;
+        color: #333;
+        cursor: default;
+        display: block;
+        font-weight: 400;
+        line-height: 1.42857143;
+        padding: 3px 20px;
+        white-space: nowrap;
+      }
+
+      &.active > a:hover,
+      &.active > a,
+      > a:hover {
+        background-color: var(--bs-primary);
+        color: #fff !important;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.validate-me {
+  .error {
+    border-color: $danger;
+  }
+}
+
+.error-message {
+  color: $danger;
+}
+
+.flatpickr-input[readonly] {
+  background: $input-bg;
+}
+
+.noUi-target {
+  @include media-breakpoint-down(sm) {
+    margin: 0 15px;
+  }
+}
+
+.noUi-connect {
+  background: var(--bs-primary);
+}
+
+.editor-statusbar {
+  padding-bottom: 0;
+}
+
+.editor-toolbar.fullscreen,
+.CodeMirror-fullscreen {
+  z-index: 1099;
+}
+
+.flatpickr-calendar {
+  @include media-breakpoint-down(sm) {
+    width: 270px;
+  }
+}
+
+.form-wizard {
+  .nav-pills {
+    .nav-link {
+      color: var(--bs-body-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    .nav-link.active,
+    .show > .nav-link {
+      color: #fff;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .gl-star-rating {
+    --gl-star-size: 30px;
+  }
+}
+
+// ============================
+//   19. Form css end
+// ============================
