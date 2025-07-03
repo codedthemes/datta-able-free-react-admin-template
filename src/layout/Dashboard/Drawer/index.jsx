@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 // react-bootstrap
 import Image from 'react-bootstrap/Image';
@@ -24,7 +23,6 @@ export default function MainDrawer() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
   const overlayRef = useRef(null);
   const { sidebarTheme } = useConfig();
-  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 1024);
@@ -43,14 +41,6 @@ export default function MainDrawer() {
     }
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMobile]);
-
-  const isLargeScreen = window.innerWidth > 1024;
-
-  useEffect(() => {
-    if (!isLargeScreen) {
-      document.body.setAttribute('data-pc-layout', 'vertical');
-    }
-  }, [isLargeScreen, location.pathname]);
 
   return (
     <nav id="pc-sidebar" className={`pc-sidebar ${drawerOpen ? 'pc-sidebar-hide mob-sidebar-active' : ''} `}>

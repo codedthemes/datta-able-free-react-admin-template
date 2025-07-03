@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // project-imports
@@ -13,15 +12,6 @@ import NavigationScroll from 'components/NavigationScroll';
 
 export default function MainLayout() {
   const { container } = useConfig();
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-pc-sidebar-caption', true);
-    document.documentElement.setAttribute('data-pc-direction', 'ltr');
-    document.documentElement.setAttribute('ddata-pc-preset', 'preset-1');
-    document.documentElement.setAttribute('data-pc-drp-menu-icon', 'preset-1');
-    document.documentElement.setAttribute('data-pc-layout', 'vertical');
-    document.documentElement.setAttribute('data-pc-theme', 'light');
-  }, []);
 
   return (
     <div>

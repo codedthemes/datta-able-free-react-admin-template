@@ -7,17 +7,7 @@ export let MenuOrientation;
 
 (function (MenuOrientation) {
   MenuOrientation['VERTICAL'] = 'vertical';
-  MenuOrientation['TAB'] = 'tab';
-  MenuOrientation['LAYOUT2'] = 'layout 2';
-  MenuOrientation['LAYOUT3'] = 'layout 3';
 })(MenuOrientation || (MenuOrientation = {}));
-
-export let Gender;
-
-(function (Gender) {
-  Gender['MALE'] = 'Male';
-  Gender['FEMALE'] = 'Female';
-})(Gender || (Gender = {}));
 
 // ==============================|| THEME CONFIG ||============================== //
 

@@ -16,7 +16,6 @@ const initialState = {
   onChangeSideTheme: () => {},
   onChangeThemePreset: () => {},
   onChangeMenuIcon: () => {},
-  onChangeMode: () => {},
   onReset: () => {}
 };
 
