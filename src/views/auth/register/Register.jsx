@@ -15,7 +15,7 @@ export default function RegisterPage() {
               <span className="r s"></span>
               <span className="r"></span>
             </div>
-            <AuthRegisterForm link="/auth/login" />
+            <AuthRegisterForm link="/login" />
           </div>
         </div>
       </div>

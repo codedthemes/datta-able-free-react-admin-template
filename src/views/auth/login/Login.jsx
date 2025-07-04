@@ -15,7 +15,7 @@ export default function LoginPage() {
               <span className="r s"></span>
               <span className="r"></span>
             </div>
-            <AuthLoginForm link="/auth/register" resetLink="/auth/reset-password" />
+            <AuthLoginForm link="/register" />
           </div>
         </div>
       </div>
