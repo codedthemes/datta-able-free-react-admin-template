@@ -1,0 +1,212 @@
+/**======================================================================
+=========================================================================
+Template Name: Datta able - Admin Template
+Author: Codedthemes
+Support: https://codedthemes.support-hub.io/
+File: style.css
+=========================================================================
+=================================================================================== */
+
+// main framework
+@import 'settings/color-variables';
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'settings/bootstrap-variables';
+@import 'settings/theme-variables';
+
+@import 'bootstrap/scss/mixins';
+
+$i: 1;
+@each $name, $value in $preset-colors {
+  [data-pc-preset='#{$name}'] {
+    $pc-primary: map-get($value, 'primary');
+    $color-rgb: to-rgb($pc-primary);
+    $pc-primary-light: tint-color($pc-primary, 90%);
+    --pc-sidebar-active-color: #{$pc-primary};
+    --bs-blue: #{$pc-primary};
+    --bs-primary: #{$pc-primary};
+    --bs-primary-rgb: #{$color-rgb};
+    --bs-primary-light: #{$pc-primary-light};
+    --bs-link-color: #{$pc-primary};
+    --bs-link-color-rgb: #{$color-rgb};
+    --bs-link-hover-color: #{shift-color($pc-primary, $link-shade-percentage)};
+    --bs-link-hover-color-rgb: to-rgb(shift-color($pc-primary, $link-shade-percentage));
+
+    --dt-row-selected: #{to-rgb($pc-primary)};
+
+    .bg-light-primary {
+      background: $pc-primary-light;
+      color: $pc-primary;
+    }
+
+    .link-primary {
+      $value: map-get($value, 'primary');
+      color: $value !important; // stylelint-disable-line declaration-no-important
+
+      @if $link-shade-percentage !=0 {
+        &:hover,
+        &:focus {
+          color: if(
+            color-contrast($value) ==$color-contrast-light,
+            shade-color($value, $link-shade-percentage),
+            tint-color($value, $link-shade-percentage)
+          ) !important; // stylelint-disable-line declaration-no-important
+        }
+      }
+    }
+
+    .btn-primary {
+      @include button-variant($pc-primary, $pc-primary);
+    }
+
+    .btn-link {
+      --bs-btn-color: #{$pc-primary};
+      --bs-btn-hover-color: #{shift-color($pc-primary, $link-shade-percentage)};
+      --bs-btn-active-color: #{shift-color($pc-primary, $link-shade-percentage)};
+    }
+
+    .text-bg-primary {
+      color: color-contrast($pc-primary) if($enable-important-utilities, !important, null);
+      background-color: RGBA($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    }
+
+    .accordion {
+      // scss-docs-start accordion-css-vars
+      --#{$prefix}accordion-btn-focus-border-color: #{$pc-primary};
+      --#{$prefix}accordion-btn-focus-box-shadow: 0 0 0 #{$input-btn-focus-width} #{rgba($pc-primary, $input-btn-focus-color-opacity)};
+      --#{$prefix}accordion-active-color: #{$pc-primary};
+      --#{$prefix}accordion-active-bg: #{$pc-primary-light};
+      --#{$prefix}accordion-btn-active-icon: #{escape-svg(
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$pc-primary}'><path fill-rule=' evenodd' d=' M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")
+        )};
+      // scss-docs-end accordion-css-vars
+    }
+
+    .progress {
+      --bs-progress-bar-bg: #{$pc-primary};
+    }
+
+    .form-check {
+      .form-check-input {
+        &.input-primary {
+          &:checked {
+            border-color: $pc-primary;
+            background-color: $pc-primary;
+          }
+        }
+
+        &.input-primary {
+          &:focus {
+            &[type='checkbox'],
+            &[type='radio'] {
+              box-shadow: 0 0 0 0.2rem rgba($pc-primary, 0.25);
+              border-color: $pc-primary;
+            }
+          }
+        }
+      }
+
+      &.form-switch {
+        .form-check-input {
+          &:checked {
+            background-image: escape-svg(
+              url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$pc-primary}'/></svg>")
+            );
+          }
+        }
+      }
+    }
+
+    .btn-light-primary {
+      background: $pc-primary-light;
+      color: $pc-primary;
+      border-color: $pc-primary-light;
+
+      &:hover {
+        background: $pc-primary;
+        color: #fff;
+        border-color: $pc-primary;
+      }
+
+      &.focus,
+      &:focus {
+        background: $pc-primary;
+        color: #fff;
+        border-color: $pc-primary;
+      }
+
+      &:not(:disabled):not(.disabled).active,
+      &:not(:disabled):not(.disabled):active,
+      .show > &.dropdown-toggle {
+        background: $pc-primary;
+        color: #fff;
+        border-color: $pc-primary;
+      }
+    }
+
+    .btn-check:active,
+    .btn-check:checked {
+      + .btn-light-primary {
+        background: $pc-primary;
+        color: #fff;
+        border-color: $pc-primary;
+      }
+    }
+
+    .btn-link-primary {
+      background: transparent;
+      color: $pc-primary;
+      border-color: transparent;
+
+      &:hover {
+        background: $pc-primary-light;
+        color: $pc-primary;
+        border-color: $pc-primary-light;
+      }
+
+      &.focus,
+      &:focus {
+        background: $pc-primary-light;
+        color: $pc-primary;
+        border-color: $pc-primary-light;
+      }
+
+      &:not(:disabled):not(.disabled).active,
+      &:not(:disabled):not(.disabled):active,
+      .show > &.dropdown-toggle {
+        background: $pc-primary-light;
+        color: $pc-primary;
+        border-color: $pc-primary-light;
+      }
+    }
+
+    .btn-check:active,
+    .btn-check:checked {
+      + .btn-link-primary {
+        background: $pc-primary-light;
+        color: $pc-primary;
+        border-color: $pc-primary-light;
+      }
+    }
+
+    @include table-variant('primary', $pc-primary);
+  }
+}
+
+$drp-icon: (
+  'preset-1': '\ea61'
+);
+@each $key, $value in $drp-icon {
+  [data-pc-drp-menu-icon='#{$key}'] {
+    --pc-sidebar-drp-menu-icon: '#{$value}';
+  }
+}
+
+$drp-link-icon: (
+  'preset-1': ''
+);
+@each $key, $value in $drp-link-icon {
+  [data-pc-drp-menu-link-icon='#{$key}'] {
+    --pc-sidebar-drp-menu-link-icon: '#{$value}';
+  }
+}

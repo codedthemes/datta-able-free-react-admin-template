@@ -1,10 +1,12 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 
-import routes, { renderRoutes } from './routes';
+// project-imports
+import router from 'routes';
 
-const App = () => {
-  return <BrowserRouter basename={import.meta.env.VITE_APP_BASE_NAME}>{renderRoutes(routes)}</BrowserRouter>;
-};
+// ==============================|| APP - THEME, ROUTER, LOCAL ||============================== //
+
+function App() {
+  return <RouterProvider router={router} />;
+}
 
 export default App;

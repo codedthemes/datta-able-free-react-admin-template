@@ -1,0 +1,130 @@
+/**  =====================
+    2. Custom css start
+==========================  **/
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
+.accordion {
+  --#{$prefix}accordion-color: #{$body-color};
+}
+
+a {
+  &:hover {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:not([href]) {
+    color: inherit;
+  }
+}
+
+p {
+  font-size: 14px;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  color: var(--pc-heading-color);
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+.ti:not([class*='align-']) {
+  vertical-align: middle;
+}
+
+.breadcrumb-default-icon {
+  .breadcrumb-item + .breadcrumb-item::before {
+    position: relative;
+    top: 2px;
+  }
+}
+
+.btn-page {
+  .btn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .btn-group {
+    .btn {
+      margin-right: 0;
+      margin-bottom: 0;
+
+      &:last-child {
+        border-left: none;
+      }
+    }
+
+    label {
+      &:first-of-type {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.img-radius {
+  border-radius: 50%;
+}
+
+/* ================================    Blockquote Start  ===================== */
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1540px;
+  }
+}
+
+pre[class*='language-']:before,
+pre[class*='language-']:after {
+  display: none;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  display: flex;
+  margin: 0;
+}
+
+pre[class*='language-'] > code {
+  width: 100%;
+}
+
+.blockquote {
+  padding: 0.5rem 1rem;
+}
+
+/* ================================    Blockquote End  ===================== */
+
+.blockquote-footer {
+  margin-top: 0;
+}
+
+.breadcrumb-svg {
+  .breadcrumb-item + .breadcrumb-item::before {
+    position: relative;
+    top: 2px;
+  }
+}
+
+/**  =====================
+    2. Custom css end
+==========================  **/

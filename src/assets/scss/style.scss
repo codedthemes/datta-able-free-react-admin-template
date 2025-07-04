@@ -1,53 +1,94 @@
 /**======================================================================
 =========================================================================
-Template Name: Datta Able Admin Template
+Template Name: Datta able - Admin Template
 Author: Codedthemes
-supports: https://codedthemes.support-hub.io/
+Support: https://codedthemes.support-hub.io/
 File: style.css
+
+1.  Generic-class css
+2.  Custom css
+3.  Sidebar css
+4.  header css
+5.  footer css
+6.  Common layout css
+7.  Avatar css
+8.  Badge css
+9.  Button css
+10. Dropdown css
+11. Card css
+12. Progress css
+13. Table css
+14. Form css
+15. Authentication css
+16. Icon layouts css
+
 =========================================================================
-=========================================================================
-  == Table of Contents==
-	- Generic classes
-		-	Margin, Padding, Font class, text align, position, floating, overflow, background class, text color, display class, boarder class
-	- Theme Elements
-		-	Accordion, Button, tabs, typography, buttons, box shadow, Lable & Badges, Alert, Pagination, Breadcumb, Cards, Collapse,
-        -   Carousel, Grid, Progress, Model, tooltip, popover, Datepicker, Gridstack, lightbox, notification, Nestable, pnotify, rating,
-        -   Rangeslider, Slider, Syntax Highlighter, Tour, Treeview, Toolbar, Session Timeout, Session idle Timeout, offline, Animation
-    - Forms
-        -   Forms Elements, Advance Form Control, Validation, Masking, Wizard, Picker, Select
-	- Pages
-		-   Chat, authentication, Maintenance, Maps, Landingpage messages, task, Todo, Notes, Charts, Icons, Gallery, Editors,
-        -   Invoice, Full Calender, File Upload,
-=================================================================================
 =================================================================================== */
-@import 'bootstrap/dist/css/bootstrap';
-// General theme contents
-@import 'partials/variables';
-@import 'partials/general';
-@import 'partials/generic';
-@import 'partials/mixins/function';
 
-// icon
-@import 'partials/font/next-icon';
-@import 'partials/font/feather';
-@import 'partials/font/fontawesome';
+// main framework
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
 
-// important Element
-@import 'partials/menu/menu-lite';
-@import 'partials/widget/widget';
+@import 'settings/color-variables';
+@import 'settings/theme-variables';
+@import 'settings/bootstrap-variables';
 
-// Theme Element
-@import 'partials/theme-elements/form';
-@import 'partials/theme-elements/radiobox-checkbox';
-@import 'partials/theme-elements/labels-badges';
-@import 'partials/theme-elements/data-tables';
-@import 'partials/theme-elements/authentication';
-@import 'partials/theme-elements/button';
-@import 'partials/theme-elements/breadcrumb-pagination';
-@import 'partials/theme-elements/progress';
-@import 'partials/theme-elements/nav';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/dropdown';
+@import 'bootstrap/scss/button-group';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar';
+@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/accordion';
+@import 'bootstrap/scss/breadcrumb';
+@import 'bootstrap/scss/pagination';
+@import 'bootstrap/scss/badge';
+@import 'bootstrap/scss/alert';
+@import 'bootstrap/scss/progress';
+@import 'bootstrap/scss/list-group';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/toasts';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/tooltip';
+@import 'bootstrap/scss/popover';
+@import 'bootstrap/scss/carousel';
+@import 'bootstrap/scss/spinners';
+@import 'bootstrap/scss/offcanvas';
+@import 'bootstrap/scss/placeholders';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/utilities/api';
 
-// Other
-@import 'partials/other/chat';
+// main framework
+@import 'themes/generic';
+@import 'themes/general';
 
-@import 'partials/third-party/third-party';
+// Layouts
+@import 'themes/layouts/pc-sidebar';
+@import 'themes/layouts/pc-header';
+@import 'themes/layouts/pc-footer';
+@import 'themes/layouts/pc-common';
+
+// Components
+@import 'themes/components/avatar';
+@import 'themes/components/badge';
+@import 'themes/components/button';
+@import 'themes/components/dropdown';
+@import 'themes/components/card';
+@import 'themes/components/progress';
+@import 'themes/components/table';
+@import 'themes/components/form';
+
+// pages
+@import 'themes/pages/authentication';
