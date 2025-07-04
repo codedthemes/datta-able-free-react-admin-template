@@ -18,17 +18,7 @@ const NavigationRoutes = {
       children: [
         {
           path: '/',
-          element: <DefaultPages />,
-          children: [{ path: 'default', element: <DefaultPages /> }]
-        },
-        {
-          path: 'dashboard',
-          children: [
-            {
-              path: 'default',
-              element: <DefaultPages />
-            }
-          ]
+          element: <DefaultPages />
         }
       ]
     }
