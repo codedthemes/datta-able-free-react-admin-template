@@ -29,8 +29,10 @@ jobs:
 
       - name: 🔨 Build Project
         run: |
-          yarn install
-          yarn build
+          corepack enable
+          yarn set version 4.9.1           
+          yarn
+          yarn build-stage
 
       - name: 📂 Deploy to Server
         uses: easingthemes/ssh-deploy@main
