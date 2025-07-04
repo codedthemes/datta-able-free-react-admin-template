@@ -1,0 +1,101 @@
+// ============================
+//   19. Form css start
+// ============================
+
+select.form-control,
+.form-control {
+  &:hover {
+    background-color: $gray-100;
+  }
+
+  &[readonly] {
+    opacity: 0.6;
+  }
+}
+
+select.form-control {
+  appearance: none;
+  background: #{$input-bg}
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+    no-repeat right 0.75rem center/18px 25px;
+}
+
+.form-check {
+  label {
+    cursor: pointer;
+
+    input {
+      cursor: pointer;
+    }
+  }
+}
+
+.form-check-input.f-12 {
+  margin-left: -2.9em;
+}
+
+@each $color, $value in $theme-colors {
+  .form-check {
+    .form-check-input {
+      &.input-#{$color} {
+        &:checked {
+          border-color: $value;
+          background-color: $value;
+        }
+      }
+
+      &.input-light-#{$color} {
+        &:checked {
+          border-color: shift-color($value, $soft-bg-level);
+          background-color: shift-color($value, $soft-bg-level);
+
+          &[type='checkbox'] {
+            background-image: escape-svg(
+              url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$value}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>")
+            );
+          }
+
+          &[type='radio'] {
+            background-image: escape-svg(
+              url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$value}'/></svg>")
+            );
+          }
+        }
+      }
+
+      &.input-#{$color},
+      &.input-light-#{$color} {
+        &:focus {
+          &[type='checkbox'],
+          &[type='radio'] {
+            box-shadow: 0 0 0 0.2rem rgba($value, 0.25);
+            border-color: $value;
+          }
+        }
+      }
+    }
+
+    &.form-switch {
+      .form-check-input.input-light-#{$color} {
+        &:checked {
+          background-image: escape-svg(
+            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$value}'/></svg>")
+          );
+        }
+      }
+    }
+  }
+}
+
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+.input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .input-group-text {
+  border-right: none;
+}
+
+// ============================
+//   19. Form css end
+// ============================

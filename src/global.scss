@@ -1,0 +1,22 @@
+.bg-light[colspan] {
+  @include media-breakpoint-up(sm) {
+    padding-left: 40px;
+  }
+  @include media-breakpoint-up(md) {
+    padding-left: 48px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-left: 96px;
+  }
+}
+
+.table thead th::after {
+  position: absolute;
+  content: '';
+  background-color: rgb(240, 240, 240);
+  width: 1px;
+  height: calc(100% - 30px);
+  right: 0px;
+  top: 16px;
+  height: 0;
+}

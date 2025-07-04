@@ -1,0 +1,311 @@
+// ============================
+//   4. header css start
+// ============================
+
+.pc-header {
+  background: var(--pc-header-background);
+  color: var(--pc-header-color);
+  min-height: $header-height;
+  box-shadow: var(--pc-header-shadow);
+  backdrop-filter: blur(7px);
+  position: fixed;
+  left: $sidebar-width;
+  right: 0;
+  z-index: 1025;
+  display: flex;
+
+  ul {
+    margin-bottom: 0;
+    display: inline-flex;
+  }
+
+  .m-header {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: $sidebar-width;
+    padding: 16px 10px 16px 24px;
+  }
+
+  .header-wrapper {
+    display: flex;
+    padding: 0 25px;
+    flex-grow: 1;
+    @include media-breakpoint-down(sm) {
+      padding: 0 15px;
+    }
+  }
+
+  .pc-h-item {
+    min-height: $header-height;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .pc-head-link {
+    margin: 0 4px;
+    position: relative;
+    font-weight: 500;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: $border-radius;
+    color: var(--pc-header-color);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: var(--pc-active-background);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: all 0.08s cubic-bezier(0.37, 0.24, 0.53, 0.99);
+    }
+
+    > svg,
+    > i {
+      position: relative;
+      z-index: 5;
+      color: var(--pc-header-color);
+      transition: all 0.08s cubic-bezier(0.37, 0.24, 0.53, 0.99);
+    }
+
+    > i {
+      font-size: 24px;
+    }
+
+    > svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      color: var(--bs-primary);
+
+      > svg,
+      > i {
+        color: var(--bs-primary);
+      }
+
+      &::before {
+        border-radius: 0;
+        transform: scale(1);
+      }
+    }
+
+    .pc-h-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      border-radius: 50%;
+      font-size: 9px;
+      z-index: 9;
+
+      &.dots {
+        width: 9px;
+        height: 9px;
+        top: 7px;
+        right: 16px;
+        padding: 0;
+      }
+    }
+  }
+
+  .pc-h-dropdown {
+    .ti-circle {
+      font-size: 7px;
+      vertical-align: middle;
+    }
+
+    transform: none !important;
+    top: 100% !important;
+
+    &.dropdown-menu-end {
+      right: 0 !important;
+      left: auto !important;
+    }
+  }
+
+  .drp-search {
+    min-width: 20rem;
+  }
+
+  .user-avatar {
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  .dropdown-user-profile {
+    min-width: 290px;
+    max-width: 100%;
+    .dropdown-header,
+    .dropdown-body {
+      padding: 16px 20px;
+    }
+    .dropdown-item {
+      padding: 10px 15px;
+      display: flex;
+      border-radius: var(--bs-border-radius);
+      align-items: center;
+      justify-content: space-between;
+      border: var(--bs-border-width) var(--bs-border-style) transparent;
+      &:hover,
+      &:focus {
+        color: var(--bs-dropdown-link-color);
+        background: var(--pc-active-background);
+        border-color: var(--bs-border-color);
+      }
+
+      .user-group {
+        .avatar,
+        img {
+          width: 30px;
+          height: 30px;
+          font-size: 14px;
+        }
+      }
+    }
+    @media (max-width: 575.98px) {
+      min-width: calc(100% - 30px);
+    }
+  }
+
+  .dropdown-notification {
+    min-width: 450px;
+    max-width: 100%;
+    .dropdown-header,
+    .dropdown-body {
+      padding: 16px 20px;
+    }
+    .list-group-item-action {
+      &:active,
+      &:hover,
+      &:focus {
+        background: shift-color($primary, $soft-bg-level);
+      }
+
+      .user-avatar,
+      h5 {
+        cursor: pointer;
+      }
+    }
+
+    .badge {
+      font-size: 0.8125rem;
+      padding: 0.43em 1em;
+    }
+
+    .user-avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    .notification-file {
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 20px;
+        margin-right: 16px;
+      }
+    }
+
+    .card {
+      cursor: pointer;
+      box-shadow: none;
+
+      &:hover {
+        background: rgba(var(--bs-primary-rgb), 0.05);
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      min-width: calc(100% - 30px);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .pc-header {
+    top: 0;
+    left: 0;
+    transition: all 0.15s ease-in-out;
+
+    .m-header {
+      display: none;
+    }
+
+    .pc-head-link {
+      .user-desc,
+      .user-name {
+        display: none;
+      }
+    }
+
+    .pc-mob-drp {
+      &.mob-drp-active {
+        .pc-h-item {
+          display: block;
+          min-height: auto;
+          position: relative;
+
+          .pc-head-link {
+            display: block;
+            margin: 5px 10px !important;
+          }
+
+          .dropdown-menu {
+            position: relative !important;
+            width: 100%;
+            float: none;
+            box-shadow: none;
+          }
+        }
+
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .pc-header {
+    .pc-head-link {
+      padding: 0.65rem;
+      margin: 0 5px;
+    }
+
+    .pc-h-item {
+      position: static;
+
+      .pc-h-dropdown {
+        left: 15px !important;
+        right: 15px !important;
+      }
+    }
+  }
+}
+
+// ============================
+//   4. header css end
+// ============================
