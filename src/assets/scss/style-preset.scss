@@ -82,43 +82,6 @@ $i: 1;
       // scss-docs-end accordion-css-vars
     }
 
-    .alert-primary {
-      $alert-background: shift-color($pc-primary, $alert-bg-scale);
-      $alert-border: shift-color($pc-primary, $alert-border-scale);
-      $alert-color: shift-color($pc-primary, $alert-color-scale);
-
-      --#{$prefix}alert-color: #{$alert-color};
-      --#{$prefix}alert-bg: #{$alert-background};
-      --#{$prefix}alert-border-color: #{$alert-border};
-      --#{$prefix}alert-link-color: #{shade-color($alert-color, 20%)};
-    }
-
-    .list-group {
-      --bs-list-group-active-bg: #{$pc-primary};
-      --bs-list-group-active-border-color: #{$pc-primary};
-    }
-
-    .list-group-item-primary {
-      color: shift-color($pc-primary, $alert-color-scale);
-      background-color: shift-color($pc-primary, $alert-bg-scale);
-    }
-
-    .nav {
-      --bs-nav-link-hover-color: #{shift-color($pc-primary, $link-shade-percentage)};
-    }
-
-    .nav-pills {
-      --bs-nav-pills-link-active-bg: #{$pc-primary};
-    }
-
-    .pagination {
-      --bs-pagination-hover-color: #{shift-color($pc-primary, $link-shade-percentage)};
-      --bs-pagination-focus-color: #{shift-color($pc-primary, $link-shade-percentage)};
-      --bs-pagination-focus-box-shadow: 0 0 0 #{$input-btn-focus-width} #{rgba($pc-primary, $input-btn-focus-color-opacity)};
-      --bs-pagination-active-bg: #{$pc-primary};
-      --bs-pagination-active-border-color: #{$pc-primary};
-    }
-
     .progress {
       --bs-progress-bar-bg: #{$pc-primary};
     }
@@ -132,27 +95,7 @@ $i: 1;
           }
         }
 
-        &.input-light-primary {
-          &:checked {
-            border-color: shift-color($pc-primary, $soft-bg-level);
-            background-color: shift-color($pc-primary, $soft-bg-level);
-
-            &[type='checkbox'] {
-              background-image: escape-svg(
-                url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$pc-primary}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>")
-              );
-            }
-
-            &[type='radio'] {
-              background-image: escape-svg(
-                url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$pc-primary}'/></svg>")
-              );
-            }
-          }
-        }
-
-        &.input-primary,
-        &.input-light-primary {
+        &.input-primary {
           &:focus {
             &[type='checkbox'],
             &[type='radio'] {
@@ -164,7 +107,7 @@ $i: 1;
       }
 
       &.form-switch {
-        .form-check-input.input-light-primary {
+        .form-check-input {
           &:checked {
             background-image: escape-svg(
               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$pc-primary}'/></svg>")
@@ -246,85 +189,12 @@ $i: 1;
       }
     }
 
-    .slider-selection {
-      background-image: linear-gradient(to bottom, lighten($pc-primary, 25%) 0, lighten($pc-primary, 25%) 100%);
-
-      &.tick-slider-selection {
-        background-image: linear-gradient(to bottom, lighten($pc-primary, 20%) 0, lighten($pc-primary, 20%) 100%);
-      }
-    }
-
-    .swal-button {
-      &:not([disabled]):hover {
-        background-color: darken($pc-primary, 5%);
-      }
-
-      &:active {
-        background-color: darken($pc-primary, 5%);
-      }
-
-      &:focus {
-        box-shadow:
-          0 0 0 1px #fff,
-          0 0 0 3px transparentize($pc-primary, 0.71);
-      }
-    }
-
-    .swal-content__input:focus {
-      border-color: transparentize($pc-primary, 0.71);
-    }
-
-    .swal-content__textarea {
-      &:focus {
-        border-color: transparentize($pc-primary, 0.71);
-      }
-    }
-
-    .swal2-styled {
-      &:focus {
-        box-shadow:
-          0 0 0 1px #fff,
-          0 0 0 3px rgba($pc-primary, 0.4) !important;
-      }
-    }
-
-    .slider-tick {
-      &.in-selection {
-        background-image: linear-gradient(to bottom, lighten($pc-primary, 20%) 0, lighten($pc-primary, 20%) 100%);
-      }
-    }
-
     @include table-variant('primary', $pc-primary);
   }
-
-  [data-pc-header='#{$name}'] {
-    $color-rgb: to-rgb($value);
-    --pc-header-background: rgba(#{$color-rgb}, 0.85);
-    --pc-header-color: #fff;
-  }
-  [data-pc-navbar='#{$name}'] {
-    $color-rgb: to-rgb($value);
-    --pc-sidebar-background: #{$value};
-    --pc-sidebar-color: #fff;
-  }
-  [data-pc-logo='#{$name}'] {
-    --pc-logo-bg: #{$value};
-  }
-  [data-pc-caption='#{$name}'] {
-    --pc-sidebar-caption-color: #{$value};
-  }
-  [data-pc-navimg='#{$name}'] {
-    --pc-sidebar-background: url('assets/images/layout/navbar-img-#{$i}.jpg');
-  }
-  $i: $i + 1;
 }
 
 $drp-icon: (
-  'preset-1': '\ea61',
-  'preset-2': '\ea65',
-  'preset-3': '\eb5f',
-  'preset-4': '\ea69',
-  'preset-5': '\eb0b'
+  'preset-1': '\ea61'
 );
 @each $key, $value in $drp-icon {
   [data-pc-drp-menu-icon='#{$key}'] {
@@ -333,26 +203,10 @@ $drp-icon: (
 }
 
 $drp-link-icon: (
-  'preset-1': '',
-  'preset-2': '\ea1c',
-  'preset-3': '\ea61',
-  'preset-4': '\ea65',
-  'preset-5': '\ea7d',
-  'preset-6': '\eaf2'
+  'preset-1': ''
 );
 @each $key, $value in $drp-link-icon {
   [data-pc-drp-menu-link-icon='#{$key}'] {
     --pc-sidebar-drp-menu-link-icon: '#{$value}';
   }
-}
-
-[data-pc-direction='rtl'] {
-  direction: rtl;
-  text-align: right;
-  @import 'themes/layouts/style-rtl';
-}
-
-[data-pc-theme='dark'] {
-  @import 'themes/layouts/style-dark';
-  color-scheme: dark;
 }

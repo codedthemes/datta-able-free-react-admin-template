@@ -14,30 +14,16 @@ const pages = {
         {
           id: 'login',
           title: 'Login',
-          type: 'collapse',
-          children: [
-            {
-              id: 'login',
-              title: 'Login',
-              type: 'item',
-              url: '/auth/login',
-              target: true
-            }
-          ]
+          type: 'item',
+          url: '/auth/login',
+          target: true
         },
         {
           id: 'register',
           title: 'Register',
-          type: 'collapse',
-          children: [
-            {
-              id: 'register',
-              title: 'Register',
-              type: 'item',
-              url: '/auth/register',
-              target: true
-            }
-          ]
+          type: 'item',
+          url: '/auth/register',
+          target: true
         }
       ]
     }

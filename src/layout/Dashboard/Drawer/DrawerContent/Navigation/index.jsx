@@ -7,16 +7,13 @@ import ListGroup from 'react-bootstrap/ListGroup';
 // project-imports
 import NavItem from './NavItem';
 import NavGroup from './NavGroup';
-import { MenuOrientation } from 'config';
 import menuItems from 'menu-items';
-import useConfig from 'hooks/useConfig';
 
 // ==============================|| NAVIGATION ||============================== //
 
 export default function Navigation({ selectedItems, setSelectedItems, setSelectTab }) {
   const [selectedID, setSelectedID] = useState('');
   const [selectedLevel, setSelectedLevel] = useState(0);
-  const { menuOrientation } = useConfig();
 
   const lastItem = null;
   let lastItemIndex = menuItems.items.length - 1;
@@ -76,9 +73,7 @@ export default function Navigation({ selectedItems, setSelectedItems, setSelectT
     }
   });
 
-  return (
-    <ul className={`pc-navbar 'd-block'  ${menuOrientation === MenuOrientation.TAB ? 'pc-tab-link nav flex-column' : ''}`}>{navGroups}</ul>
-  );
+  return <ul className={`pc-navbar 'd-block'`}>{navGroups}</ul>;
 }
 
 Navigation.propTypes = {

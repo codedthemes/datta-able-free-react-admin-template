@@ -37,42 +37,6 @@
     }
   }
 
-  .header-search {
-    position: relative;
-
-    .form-control {
-      border-radius: $border-radius;
-      padding: 0.344rem 1.8rem;
-      width: 200px;
-      max-width: 100%;
-
-      @media (max-width: 1024px) {
-        width: 100%;
-      }
-    }
-
-    .icon-search {
-      position: absolute;
-      top: 11px;
-      left: 11px;
-      width: 12px;
-      height: 12px;
-    }
-
-    .btn-search {
-      position: absolute;
-      top: 7px;
-      right: 9px;
-      padding: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: $border-radius;
-    }
-  }
-
   .pc-h-item {
     min-height: $header-height;
     display: flex;
@@ -141,17 +105,6 @@
         border-radius: 0;
         transform: scale(1);
       }
-
-      .hamburger {
-        .hamburger-inner {
-          background-color: $secondary;
-
-          &::after,
-          &::before {
-            background-color: $secondary;
-          }
-        }
-      }
     }
 
     .pc-h-badge {
@@ -170,30 +123,6 @@
         padding: 0;
       }
     }
-
-    .user-desc,
-    .user-name {
-      display: block;
-      line-height: 1;
-    }
-
-    .user-name {
-      margin-bottom: 5px;
-
-      font: {
-        size: 15px;
-        weight: 600;
-      }
-    }
-
-    .user-desc {
-      font: {
-        size: 12px;
-        weight: 400;
-      }
-
-      color: var(--pc-header-color);
-    }
   }
 
   .pc-h-dropdown {
@@ -211,109 +140,13 @@
     }
   }
 
-  .pc-level-menu {
-    position: relative;
-
-    &:hover {
-      > .dropdown-menu {
-        display: block;
-        left: 100%;
-        top: -18px !important;
-      }
-    }
-  }
-
   .drp-search {
     min-width: 20rem;
-  }
-
-  #vertical-nav-toggle {
-    margin-left: -15px;
-  }
-
-  .pc-cart-menu .drp-cart {
-    min-width: 20rem;
-    padding: 0;
-
-    .cart-head {
-      border-radius: 2px 2px 0 0;
-      padding: 20px;
-      background: transparentize(shift-color($primary, $soft-bg-level), 0.8);
-      border-bottom: 1px solid $border-color;
-    }
-
-    .cart-item {
-      display: flex;
-      padding: 10px 20px;
-
-      + .cart-item {
-        border-top: 1px dashed $border-color;
-      }
-
-      img {
-        width: 60px;
-      }
-
-      .cart-desc {
-        flex: 1;
-      }
-
-      .p-star {
-        fill: currentColor;
-      }
-
-      &.table-responsive {
-        border-top: 1px solid $border-color;
-        background: transparentize(shift-color($primary, $soft-bg-level), 0.8);
-      }
-
-      svg {
-        width: 14px;
-        height: 14px;
-      }
-    }
   }
 
   .user-avatar {
     width: 40px;
     border-radius: 50%;
-  }
-
-  .header-user-profile {
-    .pc-head-link {
-      padding: 7px;
-      background: transparent;
-
-      &:focus,
-      &:hover {
-        .user-avatar {
-          transform: scale(1.03);
-        }
-      }
-
-      > span > i {
-        font-size: 22px;
-        margin-right: 8px;
-      }
-
-      .user-avatar {
-        width: 40px;
-        transition: all 0.08s cubic-bezier(0.37, 0.24, 0.53, 0.99);
-      }
-
-      @include media-breakpoint-down(sm) {
-        width: 40px;
-
-        .user-avatar {
-          margin-right: 0;
-        }
-
-        > span,
-        > span > i {
-          display: none;
-        }
-      }
-    }
   }
 
   .dropdown-user-profile {
@@ -409,65 +242,6 @@
     }
   }
 }
-.drp-upgrade-card {
-  background-size: cover;
-
-  .user-group {
-    .avatar,
-    img {
-      font-size: 14px;
-    }
-  }
-}
-
-.user-group {
-  display: inline-flex;
-  align-items: center;
-
-  .avatar,
-  img {
-    cursor: pointer;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    z-index: 2;
-    transition: all 0.1s ease-in-out;
-    border: 2px solid $card-bg;
-
-    + .avatar,
-    + img {
-      margin-left: -14px;
-    }
-
-    &:hover {
-      z-index: 5;
-    }
-  }
-}
-
-.notification-modal.modal.fade .modal-dialog {
-  transform: translate(100%, 0);
-}
-
-.notification-modal.modal.show .modal-dialog {
-  transform: none;
-}
-
-.notification-modal {
-  padding-right: 0 !important;
-
-  .modal-dialog {
-    margin: 0 0 0 auto;
-  }
-
-  .modal-content {
-    min-height: 100vh;
-    border: none;
-    border-radius: 0;
-    box-shadow: -1px 0 9px -3px rgba(0, 0, 0, 0.6);
-  }
-}
 
 @media (max-width: 1024px) {
   .pc-header {
@@ -484,40 +258,6 @@
       .user-name {
         display: none;
       }
-    }
-
-    .pcm-logo {
-      margin-left: 30px;
-
-      img {
-        max-width: 160px;
-      }
-    }
-
-    &.mob-header-active {
-      top: $header-height;
-
-      .header-wrapper {
-        background: var(pc-header-background);
-        position: relative;
-        z-index: 5;
-      }
-    }
-
-    .pc-md-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    .pc-level-menu .dropdown-menu {
-      left: 0;
-      display: block;
-      padding-left: 30px;
     }
 
     .pc-mob-drp {
@@ -544,22 +284,6 @@
           display: block;
         }
       }
-    }
-  }
-
-  .minimenu {
-    .pc-header {
-      left: 0;
-    }
-  }
-}
-
-#pc-noti-home {
-  > .media {
-    &:hover {
-      margin: -15px;
-      padding: 15px;
-      background: rgba($primary, 0.1);
     }
   }
 }

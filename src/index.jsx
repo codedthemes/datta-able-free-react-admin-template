@@ -5,7 +5,6 @@ import './index.scss';
 
 // project-imports
 import App from './App';
-import { ConfigProvider } from 'contexts/ConfigContext';
 
 import '@fontsource/open-sans/300.css';
 import '@fontsource/open-sans/400.css';
@@ -17,8 +16,4 @@ const root = createRoot(container);
 
 // ==============================|| MAIN - REACT DOM RENDER ||============================== //
 
-root.render(
-  <ConfigProvider>
-    <App />
-  </ConfigProvider>
-);
+root.render(<App />);
