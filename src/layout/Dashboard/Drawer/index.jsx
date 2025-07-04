@@ -8,11 +8,9 @@ import Image from 'react-bootstrap/Image';
 // project-imports
 import DrawerContent from './DrawerContent';
 import { handlerDrawerOpen, useGetMenuMaster } from 'api/menu';
-import useConfig from 'hooks/useConfig';
 
 // assets
 import logo from 'assets/images/logo-white.svg';
-import DarkLogo from 'assets/images/logo-dark.svg';
 
 // ==============================|| MAIN LAYOUT - DRAWER ||============================== //
 
@@ -22,7 +20,6 @@ export default function MainDrawer() {
   const [selectedItems, setSelectedItems] = useState();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
   const overlayRef = useRef(null);
-  const { sidebarTheme } = useConfig();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 1024);
@@ -47,7 +44,7 @@ export default function MainDrawer() {
       <div className="navbar-wrapper">
         <div className="m-header">
           <a className="b-brand text-primary">
-            <Image src={sidebarTheme === true ? DarkLogo : logo} fluid className="logo logo-lg" alt="logo" />
+            <Image src={logo} fluid className="logo logo-lg" alt="logo" />
           </a>
         </div>
 

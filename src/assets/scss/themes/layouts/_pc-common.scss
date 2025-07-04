@@ -156,15 +156,6 @@
   position: relative;
 }
 
-[data-simplebar] {
-  position: relative;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
 .simplebar-scrollbar {
   position: absolute;
   left: 0;

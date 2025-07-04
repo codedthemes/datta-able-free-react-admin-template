@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useState, useMemo, useCallback } from 'react';
-import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState, useMemo, useCallback } from 'react';
+import { matchPath, useLocation, useNavigate } from 'react-router-dom';
 
 // react-bootstrap
 import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/ListGroup';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 
 // project-imports
 import NavItem from './NavItem';
 import { useGetMenuMaster } from 'api/menu';
-import useConfig from 'hooks/useConfig';
-import { MenuOrientation } from 'config';
 
 // ==============================|| NAVIGATION - COLLAPSE ||============================== //
 
@@ -23,9 +19,7 @@ export default function NavCollapse({ menu, level, parentId, setSelectedItems, s
 
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
-  const { menuOrientation } = useConfig();
   const location = useLocation();
-  const currentPath = location.pathname;
 
   const isMenuActive = (menu, currentPath) => {
     if (menu.type === 'item') {
@@ -36,8 +30,6 @@ export default function NavCollapse({ menu, level, parentId, setSelectedItems, s
     }
     return false;
   };
-
-  const active = isMenuActive(menu, currentPath);
 
   const handleClick = (isRedirect) => {
     const isMobile = window.innerWidth <= 1024;
@@ -144,45 +136,21 @@ export default function NavCollapse({ menu, level, parentId, setSelectedItems, s
 
   return (
     <>
-      {menuOrientation !== MenuOrientation.TAB ? (
-        <ListGroup className={`pc-item pc-hasmenu ${open && 'pc-trigger'}`}>
-          <a className="pc-link" href="#!" onClick={() => handleClick(true)}>
-            {menu.icon && (
-              <span className="pc-micon">
-                <i className={typeof menu.icon === 'string' ? menu.icon : menu.icon?.props.className} />
-              </span>
-            )}
-            <span className="pc-mtext">{menu.title}</span>
-            <span className="pc-arrow">
-              <i className={`ti ti-chevron-right`} />
+      <ListGroup className={`pc-item pc-hasmenu ${open && 'pc-trigger'}`}>
+        <a className="pc-link" href="#!" onClick={() => handleClick(true)}>
+          {menu.icon && (
+            <span className="pc-micon">
+              <i className={typeof menu.icon === 'string' ? menu.icon : menu.icon?.props.className} />
             </span>
-            {menu.badge && <Badge className="pc-badge">{menu.badge}</Badge>}
-          </a>
-          {open === true && <ul className="pc-submenu">{navCollapse}</ul>}
-        </ListGroup>
-      ) : (
-        <>
-          {menuOrientation !== MenuOrientation.TAB && (
-            <ListGroup className={`pc-item pc-hasmenu ${open ?? 'pc-trigger'} ${active ? 'active' : ''}`}>
-              <OverlayTrigger placement="right" overlay={<Tooltip id={`tooltip-${menu.title}`}>{menu.title}</Tooltip>}>
-                <Link
-                  to="#!"
-                  className="pc-link"
-                  onClick={() => {
-                    handleClick(!open);
-                  }}
-                >
-                  {menu.icon && (
-                    <span className="pc-micon">
-                      <i className={typeof menu.icon === 'string' ? menu.icon : menu.icon?.props.className} />
-                    </span>
-                  )}
-                </Link>
-              </OverlayTrigger>
-            </ListGroup>
           )}
-        </>
-      )}
+          <span className="pc-mtext">{menu.title}</span>
+          <span className="pc-arrow">
+            <i className={`ti ti-chevron-right`} />
+          </span>
+          {menu.badge && <Badge className="pc-badge">{menu.badge}</Badge>}
+        </a>
+        {open === true && <ul className="pc-submenu">{navCollapse}</ul>}
+      </ListGroup>
     </>
   );
 }

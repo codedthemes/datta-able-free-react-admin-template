@@ -9,18 +9,9 @@ const navigation = {
     {
       id: 'dashboard',
       title: 'Dashboard',
-      badge: 5,
-      type: 'collapse',
+      type: 'item',
       icon: icons.dashboard,
-      children: [
-        {
-          id: 'default',
-          title: 'Default',
-          type: 'item',
-          breadcrumbs: false,
-          url: '/dashboard/default'
-        }
-      ]
+      url: '/'
     }
   ]
 };

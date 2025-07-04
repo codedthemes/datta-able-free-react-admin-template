@@ -5,16 +5,13 @@ import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
 
 // project-imports
-import useConfig from 'hooks/useConfig';
 import branding from 'branding.json';
 
 // ==============================|| MAIN LAYOUT - FOOTER ||============================== //
 export default function Footer() {
-  const { container } = useConfig();
-
   return (
     <footer className="pc-footer">
-      <div className={`footer-wrapper ${container === false ? 'container-fluid' : 'container'}`}>
+      <div className="footer-wrapper  container-fluid">
         <Row className="justify-content-center justify-content-md-between">
           {/* Footer Text */}
           <Col xs="auto" className="my-1">

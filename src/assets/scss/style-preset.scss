@@ -191,27 +191,6 @@ $i: 1;
 
     @include table-variant('primary', $pc-primary);
   }
-
-  [data-pc-header='#{$name}'] {
-    $color-rgb: to-rgb($value);
-    --pc-header-background: rgba(#{$color-rgb}, 0.85);
-    --pc-header-color: #fff;
-  }
-  [data-pc-navbar='#{$name}'] {
-    $color-rgb: to-rgb($value);
-    --pc-sidebar-background: #{$value};
-    --pc-sidebar-color: #fff;
-  }
-  [data-pc-logo='#{$name}'] {
-    --pc-logo-bg: #{$value};
-  }
-  [data-pc-caption='#{$name}'] {
-    --pc-sidebar-caption-color: #{$value};
-  }
-  [data-pc-navimg='#{$name}'] {
-    --pc-sidebar-background: url('assets/images/layout/navbar-img-#{$i}.jpg');
-  }
-  $i: $i + 1;
 }
 
 $drp-icon: (

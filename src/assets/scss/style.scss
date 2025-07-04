@@ -21,7 +21,6 @@ File: style.css
 14. Form css
 15. Authentication css
 16. Icon layouts css
-17. Switches css
 
 =========================================================================
 =================================================================================== */
@@ -93,7 +92,3 @@ File: style.css
 
 // pages
 @import 'themes/pages/authentication';
-@import 'themes/pages/icon-pages';
-
-// custom plugins
-@import 'themes/plugins/switches';
