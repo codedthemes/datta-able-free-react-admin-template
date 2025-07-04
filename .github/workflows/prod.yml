@@ -32,7 +32,7 @@ jobs:
           corepack enable
           yarn set version 4.9.1           
           yarn
-          yarn build-stage
+          yarn build
 
       - name: 📂 Deploy to Server
         uses: easingthemes/ssh-deploy@main
