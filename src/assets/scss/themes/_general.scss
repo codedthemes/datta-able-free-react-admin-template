@@ -85,6 +85,11 @@ strong {
   border-radius: 50%;
 }
 
+.apexcharts-tooltip-series-group.apexcharts-active,
+.apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 0 !important;
+}
+
 /* ================================    Blockquote Start  ===================== */
 
 @media (min-width: 1600px) {

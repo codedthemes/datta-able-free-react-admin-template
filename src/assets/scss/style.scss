@@ -24,6 +24,9 @@ File: style.css
 
 =========================================================================
 =================================================================================== */
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:string';
 
 // main framework
 @import 'bootstrap/scss/functions';
@@ -89,6 +92,9 @@ File: style.css
 @import 'themes/components/progress';
 @import 'themes/components/table';
 @import 'themes/components/form';
+@import 'themes/components/widget';
 
 // pages
 @import 'themes/pages/authentication';
+
+@import 'themes/plugins/jsvectormap';

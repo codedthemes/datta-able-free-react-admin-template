@@ -6,6 +6,10 @@ Support: https://codedthemes.support-hub.io/
 File: style.css
 =========================================================================
 =================================================================================== */
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:string';
+@use 'sass:map';
 
 // main framework
 @import 'settings/color-variables';
@@ -19,7 +23,7 @@ File: style.css
 $i: 1;
 @each $name, $value in $preset-colors {
   [data-pc-preset='#{$name}'] {
-    $pc-primary: map-get($value, 'primary');
+    $pc-primary: map.get($value, 'primary');
     $color-rgb: to-rgb($pc-primary);
     $pc-primary-light: tint-color($pc-primary, 90%);
     --pc-sidebar-active-color: #{$pc-primary};
@@ -40,7 +44,7 @@ $i: 1;
     }
 
     .link-primary {
-      $value: map-get($value, 'primary');
+      $value: map.get($value, 'primary');
       color: $value !important; // stylelint-disable-line declaration-no-important
 
       @if $link-shade-percentage !=0 {
@@ -67,13 +71,18 @@ $i: 1;
 
     .text-bg-primary {
       color: color-contrast($pc-primary) if($enable-important-utilities, !important, null);
-      background-color: RGBA($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+      background-color: RGBA($color-rgb, var(--#{$prefix}bg-opacity, 1))
+        if($enable-important-utilities, !important, null);
     }
 
     .accordion {
       // scss-docs-start accordion-css-vars
       --#{$prefix}accordion-btn-focus-border-color: #{$pc-primary};
-      --#{$prefix}accordion-btn-focus-box-shadow: 0 0 0 #{$input-btn-focus-width} #{rgba($pc-primary, $input-btn-focus-color-opacity)};
+      --#{$prefix}accordion-btn-focus-box-shadow: 0
+        0
+        0
+        #{$input-btn-focus-width}
+        #{rgba($pc-primary, $input-btn-focus-color-opacity)};
       --#{$prefix}accordion-active-color: #{$pc-primary};
       --#{$prefix}accordion-active-bg: #{$pc-primary-light};
       --#{$prefix}accordion-btn-active-icon: #{escape-svg(
@@ -95,7 +104,27 @@ $i: 1;
           }
         }
 
-        &.input-primary {
+        &.input-light-primary {
+          &:checked {
+            border-color: shift-color($pc-primary, $soft-bg-level);
+            background-color: shift-color($pc-primary, $soft-bg-level);
+
+            &[type='checkbox'] {
+              background-image: escape-svg(
+                url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$pc-primary}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>")
+              );
+            }
+
+            &[type='radio'] {
+              background-image: escape-svg(
+                url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$pc-primary}'/></svg>")
+              );
+            }
+          }
+        }
+
+        &.input-primary,
+        &.input-light-primary {
           &:focus {
             &[type='checkbox'],
             &[type='radio'] {
@@ -107,7 +136,7 @@ $i: 1;
       }
 
       &.form-switch {
-        .form-check-input {
+        .form-check-input.input-light-primary {
           &:checked {
             background-image: escape-svg(
               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$pc-primary}'/></svg>")
@@ -194,7 +223,7 @@ $i: 1;
 }
 
 $drp-icon: (
-  'preset-1': '\ea61'
+  'preset-1': '\ea61',
 );
 @each $key, $value in $drp-icon {
   [data-pc-drp-menu-icon='#{$key}'] {
@@ -203,7 +232,7 @@ $drp-icon: (
 }
 
 $drp-link-icon: (
-  'preset-1': ''
+  'preset-1': '',
 );
 @each $key, $value in $drp-link-icon {
   [data-pc-drp-menu-link-icon='#{$key}'] {
