@@ -21,7 +21,7 @@ import DarkLogo from 'assets/images/logo-dark.svg';
 
 // ==============================|| AUTH LOGIN FORM ||============================== //
 
-export default function AuthLoginForm({ className, link, resetLink }) {
+export default function AuthLoginForm({ className, link }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -83,7 +83,7 @@ export default function AuthLoginForm({ className, link, resetLink }) {
               className={`input-primary ${className ? className : 'text-muted'} `}
             />
           </Form.Group>
-          <Link to={resetLink ?? '/'} className={`text-secondary f-w-400 mb-0  ${className}`}>
+          <Link to="#!" className={`text-secondary f-w-400 mb-0  ${className}`}>
             Forgot Password?
           </Link>
         </Stack>
@@ -103,4 +103,4 @@ export default function AuthLoginForm({ className, link, resetLink }) {
   );
 }
 
-AuthLoginForm.propTypes = { className: PropTypes.string, link: PropTypes.string, resetLink: PropTypes.string };
+AuthLoginForm.propTypes = { className: PropTypes.string, link: PropTypes.string };

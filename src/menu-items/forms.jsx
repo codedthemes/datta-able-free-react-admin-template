@@ -7,13 +7,13 @@ const formComponents = {
   children: [
     {
       id: 'form-elements',
-      title: 'Form elements',
+      title: 'Form Elements',
       type: 'collapse',
       icon: 'ph ph-textbox',
       children: [
         {
           id: 'form-basic',
-          title: 'Form basic',
+          title: 'Form Basic',
           type: 'item',
           url: '/forms/form-elements/basic'
         }

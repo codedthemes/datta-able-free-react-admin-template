@@ -2,7 +2,7 @@
 
 const uiComponents = {
   id: 'group-ui-components',
-  title: 'Ui components',
+  title: 'Ui Components',
   type: 'group',
   children: [
     {
@@ -37,7 +37,7 @@ const uiComponents = {
         },
         {
           id: 'tabs-pills',
-          title: 'Tabs & pills',
+          title: 'Tabs-pills',
           type: 'item',
           url: '/basic/tabs-pills'
         },

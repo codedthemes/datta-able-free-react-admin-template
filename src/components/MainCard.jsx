@@ -12,7 +12,6 @@ export default function MainCard({
   footer,
   secondary,
   content = true,
-  codeString,
   title,
   className,
   headerClassName,
@@ -37,8 +36,6 @@ export default function MainCard({
       {/* Content */}
       {content && <Card.Body className={bodyClassName}>{children}</Card.Body>}
       {!content && children}
-      {/* Footer Section for Code Highlighting */}
-      {codeString && <hr />}
       {footer && <Card.Footer className={footerClassName}>{footer}</Card.Footer>}
     </Card>
   );
@@ -50,7 +47,6 @@ MainCard.propTypes = {
   footer: PropTypes.node,
   secondary: PropTypes.node,
   content: PropTypes.bool,
-  codeString: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   className: PropTypes.string,
   headerClassName: PropTypes.string,
