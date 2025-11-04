@@ -1,10 +1,16 @@
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 
 // third-party
 import ReactApexChart from 'react-apexcharts';
 
-// chart-options
-const chartOptions = {
+// chart options
+const columnChartOptions = {
+  chart: {
+    type: 'bar',
+    height: 350,
+    background: 'transparent',
+    toolbar: { show: false }
+  },
   plotOptions: {
     bar: {
       horizontal: false,
@@ -12,76 +18,70 @@ const chartOptions = {
       endingShape: 'rounded'
     }
   },
-  dataLabels: {
-    enabled: false
-  },
+  dataLabels: { enabled: false },
   stroke: {
     show: true,
     width: 2,
     colors: ['transparent']
   },
-  xaxis: {
-    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']
-  },
-  fill: {
-    opacity: 1
+  xaxis: { categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'] },
+  fill: { opacity: 1 },
+  tooltip: {
+    y: {
+      formatter(val) {
+        return `$ ${val} thousands`;
+      }
+    }
   },
   legend: {
     show: true,
     position: 'bottom',
     offsetX: 10,
     offsetY: 10,
-    labels: {
-      useSeriesColors: false
-    },
-    markers: {
-      width: 16,
-      height: 16,
-      radius: 5
-    },
-    itemMargin: {
-      horizontal: 5,
-      vertical: 4
-    }
+    labels: { useSeriesColors: false },
+    markers: { size: 6, shape: 'circle', strokeWidth: 0 },
+    itemMargin: { horizontal: 15, vertical: 8 }
   },
-  tooltip: {
-    y: {
-      formatter: (value) => `$ ${value} thousands`
-    }
-  },
-  responsive: [
-    {
-      breakpoint: 600,
-      options: {
-        yaxis: {
-          show: false
-        }
-      }
-    }
-  ],
-  colors: ['#1de9b6', '#04a9f5', '#13c2c2']
+  responsive: [{ breakpoint: 600, options: { yaxis: { show: false } } }]
 };
 
-// ==============================|| APEX CHART - BAR CHART ||============================== //
+// ==============================|| APEXCHART - COLUMN ||============================== //
 
-export default function ApexBarChart() {
-  const series = useMemo(
-    () => [
-      {
-        name: 'Net Profit',
-        data: [44, 55, 57, 56, 61, 58, 63]
-      },
-      {
-        name: 'Revenue',
-        data: [76, 85, 101, 98, 87, 105, 91]
-      },
-      {
-        name: 'Free Cash Flow',
-        data: [35, 41, 36, 26, 45, 48, 52]
-      }
-    ],
-    []
-  );
+export default function ApexColumnChart() {
+  const textPrimary = 'var(--bs-primary)';
+  const line = 'var(--bs-border-color)';
 
-  return <ReactApexChart options={chartOptions} series={series} type="bar" height={350} />;
+  const primary700 = 'var(--bs-teal)';
+  const primaryMain = 'var(--bs-primary)';
+  const successMain = 'var(--bs-success)';
+
+  const [series] = useState([
+    {
+      name: 'Net Profit',
+      data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+    },
+    {
+      name: 'Revenue',
+      data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+    },
+    {
+      name: 'Free Cash Flow',
+      data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+    }
+  ]);
+
+  const [options, setOptions] = useState(columnChartOptions);
+
+  useEffect(() => {
+    setOptions({
+      ...columnChartOptions,
+      chart: { ...columnChartOptions.chart },
+      colors: [primary700, primaryMain, successMain],
+      xaxis: { ...columnChartOptions.xaxis },
+      grid: { borderColor: line },
+      legend: { ...columnChartOptions.legend, labels: { ...columnChartOptions.legend.labels } }
+    });
+  }, [textPrimary, line, primary700, primaryMain, successMain]);
+
+  return <ReactApexChart options={options} series={series} type="bar" height={350} />;
 }

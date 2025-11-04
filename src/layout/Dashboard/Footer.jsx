@@ -11,7 +11,7 @@ import branding from 'branding.json';
 export default function Footer() {
   return (
     <footer className="pc-footer">
-      <div className="footer-wrapper  container-fluid">
+      <div className="footer-wrapper container-fluid">
         <Row className="justify-content-center justify-content-md-between">
           {/* Footer Text */}
           <Col xs="auto" className="my-1">

@@ -9,7 +9,7 @@ const tableComponents = {
       id: 'bootstrap-table',
       title: 'Bootstrap table',
       type: 'collapse',
-      icon: <i className="ph ph-table" />,
+      icon: 'ph ph-table',
       children: [
         {
           id: 'basic-table',

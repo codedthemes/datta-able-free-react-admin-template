@@ -24,21 +24,21 @@ export default function RatingCard() {
         <Col xs={6}>
           <Stack direction="horizontal" as="h2" className=" f-w-300 align-items-center float-start m-0">
             4.7
-            <i className="ti ti-star-filled f-10 m-l-10 text-warning" />
+            <i className="ti ti-star-filled f-10 ms-2 text-warning" />
           </Stack>
         </Col>
         <Col xs={6}>
           <Stack as="h6" direction="horizontal" className="align-items-center float-end m-0">
             0.4
-            <i className="ti ti-caret-up-filled text-success m-l-10 f-22" />
+            <i className="ti ti-caret-up-filled text-success ms-2 f-22" />
           </Stack>
         </Col>
       </Row>
       {ratings.map((rating) => (
         <Row key={rating.stars}>
           <Col xl={12}>
-            <h6 className="align-items-center float-start">
-              <i className="ti ti-star-filled f-10 m-r-10 text-warning" />
+            <h6 className="align-items-center float-start d-flex align-items-center gap-1">
+              <i className="ti ti-star-filled f-10 text-warning" />
               {rating.stars}
             </h6>
             <h6 className="align-items-center float-end">{rating.count}</h6>

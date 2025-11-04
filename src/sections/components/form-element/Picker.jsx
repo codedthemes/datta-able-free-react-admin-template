@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 // project-import
 import MainCard from 'components/MainCard';
 
-// =============================|| PICKER ||============================== //
+// =============================|| FORM ELEMENT - PICKER ||============================== //
 
 export default function Picker() {
   return (

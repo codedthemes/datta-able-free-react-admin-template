@@ -19,7 +19,7 @@ const recentUsersData = [
     projectname: 'Isabella Christensen',
     desc: 'Lorem Ipsum is simply dummy text of…',
     date: '11 MAY 12:56',
-    iconClass: 'text-success m-r-15',
+    iconClass: 'text-success',
     badge1: 'Reject',
     badge2: 'Approve'
   },
@@ -28,7 +28,7 @@ const recentUsersData = [
     projectname: 'Mathilde Andersen',
     desc: 'Lorem Ipsum is simply dummy text of…',
     date: '11 MAY 10:35',
-    iconClass: 'text-danger m-r-15',
+    iconClass: 'text-danger',
     badge1: 'Reject',
     badge2: 'Approve'
   },
@@ -37,7 +37,7 @@ const recentUsersData = [
     projectname: 'Karla Sorensen',
     desc: 'Lorem Ipsum is simply dummy text of…',
     date: '9 MAY 17:38',
-    iconClass: 'text-success m-r-15',
+    iconClass: 'text-success',
     badge1: 'Reject',
     badge2: 'Approve'
   },
@@ -46,7 +46,7 @@ const recentUsersData = [
     projectname: 'Ida Jorgensen',
     desc: 'Lorem Ipsum is simply dummy text of…',
     date: '19 MAY 12:56',
-    iconClass: 'text-danger m-r-15',
+    iconClass: 'text-danger',
     badge1: 'Reject',
     badge2: 'Approve'
   },
@@ -55,7 +55,7 @@ const recentUsersData = [
     projectname: 'Albert Andersen',
     desc: 'Lorem Ipsum is simply dummy text of…',
     date: '21 July 12:56',
-    iconClass: 'text-success m-r-15',
+    iconClass: 'text-success',
     badge1: 'Reject',
     badge2: 'Approve'
   }
@@ -65,7 +65,7 @@ const recentUsersData = [
 
 export default function RecentUsersCard() {
   return (
-    <MainCard title="Recent Users" className="Recent-Users table-card">
+    <MainCard title="Recent Users" className="Recent-Users table-card" bodyClassName="p-0">
       <Table responsive hover className="mb-0">
         <tbody>
           {recentUsersData.map((user, index) => (
@@ -78,8 +78,10 @@ export default function RecentUsersCard() {
                 <p className="m-0">{user.desc}</p>
               </td>
               <td>
-                <i className={`ti ti-circle-filled f-10 ${user.iconClass}`} />
-                {user.date}
+                <div className="d-flex align-items-center gap-3">
+                  <i className={`ti ti-circle-filled f-10 ${user.iconClass}`} />
+                  {user.date}
+                </div>
               </td>
               <td>
                 <Badge bg="brand-color-2" className="me-2 f-12">

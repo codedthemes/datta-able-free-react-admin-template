@@ -1,19 +1,10 @@
-// third-party
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+// react bootstrap
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 // project-imports
-import MainCard from 'components/MainCard';
 import ReferenceHeader from 'components/ReferenceHeader';
-
-const containerStyle = {
-  width: '100%',
-  height: '400px'
-};
-
-const center = {
-  lat: 20.5937,
-  lng: 78.9629
-};
+import BasicGMap from 'sections/maps/google-maps/BasicMap';
 
 // ===============================|| MAPS - GOOGLE MAP ||============================== //
 
@@ -24,13 +15,11 @@ export default function GoogleMapPage() {
         caption="Converts an elements content into a svg mini pie donut line or bar chart and is compatible with any browser that supports svg"
         link="https://developers.google.com/maps/documentation/javascript/libraries"
       />
-      <MainCard title="Gmap">
-        <LoadScript googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY}>
-          <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={5}>
-            <Marker position={center} />
-          </GoogleMap>
-        </LoadScript>
-      </MainCard>
+      <Row>
+        <Col sm={12}>
+          <BasicGMap />
+        </Col>
+      </Row>
     </>
   );
 }

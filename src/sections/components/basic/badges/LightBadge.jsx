@@ -17,7 +17,9 @@ export default function LightBadge() {
         <Badge bg="light-danger">Danger</Badge>
         <Badge bg="light-warning">Warning</Badge>
         <Badge bg="light-info">Info</Badge>
-        <Badge bg="light-light">Light</Badge>
+        <Badge bg="light-light" text="dark">
+          Light
+        </Badge>
         <Badge bg="light-dark" text="light" style={{ background: '#13192033' }}>
           Dark
         </Badge>

@@ -12,7 +12,7 @@ import * as yup from 'yup';
 // project-import
 import MainCard from 'components/MainCard';
 
-// =============================|| TOOLTIPS ||============================== //
+// =============================|| FORM ELEMENT - TOOLTIPS ||============================== //
 
 const validationSchema = yup.object({
   firstName: yup.string().required(),
@@ -62,7 +62,6 @@ export default function FormExample() {
               isInvalid={formik.touched.lastName && !!formik.errors.lastName}
               isValid={formik.touched.lastName && !formik.errors.lastName}
             />
-
             <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>
           </Form.Group>
           <Form.Group as={Col} md="4" className="mb-3" controlId="validationFormikUsername2">
@@ -124,7 +123,6 @@ export default function FormExample() {
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
-
         <Button type="submit">Submit form</Button>
       </Form>
     </MainCard>

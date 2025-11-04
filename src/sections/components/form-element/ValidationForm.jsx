@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 // project-import
 import MainCard from 'components/MainCard';
 
-// =============================|| VALIDATION FORM ||============================== //
+// =============================|| FORM ELEMENT - VALIDATION FORM ||============================== //
 
 export default function ValidationForm() {
   const [validated, setValidated] = useState(false);

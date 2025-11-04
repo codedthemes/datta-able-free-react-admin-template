@@ -9,6 +9,7 @@ import MainCard from 'components/MainCard';
 export default function HoverTable() {
   return (
     <MainCard
+      className="table-card"
       title="Hover Table"
       subheader={
         <p className="mb-0">

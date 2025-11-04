@@ -1,0 +1,134 @@
+// ============================
+//    10. Widget css start
+// ============================
+
+.Recent-Users {
+  .table {
+    tr {
+      &:first-child {
+        td {
+          border-top: 0;
+        }
+      }
+    }
+
+    td {
+      vertical-align: middle;
+    }
+
+    .label {
+      border-radius: 15px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.card-social {
+  &:hover {
+    i {
+      font-size: 40px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .progress {
+    height: 6px;
+  }
+
+  .card-active > div + div {
+    border-left: 1px solid var(--bs-border-color);
+  }
+}
+
+.card {
+  .card-body {
+    code {
+      background-color: #eee;
+      margin: 5px;
+      display: inline-block;
+      border-radius: 3px;
+      padding: 0 3px;
+    }
+  }
+}
+
+/*  ================ new css =================== */
+
+.table-card .card-body,
+.table-body.card-body {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+
+  .table {
+    > thead > tr > th {
+      border-top: 0;
+    }
+
+    tr {
+      td,
+      th {
+        &:first-child {
+          padding-left: 25px;
+
+          @include media-breakpoint-down(sm) {
+            padding-left: 20px;
+          }
+        }
+
+        &:last-child {
+          padding-right: 25px;
+
+          @include media-breakpoint-down(sm) {
+            padding-right: 20px;
+          }
+        }
+      }
+    }
+
+    &.without-header {
+      tr {
+        &:first-child {
+          td {
+            border-top: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-card {
+  .row-table {
+    display: flex;
+    align-items: center;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    svg {
+      margin: 0 20px;
+    }
+
+    i {
+      padding: 50px 20px;
+    }
+
+    > [class*='col-'] {
+      display: table-cell;
+      float: none;
+      table-layout: fixed;
+      vertical-align: middle;
+
+      .row {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// ============================
+//    10. Widget css end
+// ============================

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // react-bootstrap
 import Button from 'react-bootstrap/Button';
@@ -136,9 +137,9 @@ export default function AuthRegisterForm({ className, link }) {
         </div>
         <Stack direction="horizontal" className="justify-content-between align-items-end mt-4">
           <h6 className={`f-w-500 mb-0 ${className}`}>Already have an Account?</h6>
-          <a href={link} className="link-primary">
+          <Link to={link} className="link-primary">
             Login
-          </a>
+          </Link>
         </Stack>
       </Form>
     </MainCard>

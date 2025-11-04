@@ -9,7 +9,7 @@ const formComponents = {
       id: 'form-elements',
       title: 'Form Elements',
       type: 'collapse',
-      icon: <i className="ph ph-textbox" />,
+      icon: 'ph ph-textbox',
       children: [
         {
           id: 'form-basic',

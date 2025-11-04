@@ -3,9 +3,9 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 // project-imports
-import SalesPerformanceCard from 'components/cards/SalesPerformanceCard';
-import SocialStatsCard from 'components/cards/SocialStatsCard';
-import StatIndicatorCard from 'components/cards/StatIndicatorCard';
+import SalesPerformanceCard from 'components/cards/dashboard/SalesPerformanceCard';
+import SocialStatsCard from 'components/cards/dashboard/SocialStatsCard';
+import StatIndicatorCard from 'components/cards/dashboard/StatIndicatorCard';
 import { UsersMap, EarningChart, RatingCard, RecentUsersCard } from 'sections/dashboard/default';
 
 // ===============================|| SALES PERFORMANCE CARD - DATA ||============================== //

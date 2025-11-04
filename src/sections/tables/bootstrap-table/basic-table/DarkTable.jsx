@@ -9,6 +9,7 @@ import MainCard from 'components/MainCard';
 export default function DarkTable() {
   return (
     <MainCard
+      className="table-card"
       title="Dark Table"
       subheader={
         <p className="mb-0">
