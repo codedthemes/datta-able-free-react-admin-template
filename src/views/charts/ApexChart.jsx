@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 
 // project-imports
 import MainCard from 'components/MainCard';
-import ApexBarChart from 'sections/charts/apex-charts/BarChart';
-import ApexBarHorizontalChart from 'sections/charts/apex-charts/BarHorizontalChart';
-import ApexBarHorizontalStackedChart from 'sections/charts/apex-charts/BarHorizontalStackedChart';
-import ApexBarStackedChart from 'sections/charts/apex-charts/BarStackedChart';
+import BarChart from 'sections/charts/apex-charts/BarChart';
+import BarHorizontalChart from 'sections/charts/apex-charts/BarHorizontalChart';
+import BarHorizontalStackedChart from 'sections/charts/apex-charts/BarHorizontalStackedChart';
+import BarStackedChart from 'sections/charts/apex-charts/BarStackedChart';
 import ReferenceHeader from 'components/ReferenceHeader';
 
 // =============================|| CHARTS - APEX CHART ||============================== //
@@ -20,24 +20,24 @@ export default function ApexChartPage() {
         link="https://apexcharts.com/"
       />
       <Row>
-        <Col sm={6}>
+        <Col lg={6}>
           <MainCard title="Bar chart">
-            <ApexBarChart />
+            <BarChart />
           </MainCard>
         </Col>
-        <Col sm={6}>
+        <Col lg={6}>
           <MainCard title="Bar chart stacked">
-            <ApexBarStackedChart />
+            <BarStackedChart />
           </MainCard>
         </Col>
-        <Col sm={6}>
+        <Col lg={6}>
           <MainCard title="Bar chart horizontal">
-            <ApexBarHorizontalChart />
+            <BarHorizontalChart />
           </MainCard>
         </Col>
-        <Col sm={6}>
+        <Col lg={6}>
           <MainCard title="Bar chart horizontal stacked">
-            <ApexBarHorizontalStackedChart />
+            <BarHorizontalStackedChart />
           </MainCard>
         </Col>
       </Row>

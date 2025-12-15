@@ -9,6 +9,7 @@ import MainCard from 'components/MainCard';
 export default function StripedTable() {
   return (
     <MainCard
+      className="table-card"
       title="Striped Table"
       subheader={
         <p className="mb-0">

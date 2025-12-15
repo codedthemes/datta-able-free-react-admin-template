@@ -9,7 +9,7 @@ const chartsMaps = {
       id: 'charts',
       title: 'Charts',
       type: 'collapse',
-      icon: <i className="ph ph-chart-donut" />,
+      icon: 'ph ph-chart-donut',
       children: [
         {
           id: 'apex-chart',
@@ -23,7 +23,7 @@ const chartsMaps = {
       id: 'map',
       title: 'Map',
       type: 'collapse',
-      icon: <i className="ph ph-map-trifold" />,
+      icon: 'ph ph-map-trifold',
       children: [
         {
           id: 'google-map',

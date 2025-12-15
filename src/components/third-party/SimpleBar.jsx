@@ -6,10 +6,10 @@ import SimpleBar from 'simplebar-react';
 
 // ==============================|| SIMPLE BAR SCROLL ||============================== //
 
-export default function SimpleBarScroll({ children, className, style, ...other }) {
+export default function SimpleBarScroll({ children, className, browserStyle, style, ...other }) {
   return (
     <>
-      <BrowserView style={{ flexGrow: 1, height: '100%', overflow: 'hidden' }}>
+      <BrowserView style={{ flexGrow: 1, height: '100%', overflow: 'hidden', ...browserStyle }}>
         <SimpleBar clickOnTrack={false} style={{ maxHeight: '100%', ...style }} className={className} {...other}>
           {children}
         </SimpleBar>
@@ -24,4 +24,10 @@ export default function SimpleBarScroll({ children, className, style, ...other }
   );
 }
 
-SimpleBarScroll.propTypes = { children: PropTypes.node, className: PropTypes.string, style: PropTypes.any, other: PropTypes.any };
+SimpleBarScroll.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  browserStyle: PropTypes.any,
+  style: PropTypes.any,
+  other: PropTypes.any
+};

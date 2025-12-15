@@ -11,7 +11,7 @@ import SplitButton from 'react-bootstrap/SplitButton';
 // project-import
 import MainCard from 'components/MainCard';
 
-// =============================|| INPUT GROUP ||============================== //
+// =============================|| FORM ELEMENT - INPUT GROUP ||============================== //
 
 export default function CustomInputGroup() {
   return (

@@ -9,7 +9,7 @@ const other = {
       id: 'menu-levels',
       title: 'Menu-levels',
       type: 'collapse',
-      icon: <i className="ph ph-tree-structure" />,
+      icon: 'ph ph-tree-structure',
       children: [
         {
           id: 'level-2.1',
@@ -90,7 +90,7 @@ const other = {
       id: 'sample-page',
       title: 'Sample page',
       type: 'item',
-      icon: <i className="ph ph-desktop" />,
+      icon: 'ph ph-desktop',
       url: '/other/sample-page'
     }
   ]

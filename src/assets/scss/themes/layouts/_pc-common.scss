@@ -13,6 +13,7 @@
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
+
     @include media-breakpoint-down(xl) {
       &.container {
         max-width: 100%;
@@ -20,11 +21,11 @@
     }
   }
 
-  .page-header + .row {
+  .page-header+.row {
     padding-top: 24px;
   }
 
-  .page-header + .pc-content {
+  .page-header+.pc-content {
     padding-top: calc(30px + 55px);
   }
 }
@@ -69,7 +70,7 @@
         color: $primary;
       }
 
-      + .breadcrumb-item::before {
+      +.breadcrumb-item::before {
         position: relative;
         top: 2px;
       }
@@ -92,8 +93,8 @@
     margin-left: 0px;
     margin-right: 0px;
 
-    .page-header + .row,
-    .page-header + .pc-content,
+    .page-header+.row,
+    .page-header+.pc-content,
     .pc-content {
       padding-top: 20px;
       padding-left: 15px;
@@ -115,6 +116,7 @@
     padding-top: 0;
     padding-bottom: 5px;
   }
+
   .pc-container {
     .pc-content {
       padding: 15px;
@@ -125,8 +127,8 @@
       padding-right: 0;
     }
 
-    .page-header + .row,
-    .page-header + .pc-content {
+    .page-header+.row,
+    .page-header+.pc-content {
       padding-left: 0;
       padding-right: 0;
     }
@@ -156,28 +158,6 @@
   position: relative;
 }
 
-.simplebar-scrollbar {
-  position: absolute;
-  left: 0;
-  right: 0;
-  min-height: 10px;
-
-  &:before {
-    position: absolute;
-    content: '';
-    background: darken($body-bg, 25%);
-    border-radius: 7px;
-    left: 2px;
-    right: 2px;
-    opacity: 0;
-    transition: opacity 0.2s linear;
-  }
-
-  &.simplebar-visible:before {
-    opacity: 0.5;
-    transition: opacity 0s linear;
-  }
-}
 
 // ============================
 //   6. Common layout css end

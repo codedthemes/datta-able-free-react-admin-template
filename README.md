@@ -100,7 +100,7 @@ Get started with a sweet set of features, including:
 
 - Bootstrap 5
 - React Bootstrap
-- React
+- React 19.2
 - npm/yarn package installer
 - Vite
 

@@ -9,7 +9,7 @@ const pages = {
       id: 'authentication',
       title: 'Authentication',
       type: 'collapse',
-      icon: <i className="ph ph-lock-key" />,
+      icon: 'ph ph-lock-key',
       children: [
         {
           id: 'login',

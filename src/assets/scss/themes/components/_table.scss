@@ -1,6 +1,7 @@
 // ============================
 //   17. Table css start
 // ============================
+@use 'sass:color';
 
 .table {
   &.table-align-center {
@@ -11,9 +12,18 @@
   }
   thead th {
     padding: 0.9rem 0.75rem;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 13px;
+    color: #262626;
+    background: rgba(244, 247, 250, 0.5);
+    text-transform: uppercase;
   }
   td,
   th {
+    border-top: 1px solid $border-color;
+    border-bottom: none;
+    white-space: nowrap;
+    padding: 0.7rem 0.75rem;
     vertical-align: middle;
   }
   &.table-borderless {
@@ -25,7 +35,7 @@
 }
 
 .table-hover tbody tr:hover {
-  background-color: transparentize($primary, 0.97);
+  background-color: #{color.adjust($primary, $alpha: -0.97)};
 }
 
 // ============================

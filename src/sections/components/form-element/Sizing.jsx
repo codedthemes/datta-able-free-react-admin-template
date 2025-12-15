@@ -6,9 +6,9 @@ import Row from 'react-bootstrap/Row';
 // project-imports
 import MainCard from 'components/MainCard';
 
-// =============================|| SIZING ||============================== //
+// =============================|| FORM ELEMENT - SIZING ||============================== //
 
-export default function Sizeing() {
+export default function Sizing() {
   return (
     <MainCard title="Sizing">
       <Row className="g-4">

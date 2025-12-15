@@ -16,6 +16,7 @@
     svg {
       stroke: #fff;
     }
+
     i {
       color: #fff;
     }
@@ -105,7 +106,7 @@
       vertical-align: text-top;
     }
 
-    > svg {
+    >svg {
       width: 18px;
       height: 18px;
       display: inline-block;
@@ -130,10 +131,10 @@
     }
   }
 
-  .pc-navbar > .pc-item:not(.pc-caption) {
+  .pc-navbar>.pc-item:not(.pc-caption) {
     position: relative;
 
-    > .pc-link {
+    >.pc-link {
       &::after {
         content: '';
         position: absolute;
@@ -163,7 +164,7 @@
         background: var(--pc-sidebar-active-color);
       }
 
-      > .pc-link {
+      >.pc-link {
         font-weight: 500;
         color: var(--pc-sidebar-main-active-color);
 
@@ -175,8 +176,9 @@
 
     .pc-submenu {
       padding: 15px 0;
+
       .pc-item {
-        > .pc-link {
+        >.pc-link {
           &:after {
             content: '';
             border-radius: 50%;
@@ -192,7 +194,7 @@
 
         &.pc-trigger,
         &.active {
-          > .pc-link {
+          >.pc-link {
             font-weight: 500;
             color: var(--pc-sidebar-active-color);
 
@@ -206,7 +208,7 @@
         &.active,
         &:focus,
         &:hover {
-          > .pc-link {
+          >.pc-link {
             &:after {
               opacity: 1;
               transform: scale(1.2);
@@ -274,7 +276,7 @@
     display: inline-block;
     transition: all 0.2s ease-in-out;
 
-    > svg {
+    >svg {
       width: 14px;
       height: 14px;
     }
@@ -320,18 +322,18 @@
 
   .pc-hasmenu {
     &:not(.pc-trigger) {
-      > .pc-submenu {
+      >.pc-submenu {
         display: none;
       }
     }
 
     &.pc-trigger {
-      > .pc-submenu {
+      >.pc-submenu {
         display: block;
       }
 
-      > .pc-link {
-        > .pc-arrow {
+      >.pc-link {
+        >.pc-arrow {
           transform: rotate(90deg);
         }
       }
@@ -354,12 +356,12 @@
   .pc-sidebar {
     transition: width 0.2s ease;
 
-    ~ .pc-header {
+    ~.pc-header {
       transition: left 0.2s ease;
     }
 
-    ~ .pc-footer,
-    ~ .pc-container {
+    ~.pc-footer,
+    ~.pc-container {
       transition: margin-left 0.2s ease;
     }
 
@@ -367,12 +369,12 @@
       width: 0;
       --pc-sidebar-border: none;
 
-      ~ .pc-header {
+      ~.pc-header {
         left: 0;
       }
 
-      ~ .pc-footer,
-      ~ .pc-container {
+      ~.pc-footer,
+      ~.pc-container {
         margin-left: 0px;
       }
     }

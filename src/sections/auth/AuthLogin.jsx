@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // react-bootstrap
 import Button from 'react-bootstrap/Button';
@@ -69,8 +70,8 @@ export default function AuthLoginForm({ className, link }) {
             <Button onClick={togglePasswordVisibility}>
               {showPassword ? <i className="ti ti-eye" /> : <i className="ti ti-eye-off" />}
             </Button>
+            <Form.Control.Feedback type="invalid">{errors.password?.message}</Form.Control.Feedback>
           </InputGroup>
-          <Form.Control.Feedback type="invalid">{errors.password?.message}</Form.Control.Feedback>
         </Form.Group>
 
         <Stack direction="horizontal" className="mt-1 justify-content-between align-items-center">
@@ -82,9 +83,9 @@ export default function AuthLoginForm({ className, link }) {
               className={`input-primary ${className ? className : 'text-muted'} `}
             />
           </Form.Group>
-          <a href="#!" className={`text-secondary f-w-400 mb-0  ${className}`}>
+          <Link to="#!" className={`text-secondary f-w-400 mb-0  ${className}`}>
             Forgot Password?
-          </a>
+          </Link>
         </Stack>
         <div className="text-center mt-4">
           <Button type="submit" className="shadow px-sm-4">
@@ -93,13 +94,13 @@ export default function AuthLoginForm({ className, link }) {
         </div>
         <Stack direction="horizontal" className="justify-content-between align-items-end mt-4">
           <h6 className={`f-w-500 mb-0 ${className}`}>Don't have an Account?</h6>
-          <a href={link} className="link-primary">
+          <Link to={link} className="link-primary">
             Create Account
-          </a>
+          </Link>
         </Stack>
       </Form>
     </MainCard>
   );
 }
 
-AuthLoginForm.propTypes = { className: PropTypes.string, link: PropTypes.string, resetLink: PropTypes.string };
+AuthLoginForm.propTypes = { className: PropTypes.string, link: PropTypes.string };

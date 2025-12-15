@@ -8,11 +8,11 @@ const uiComponents = {
     {
       id: 'basic',
       title: 'Basic',
-      icon: <i className="ph ph-pencil-ruler" />,
+      icon: 'ph ph-pencil-ruler',
       type: 'collapse',
       children: [
         {
-          id: 'buttons',
+          id: 'button',
           title: 'Button',
           type: 'item',
           url: '/basic/buttons'

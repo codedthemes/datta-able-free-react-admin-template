@@ -1,153 +1,81 @@
 import PropTypes from 'prop-types';
-import { useCallback, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
 // react-bootstrap
 import ListGroup from 'react-bootstrap/ListGroup';
 
-// project-imports
-import Navigation from './Navigation';
-import { useGetMenuMaster } from 'api/menu';
-import SimpleBarScroll from 'components/third-party/SimpleBar';
+// project imports
+import NavItem from './NavItem';
+import NavGroup from './NavGroup';
 import menuItems from 'menu-items';
 
-// ==============================|| DRAWER CONTENT - NAVIGATION ||============================== //
+// ==============================|| DRAWER CONTENT ||============================== //
 
-export default function DrawerContent({ selectedItems, setSelectedItems }) {
-  const [selectTab, setSelectTab] = useState(menuItems.items[0]);
-  const { menuMaster } = useGetMenuMaster();
-  const { pathname } = useLocation();
-  const drawerOpen = menuMaster?.isDashboardDrawerOpened;
+export default function Navigation({ selectedItems, setSelectedItems, setSelectTab }) {
+  const [selectedID, setSelectedID] = useState('');
+  const [selectedLevel, setSelectedLevel] = useState(0);
 
-  const [open, setOpen] = useState({});
+  const lastItem = null;
+  let lastItemIndex = menuItems.items.length - 1;
+  let remItems = [];
+  let lastItemId;
 
-  const handleClick = (item) => {
-    if (!item.id) return;
-
-    const isMobile = window.innerWidth <= 1024;
-
-    setOpen((prev) => ({
-      ...prev,
-      [item.id]: !prev[item.id]
+  if (lastItem && lastItem < menuItems.items.length) {
+    lastItemId = menuItems.items[lastItem - 1].id;
+    lastItemIndex = lastItem - 1;
+    remItems = menuItems.items.slice(lastItem - 1, menuItems.items.length).map((item) => ({
+      id: item.id,
+      type: item.type,
+      title: item.title,
+      elements: item.children,
+      icon: item.icon,
+      ...(item.url && {
+        url: item.url
+      })
     }));
+  }
 
-    if (isMobile || !drawerOpen) {
-      setSelectedItems(item);
+  const navGroups = menuItems.items.slice(0, lastItemIndex + 1).map((item) => {
+    switch (item.type) {
+      case 'group':
+        if (item.url && item.id !== lastItemId) {
+          return (
+            <ListGroup.Item key={item.id}>
+              <NavItem item={item} level={1} isParents />
+            </ListGroup.Item>
+          );
+        }
+
+        return (
+          <NavGroup
+            key={item.id}
+            setSelectedID={setSelectedID}
+            setSelectedItems={setSelectedItems}
+            setSelectedLevel={setSelectedLevel}
+            selectedLevel={selectedLevel}
+            selectedID={selectedID}
+            selectedItems={selectedItems}
+            lastItem={lastItem}
+            remItems={remItems}
+            lastItemId={lastItemId}
+            item={item}
+            setSelectTab={setSelectTab ?? (() => {})}
+          />
+        );
     }
-  };
 
-  const isActive = useCallback(
-    (item) => {
-      if (!item.url) return false;
-      return pathname.toLowerCase().includes(item.url.toLowerCase());
-    },
-    [pathname]
-  );
+    return (
+      <h6 key={item.id} className="text-danger align-items-center">
+        Fix - Navigation Group
+      </h6>
+    );
+  });
 
-  const autoOpenParents = useCallback(
-    (items) => {
-      const openMap = {};
-
-      const findAndMark = (entries = []) => {
-        entries.forEach((item) => {
-          if (item.children) {
-            const match = item.children.find((child) => isActive(child) || child.children?.some(isActive));
-            if (match) openMap[item.id] = true;
-
-            findAndMark(item.children);
-          }
-        });
-      };
-
-      findAndMark(items);
-      setOpen(openMap);
-    },
-    [isActive, setOpen]
-  );
-
-  useEffect(() => {
-    autoOpenParents(selectTab?.children);
-  }, [autoOpenParents, selectTab]);
-  return (
-    <>
-      <SimpleBarScroll style={{ height: 'calc(100vh - 74px)' }}>
-        <Navigation selectedItems={selectedItems} setSelectedItems={setSelectedItems} setSelectTab={setSelectTab} />
-      </SimpleBarScroll>
-      <div className="tab-link">
-        <div className="navbar-content pc-trigger">
-          <SimpleBarScroll style={{ height: 'calc(100vh - 74px)' }}>
-            <ul className="pc-navbar">
-              {selectTab?.children?.map((item) => (
-                <ListGroup
-                  key={item.id}
-                  className={`pc-item pc-hasmenu ${open[item.id] ? 'pc-trigger' : ''} ${isActive(item) ? 'active' : ''}`}
-                >
-                  <Link to={item.url || '#'} className="pc-link" onClick={() => handleClick(item)}>
-                    {item.icon && (
-                      <span className="pc-micon">
-                        <i className={typeof item.icon === 'string' ? item.icon : item.icon?.props.className} />
-                      </span>
-                    )}
-                    <span className="pc-mtext">{item.title}</span>
-                    {item.type === 'collapse' && (
-                      <span className="pc-arrow">
-                        <i className="ti ti-chevron-right" />
-                      </span>
-                    )}
-                  </Link>
-
-                  {open[item.id] && item.children && (
-                    <ul className="pc-submenu">
-                      {item.children.map((child) => (
-                        <li key={child.id} className={`pc-item ${open[child.id] ? 'pc-trigger' : ''} ${isActive(child) ? 'active' : ''}`}>
-                          <Link
-                            to={child.url || '#'}
-                            className="pc-link"
-                            onClick={() => {
-                              handleClick(child);
-                            }}
-                          >
-                            {child.icon && (
-                              <span className="pc-micon">
-                                <i className={typeof child.icon === 'string' ? child.icon : child.icon?.props.className} />
-                              </span>
-                            )}
-                            {child.title}
-                            {child.type === 'collapse' && (
-                              <span className="pc-arrow">
-                                <i className="ti ti-chevron-right" />
-                              </span>
-                            )}
-                          </Link>
-
-                          {open[child.id] && child.children && (
-                            <ul className="pc-submenu">
-                              {child.children.map((value) => (
-                                <li key={value.id} className={`pc-item ${isActive(value) ? 'active' : ''}`}>
-                                  <Link className="pc-link" to={value.url || ''}>
-                                    {value.icon && (
-                                      <span className="pc-micon">
-                                        <i className={typeof value.icon === 'string' ? value.icon : value.icon?.props.className} />
-                                      </span>
-                                    )}
-                                    {value.title}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </ListGroup>
-              ))}
-            </ul>
-          </SimpleBarScroll>
-        </div>
-      </div>
-    </>
-  );
+  return <ul className="pc-navbar">{navGroups}</ul>;
 }
 
-DrawerContent.propTypes = { selectedItems: PropTypes.any, setSelectedItems: PropTypes.oneOfType([PropTypes.func, PropTypes.any]) };
+Navigation.propTypes = {
+  selectedItems: PropTypes.any,
+  setSelectedItems: PropTypes.oneOfType([PropTypes.func, PropTypes.any]),
+  setSelectTab: PropTypes.oneOfType([PropTypes.func, PropTypes.any])
+};

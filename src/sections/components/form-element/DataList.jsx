@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 // project-import
 import MainCard from 'components/MainCard';
 
-// =============================|| DATA LIST ||============================== //
+// =============================|| FORM ELEMENT - DATA LIST ||============================== //
 
 export default function DataList() {
   return (

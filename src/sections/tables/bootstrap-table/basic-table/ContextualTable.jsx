@@ -10,6 +10,7 @@ export default function ContextualTable() {
   return (
     <MainCard
       title="Contextual Classes"
+      className="table-card"
       subheader={
         <p className="mb-0">
           For Make row Contextual add Contextual class like <code>.table-success</code> in <code>tr tag</code> and For cell add Contextual
