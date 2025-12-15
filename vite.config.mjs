@@ -73,7 +73,6 @@ export default defineConfig(({ mode }) => {
     build: {
       chunkSizeWarningLimit: 1600,
       sourcemap: true,
-      // Vite-specific optimizations
       cssCodeSplit: true,
       rollupOptions: {
         input: {
