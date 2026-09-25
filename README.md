@@ -171,3 +171,7 @@ If you found a bug in any version, please generate a [GitHub issue](https://gith
 - [LinkedIn](https://www.linkedin.com/company/codedthemes/) 💼
 - [Instagram](https://www.instagram.com/codedthemes/) 📷
 - [Facebook](https://www.facebook.com/codedthemes) 🟦
+
+## Deployment
+
+[![Deploy on Hostinger](https://assets.hostinger.com/vps/deploy.svg)](https://www.hostinger.com/web-apps-hosting)
